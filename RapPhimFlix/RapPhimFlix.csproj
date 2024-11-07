@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Form\DangNhap\" />
+    <Folder Include="Form\MenuNav\" />
+    <Folder Include="Form\ThongKeDoanhThu\" />
+    <Folder Include="Form\QLyNhanVien\" />
+    <Folder Include="Form\QLySanPham\" />
+    <Folder Include="Form\QLySuatChieu\" />
+    <Folder Include="Form\QLyPhim\" />
+    <Folder Include="Icon\" />
+    <Folder Include="Poster\" />
+  </ItemGroup>
+
+</Project>
