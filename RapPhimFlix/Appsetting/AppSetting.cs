@@ -18,6 +18,7 @@ namespace RapPhimFlix.Appsetting
             if (password != Password) return false;
             return true;
         }
-        public static int VaiTro; // 0 là Admin
+        public static int VaiTro = -1; // 0 là Admin
+        public static string UserName {  get; set; }
     }
 }
