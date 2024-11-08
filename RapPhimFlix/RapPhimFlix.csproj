@@ -11,8 +11,8 @@
   <ItemGroup>
     <Folder Include="Form\DangNhap\" />
     <Folder Include="Form\MenuNav\" />
+    <Folder Include="Form\QLyNhanVien\NewFolder\" />
     <Folder Include="Form\ThongKeDoanhThu\" />
-    <Folder Include="Form\QLyNhanVien\" />
     <Folder Include="Form\QLySanPham\" />
     <Folder Include="Form\QLySuatChieu\" />
     <Folder Include="Form\QLyPhim\" />
