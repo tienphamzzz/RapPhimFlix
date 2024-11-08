@@ -9,8 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Forms\DangNhap\" />
-    <Folder Include="Forms\MenuNav\" />
     <Folder Include="Forms\ThongKeDoanhThu\" />
     <Folder Include="Forms\QLyNhanVien\" />
     <Folder Include="Forms\QLySanPham\" />
