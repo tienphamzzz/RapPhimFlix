@@ -65,17 +65,35 @@ namespace RapPhimFlix.Forms
             rtb_ThongTinPhim.Text += "Thời lượng: " + bang["ThoiLuong"].ToString() + '\n';
             rtb_ThongTinPhim.Text += "Đạo diễn:   " + bang["DaoDien"].ToString() + '\n';
             DocFile(bang["MoTa"].ToString());
+            DocFile(bang["TenAnh"].ToString(), 1);
         }
-        private void DocFile(string tenFile)
+        private void DocFile(string tenFile, int kieu = 0)
         {
-            try
+            if (kieu == 0)
             {
-                string relativePath = @"Resources\" + tenFile;
-                string fullPath = Path.Combine(Environment.CurrentDirectory, relativePath);
-                rtb_ThongTinPhim.Text += "Mô tả: " + File.ReadAllText(fullPath);
+                try
+                {
+                    string fullPath = Path.Combine(Application.StartupPath, $"Resources\\filedata\\{tenFile}");
+                    // E:\Mon Hoc\ki 5\Lap trinh truc quan\Bai tap lon\Git\RapPhimFlix\RapPhimFlix\bin\Debug\net8.0-windows\Resources\filedata\
+                    rtb_ThongTinPhim.Text += "Mô tả: " + File.ReadAllText(fullPath);
+                }
+                catch (Exception e)
+                {
+                    //textBox1.Text = "Lỗi lòi mắt " + e.Message;
+                }
             }
-            catch(Exception e) {
-                textBox1.Text = "Lỗi lòi mắt " + e.Message;
+            else if (kieu == 1)
+            {
+                try
+                {
+                    ptb_Anh.SizeMode = PictureBoxSizeMode.StretchImage;
+                    string fullPath = Path.Combine(Application.StartupPath, $"Resources\\images\\phims\\{tenFile}");
+                    ptb_Anh.Image = Image.FromFile(fullPath);
+                }
+                catch (Exception e)
+                {
+                    //textBox1.Text = "Lỗi lòi mắt " + e.Message;
+                }
             }
         }
         private void btn_Them_Click(object sender, EventArgs e)

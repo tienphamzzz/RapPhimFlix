@@ -41,14 +41,13 @@
             btn_QuayLai = new Button();
             cbo_CacCaChieuKhac = new ComboBox();
             rtb_ThongTinPhim = new RichTextBox();
-            textBox1 = new TextBox();
             grb_Anh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ptb_Anh).BeginInit();
             SuspendLayout();
             // 
             // btn_SuatChieu1
             // 
-            btn_SuatChieu1.Location = new Point(57, 304);
+            btn_SuatChieu1.Location = new Point(60, 324);
             btn_SuatChieu1.Name = "btn_SuatChieu1";
             btn_SuatChieu1.Size = new Size(78, 51);
             btn_SuatChieu1.TabIndex = 2;
@@ -59,7 +58,7 @@
             // 
             lbl_SuatChieu.AutoSize = true;
             lbl_SuatChieu.Font = new Font("Segoe UI", 15F);
-            lbl_SuatChieu.Location = new Point(47, 252);
+            lbl_SuatChieu.Location = new Point(50, 272);
             lbl_SuatChieu.Name = "lbl_SuatChieu";
             lbl_SuatChieu.Size = new Size(106, 28);
             lbl_SuatChieu.TabIndex = 3;
@@ -67,7 +66,7 @@
             // 
             // btn_SuatChieu2
             // 
-            btn_SuatChieu2.Location = new Point(141, 304);
+            btn_SuatChieu2.Location = new Point(144, 324);
             btn_SuatChieu2.Name = "btn_SuatChieu2";
             btn_SuatChieu2.Size = new Size(78, 51);
             btn_SuatChieu2.TabIndex = 4;
@@ -76,7 +75,7 @@
             // 
             // btn_SuatChieu3
             // 
-            btn_SuatChieu3.Location = new Point(226, 304);
+            btn_SuatChieu3.Location = new Point(229, 324);
             btn_SuatChieu3.Name = "btn_SuatChieu3";
             btn_SuatChieu3.Size = new Size(78, 51);
             btn_SuatChieu3.TabIndex = 5;
@@ -85,7 +84,7 @@
             // 
             // btn_SuatChieu4
             // 
-            btn_SuatChieu4.Location = new Point(310, 304);
+            btn_SuatChieu4.Location = new Point(313, 324);
             btn_SuatChieu4.Name = "btn_SuatChieu4";
             btn_SuatChieu4.Size = new Size(78, 51);
             btn_SuatChieu4.TabIndex = 6;
@@ -94,7 +93,7 @@
             // 
             // btn_SuatChieu5
             // 
-            btn_SuatChieu5.Location = new Point(394, 304);
+            btn_SuatChieu5.Location = new Point(397, 324);
             btn_SuatChieu5.Name = "btn_SuatChieu5";
             btn_SuatChieu5.Size = new Size(78, 51);
             btn_SuatChieu5.TabIndex = 7;
@@ -103,7 +102,7 @@
             // 
             // btn_Them
             // 
-            btn_Them.Location = new Point(478, 304);
+            btn_Them.Location = new Point(481, 324);
             btn_Them.Name = "btn_Them";
             btn_Them.Size = new Size(78, 51);
             btn_Them.TabIndex = 8;
@@ -114,7 +113,7 @@
             // lbl_TenPhim
             // 
             lbl_TenPhim.AutoSize = true;
-            lbl_TenPhim.Location = new Point(226, 72);
+            lbl_TenPhim.Location = new Point(197, 47);
             lbl_TenPhim.Name = "lbl_TenPhim";
             lbl_TenPhim.Size = new Size(38, 15);
             lbl_TenPhim.TabIndex = 10;
@@ -127,7 +126,7 @@
             grb_Anh.Margin = new Padding(3, 2, 3, 2);
             grb_Anh.Name = "grb_Anh";
             grb_Anh.Padding = new Padding(3, 2, 3, 2);
-            grb_Anh.Size = new Size(170, 199);
+            grb_Anh.Size = new Size(160, 217);
             grb_Anh.TabIndex = 11;
             grb_Anh.TabStop = false;
             // 
@@ -136,7 +135,7 @@
             ptb_Anh.Location = new Point(5, 13);
             ptb_Anh.Margin = new Padding(3, 2, 3, 2);
             ptb_Anh.Name = "ptb_Anh";
-            ptb_Anh.Size = new Size(159, 182);
+            ptb_Anh.Size = new Size(152, 201);
             ptb_Anh.TabIndex = 0;
             ptb_Anh.TabStop = false;
             // 
@@ -153,7 +152,7 @@
             // cbo_CacCaChieuKhac
             // 
             cbo_CacCaChieuKhac.FormattingEnabled = true;
-            cbo_CacCaChieuKhac.Location = new Point(141, 367);
+            cbo_CacCaChieuKhac.Location = new Point(144, 387);
             cbo_CacCaChieuKhac.Name = "cbo_CacCaChieuKhac";
             cbo_CacCaChieuKhac.Size = new Size(331, 23);
             cbo_CacCaChieuKhac.TabIndex = 13;
@@ -161,27 +160,18 @@
             // 
             // rtb_ThongTinPhim
             // 
-            rtb_ThongTinPhim.Enabled = false;
-            rtb_ThongTinPhim.Location = new Point(204, 102);
+            rtb_ThongTinPhim.Location = new Point(197, 104);
             rtb_ThongTinPhim.Name = "rtb_ThongTinPhim";
             rtb_ThongTinPhim.ReadOnly = true;
-            rtb_ThongTinPhim.Size = new Size(309, 131);
+            rtb_ThongTinPhim.Size = new Size(362, 144);
             rtb_ThongTinPhim.TabIndex = 14;
             rtb_ThongTinPhim.Text = "";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(74, 7);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(534, 23);
-            textBox1.TabIndex = 16;
             // 
             // frmSuatChieu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(620, 396);
-            Controls.Add(textBox1);
+            ClientSize = new Size(609, 424);
             Controls.Add(rtb_ThongTinPhim);
             Controls.Add(cbo_CacCaChieuKhac);
             Controls.Add(btn_QuayLai);
@@ -216,6 +206,5 @@
         private Button btn_QuayLai;
         private ComboBox cbo_CacCaChieuKhac;
         private RichTextBox rtb_ThongTinPhim;
-        private TextBox textBox1;
     }
 }

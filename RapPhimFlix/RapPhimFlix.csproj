@@ -9,16 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="bin\Resources\filedata\Supergirl1.rtf" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.deps.json" />
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.runtimeconfig.json" />
-    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Supergirl1.jpg" />
+    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\SuperGirl1.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="bin\filedata\" />
     <Folder Include="Forms\DangNhap\" />
     <Folder Include="Forms\MenuNav\" />
     <Folder Include="Forms\ThongKeDoanhThu\" />
@@ -35,13 +32,13 @@
     <None Include="bin\Debug\net8.0-windows\RapPhimFlix.dll" />
     <None Include="bin\Debug\net8.0-windows\RapPhimFlix.exe" />
     <None Include="bin\Debug\net8.0-windows\RapPhimFlix.pdb" />
-    <None Include="bin\Debug\net8.0-windows\Resources\filedata\Supergirl1.rtf" />
     <None Include="bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
     <None Include="bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll" />
     <None Include="bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll" />
     <None Include="bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll" />
     <None Include="bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
     <None Include="bin\Debug\net8.0-windows\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net8.0-windows\Resources\filedata\Supergirl1.rtf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,15 +58,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Resources\filedata\Supergirl1.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\images\phims\Supergirl1.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
