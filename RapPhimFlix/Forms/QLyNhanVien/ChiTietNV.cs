@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RapPhimFlix.Forms.QLyNhanVien
 {
-    public partial class TaiKhoan : Form
+    public partial class ChiTietNV : Form
     {
-        public TaiKhoan()
+        public ChiTietNV()
         {
             InitializeComponent();
         }
