@@ -1,3 +1,5 @@
+using RapPhimFlix.Forms;
+
 namespace RapPhimFlix
 {
     internal static class Program
