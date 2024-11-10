@@ -11,6 +11,11 @@
   <ItemGroup>
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.deps.json" />
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.runtimeconfig.json" />
+
+    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\No Infomation.jpg" />
+    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\SuperGirl 1.jpg" />
+    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Superman 1.jpg" />
+
   </ItemGroup>
 
   <ItemGroup>
@@ -29,16 +34,39 @@
     <None Include="bin\Debug\net8.0-windows\RapPhimFlix.dll" />
     <None Include="bin\Debug\net8.0-windows\RapPhimFlix.exe" />
     <None Include="bin\Debug\net8.0-windows\RapPhimFlix.pdb" />
+
+    <None Include="bin\debug\net8.0-windows\resources\filedata\Superman 1.rtf" />
+
     <None Include="bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
     <None Include="bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll" />
     <None Include="bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll" />
     <None Include="bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll" />
     <None Include="bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
     <None Include="bin\Debug\net8.0-windows\System.Data.SqlClient.dll" />
+
+    <None Include="bin\Debug\net8.0-windows\Resources\filedata\Supergirl 1.rtf" />
+
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 
 </Project>
