@@ -18,26 +18,26 @@
         private void InitializeComponent()
         {
             labelTitle = new Label();
-            groupBoxTicketInfo = new GroupBox();
-            lblMaVe = new Label();
-            lblPhim = new Label();
-            lblNgayChieu = new Label();
-            lblCaChieu = new Label();
-            lblPhongChieu = new Label();
-            lblGhe = new Label();
-            lblGiaVe = new Label();
-            groupBoxCustomerInfo = new GroupBox();
-            lblTenKhach = new Label();
-            txtTenKhach = new TextBox();
-            lblSoDienThoai = new Label();
-            txtSoDienThoai = new TextBox();
-            lblGioiTinh = new Label();
-            rbNam = new RadioButton();
-            rbNu = new RadioButton();
-            lblTongTien = new Label();
+            gbTicketInfo = new GroupBox();
+            lblTicketID = new Label();
+            lblFilmName = new Label();
+            lblShowDate = new Label();
+            lblScreening = new Label();
+            lblRoom = new Label();
+            lblChair = new Label();
+            lblTicketPrice = new Label();
+            gbCustomerInfo = new GroupBox();
+            lblCustomerName = new Label();
+            txtCustomerName = new TextBox();
+            lblPhoneNumber = new Label();
+            txtPhoneNumber = new TextBox();
+            lblSex = new Label();
+            rbMale = new RadioButton();
+            rbFemale = new RadioButton();
+            lblTotal = new Label();
             btnCancel = new Button();
-            btnThanhToan = new Button();
-            textBox1 = new TextBox();
+            btnPay = new Button();
+            txtTotal = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
@@ -45,8 +45,8 @@
             textBox6 = new TextBox();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
-            groupBoxTicketInfo.SuspendLayout();
-            groupBoxCustomerInfo.SuspendLayout();
+            gbTicketInfo.SuspendLayout();
+            gbCustomerInfo.SuspendLayout();
             SuspendLayout();
             // 
             // labelTitle
@@ -59,164 +59,164 @@
             labelTitle.TabIndex = 0;
             labelTitle.Text = "Thanh toán";
             // 
-            // groupBoxTicketInfo
+            // gbTicketInfo
             // 
-            groupBoxTicketInfo.Controls.Add(textBox8);
-            groupBoxTicketInfo.Controls.Add(textBox7);
-            groupBoxTicketInfo.Controls.Add(textBox6);
-            groupBoxTicketInfo.Controls.Add(textBox5);
-            groupBoxTicketInfo.Controls.Add(textBox4);
-            groupBoxTicketInfo.Controls.Add(textBox3);
-            groupBoxTicketInfo.Controls.Add(textBox2);
-            groupBoxTicketInfo.Controls.Add(lblMaVe);
-            groupBoxTicketInfo.Controls.Add(lblPhim);
-            groupBoxTicketInfo.Controls.Add(lblNgayChieu);
-            groupBoxTicketInfo.Controls.Add(lblCaChieu);
-            groupBoxTicketInfo.Controls.Add(lblPhongChieu);
-            groupBoxTicketInfo.Controls.Add(lblGhe);
-            groupBoxTicketInfo.Controls.Add(lblGiaVe);
-            groupBoxTicketInfo.Location = new Point(30, 55);
-            groupBoxTicketInfo.Name = "groupBoxTicketInfo";
-            groupBoxTicketInfo.Size = new Size(350, 316);
-            groupBoxTicketInfo.TabIndex = 1;
-            groupBoxTicketInfo.TabStop = false;
-            groupBoxTicketInfo.Text = "Thông tin vé";
+            gbTicketInfo.Controls.Add(textBox8);
+            gbTicketInfo.Controls.Add(textBox7);
+            gbTicketInfo.Controls.Add(textBox6);
+            gbTicketInfo.Controls.Add(textBox5);
+            gbTicketInfo.Controls.Add(textBox4);
+            gbTicketInfo.Controls.Add(textBox3);
+            gbTicketInfo.Controls.Add(textBox2);
+            gbTicketInfo.Controls.Add(lblTicketID);
+            gbTicketInfo.Controls.Add(lblFilmName);
+            gbTicketInfo.Controls.Add(lblShowDate);
+            gbTicketInfo.Controls.Add(lblScreening);
+            gbTicketInfo.Controls.Add(lblRoom);
+            gbTicketInfo.Controls.Add(lblChair);
+            gbTicketInfo.Controls.Add(lblTicketPrice);
+            gbTicketInfo.Location = new Point(30, 55);
+            gbTicketInfo.Name = "gbTicketInfo";
+            gbTicketInfo.Size = new Size(350, 316);
+            gbTicketInfo.TabIndex = 1;
+            gbTicketInfo.TabStop = false;
+            gbTicketInfo.Text = "Thông tin vé";
             // 
-            // lblMaVe
+            // lblTicketID
             // 
-            lblMaVe.Location = new Point(10, 35);
-            lblMaVe.Name = "lblMaVe";
-            lblMaVe.Size = new Size(100, 23);
-            lblMaVe.TabIndex = 0;
-            lblMaVe.Text = "Mã vé:";
+            lblTicketID.Location = new Point(10, 35);
+            lblTicketID.Name = "lblTicketID";
+            lblTicketID.Size = new Size(100, 23);
+            lblTicketID.TabIndex = 0;
+            lblTicketID.Text = "Mã vé:";
             // 
-            // lblPhim
+            // lblFilmName
             // 
-            lblPhim.Location = new Point(10, 75);
-            lblPhim.Name = "lblPhim";
-            lblPhim.Size = new Size(100, 23);
-            lblPhim.TabIndex = 1;
-            lblPhim.Text = "Phim:";
+            lblFilmName.Location = new Point(10, 75);
+            lblFilmName.Name = "lblFilmName";
+            lblFilmName.Size = new Size(100, 23);
+            lblFilmName.TabIndex = 1;
+            lblFilmName.Text = "Phim:";
             // 
-            // lblNgayChieu
+            // lblShowDate
             // 
-            lblNgayChieu.Location = new Point(10, 115);
-            lblNgayChieu.Name = "lblNgayChieu";
-            lblNgayChieu.Size = new Size(100, 23);
-            lblNgayChieu.TabIndex = 2;
-            lblNgayChieu.Text = "Ngày chiếu:";
+            lblShowDate.Location = new Point(10, 115);
+            lblShowDate.Name = "lblShowDate";
+            lblShowDate.Size = new Size(100, 23);
+            lblShowDate.TabIndex = 2;
+            lblShowDate.Text = "Ngày chiếu:";
             // 
-            // lblCaChieu
+            // lblScreening
             // 
-            lblCaChieu.Location = new Point(10, 159);
-            lblCaChieu.Name = "lblCaChieu";
-            lblCaChieu.Size = new Size(100, 23);
-            lblCaChieu.TabIndex = 3;
-            lblCaChieu.Text = "Ca chiếu:";
+            lblScreening.Location = new Point(10, 159);
+            lblScreening.Name = "lblScreening";
+            lblScreening.Size = new Size(100, 23);
+            lblScreening.TabIndex = 3;
+            lblScreening.Text = "Ca chiếu:";
             // 
-            // lblPhongChieu
+            // lblRoom
             // 
-            lblPhongChieu.Location = new Point(10, 198);
-            lblPhongChieu.Name = "lblPhongChieu";
-            lblPhongChieu.Size = new Size(100, 23);
-            lblPhongChieu.TabIndex = 4;
-            lblPhongChieu.Text = "Phòng chiếu:";
+            lblRoom.Location = new Point(10, 198);
+            lblRoom.Name = "lblRoom";
+            lblRoom.Size = new Size(100, 23);
+            lblRoom.TabIndex = 4;
+            lblRoom.Text = "Phòng chiếu:";
             // 
-            // lblGhe
+            // lblChair
             // 
-            lblGhe.Location = new Point(10, 235);
-            lblGhe.Name = "lblGhe";
-            lblGhe.Size = new Size(100, 23);
-            lblGhe.TabIndex = 5;
-            lblGhe.Text = "Ghế:";
+            lblChair.Location = new Point(10, 235);
+            lblChair.Name = "lblChair";
+            lblChair.Size = new Size(100, 23);
+            lblChair.TabIndex = 5;
+            lblChair.Text = "Ghế:";
             // 
-            // lblGiaVe
+            // lblTicketPrice
             // 
-            lblGiaVe.Location = new Point(10, 277);
-            lblGiaVe.Name = "lblGiaVe";
-            lblGiaVe.Size = new Size(100, 23);
-            lblGiaVe.TabIndex = 6;
-            lblGiaVe.Text = "Giá vé:";
+            lblTicketPrice.Location = new Point(10, 277);
+            lblTicketPrice.Name = "lblTicketPrice";
+            lblTicketPrice.Size = new Size(100, 23);
+            lblTicketPrice.TabIndex = 6;
+            lblTicketPrice.Text = "Giá vé:";
             // 
-            // groupBoxCustomerInfo
+            // gbCustomerInfo
             // 
-            groupBoxCustomerInfo.Controls.Add(lblTenKhach);
-            groupBoxCustomerInfo.Controls.Add(txtTenKhach);
-            groupBoxCustomerInfo.Controls.Add(lblSoDienThoai);
-            groupBoxCustomerInfo.Controls.Add(txtSoDienThoai);
-            groupBoxCustomerInfo.Controls.Add(lblGioiTinh);
-            groupBoxCustomerInfo.Controls.Add(rbNam);
-            groupBoxCustomerInfo.Controls.Add(rbNu);
-            groupBoxCustomerInfo.Location = new Point(450, 60);
-            groupBoxCustomerInfo.Name = "groupBoxCustomerInfo";
-            groupBoxCustomerInfo.Size = new Size(350, 311);
-            groupBoxCustomerInfo.TabIndex = 2;
-            groupBoxCustomerInfo.TabStop = false;
-            groupBoxCustomerInfo.Text = "Thông tin khách hàng";
+            gbCustomerInfo.Controls.Add(lblCustomerName);
+            gbCustomerInfo.Controls.Add(txtCustomerName);
+            gbCustomerInfo.Controls.Add(lblPhoneNumber);
+            gbCustomerInfo.Controls.Add(txtPhoneNumber);
+            gbCustomerInfo.Controls.Add(lblSex);
+            gbCustomerInfo.Controls.Add(rbMale);
+            gbCustomerInfo.Controls.Add(rbFemale);
+            gbCustomerInfo.Location = new Point(450, 60);
+            gbCustomerInfo.Name = "gbCustomerInfo";
+            gbCustomerInfo.Size = new Size(350, 311);
+            gbCustomerInfo.TabIndex = 2;
+            gbCustomerInfo.TabStop = false;
+            gbCustomerInfo.Text = "Thông tin khách hàng";
             // 
-            // lblTenKhach
+            // lblCustomerName
             // 
-            lblTenKhach.Location = new Point(10, 30);
-            lblTenKhach.Name = "lblTenKhach";
-            lblTenKhach.Size = new Size(100, 23);
-            lblTenKhach.TabIndex = 0;
-            lblTenKhach.Text = "Tên khách:";
-            lblTenKhach.Click += lblTenKhach_Click;
+            lblCustomerName.Location = new Point(10, 30);
+            lblCustomerName.Name = "lblCustomerName";
+            lblCustomerName.Size = new Size(100, 23);
+            lblCustomerName.TabIndex = 0;
+            lblCustomerName.Text = "Tên khách:";
+            lblCustomerName.Click += lblTenKhach_Click;
             // 
-            // txtTenKhach
+            // txtCustomerName
             // 
-            txtTenKhach.Location = new Point(120, 30);
-            txtTenKhach.Name = "txtTenKhach";
-            txtTenKhach.Size = new Size(200, 27);
-            txtTenKhach.TabIndex = 1;
+            txtCustomerName.Location = new Point(120, 30);
+            txtCustomerName.Name = "txtCustomerName";
+            txtCustomerName.Size = new Size(200, 27);
+            txtCustomerName.TabIndex = 1;
             // 
-            // lblSoDienThoai
+            // lblPhoneNumber
             // 
-            lblSoDienThoai.Location = new Point(10, 70);
-            lblSoDienThoai.Name = "lblSoDienThoai";
-            lblSoDienThoai.Size = new Size(100, 23);
-            lblSoDienThoai.TabIndex = 2;
-            lblSoDienThoai.Text = "Số điện thoại:";
+            lblPhoneNumber.Location = new Point(10, 70);
+            lblPhoneNumber.Name = "lblPhoneNumber";
+            lblPhoneNumber.Size = new Size(100, 23);
+            lblPhoneNumber.TabIndex = 2;
+            lblPhoneNumber.Text = "Số điện thoại:";
             // 
-            // txtSoDienThoai
+            // txtPhoneNumber
             // 
-            txtSoDienThoai.Location = new Point(120, 70);
-            txtSoDienThoai.Name = "txtSoDienThoai";
-            txtSoDienThoai.Size = new Size(200, 27);
-            txtSoDienThoai.TabIndex = 3;
+            txtPhoneNumber.Location = new Point(120, 70);
+            txtPhoneNumber.Name = "txtPhoneNumber";
+            txtPhoneNumber.Size = new Size(200, 27);
+            txtPhoneNumber.TabIndex = 3;
             // 
-            // lblGioiTinh
+            // lblSex
             // 
-            lblGioiTinh.Location = new Point(10, 110);
-            lblGioiTinh.Name = "lblGioiTinh";
-            lblGioiTinh.Size = new Size(100, 23);
-            lblGioiTinh.TabIndex = 4;
-            lblGioiTinh.Text = "Giới tính:";
+            lblSex.Location = new Point(10, 110);
+            lblSex.Name = "lblSex";
+            lblSex.Size = new Size(100, 23);
+            lblSex.TabIndex = 4;
+            lblSex.Text = "Giới tính:";
             // 
-            // rbNam
+            // rbMale
             // 
-            rbNam.Location = new Point(120, 110);
-            rbNam.Name = "rbNam";
-            rbNam.Size = new Size(71, 24);
-            rbNam.TabIndex = 5;
-            rbNam.Text = "Nam";
+            rbMale.Location = new Point(120, 110);
+            rbMale.Name = "rbMale";
+            rbMale.Size = new Size(71, 24);
+            rbMale.TabIndex = 5;
+            rbMale.Text = "Nam";
             // 
-            // rbNu
+            // rbFemale
             // 
-            rbNu.Location = new Point(216, 110);
-            rbNu.Name = "rbNu";
-            rbNu.Size = new Size(80, 24);
-            rbNu.TabIndex = 6;
-            rbNu.Text = "Nữ";
-            rbNu.CheckedChanged += rbNu_CheckedChanged;
+            rbFemale.Location = new Point(216, 110);
+            rbFemale.Name = "rbFemale";
+            rbFemale.Size = new Size(80, 24);
+            rbFemale.TabIndex = 6;
+            rbFemale.Text = "Nữ";
+            rbFemale.CheckedChanged += rbNu_CheckedChanged;
             // 
-            // lblTongTien
+            // lblTotal
             // 
-            lblTongTien.Location = new Point(30, 388);
-            lblTongTien.Name = "lblTongTien";
-            lblTongTien.Size = new Size(100, 23);
-            lblTongTien.TabIndex = 3;
-            lblTongTien.Text = "Tổng tiền:";
+            lblTotal.Location = new Point(30, 388);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(100, 23);
+            lblTotal.TabIndex = 3;
+            lblTotal.Text = "Tổng tiền:";
             // 
             // btnCancel
             // 
@@ -224,24 +224,24 @@
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 43);
             btnCancel.TabIndex = 4;
-            btnCancel.Text = "Cancel";
+            btnCancel.Text = "Hủy";
             btnCancel.Click += btnCancel_Click;
             // 
-            // btnThanhToan
+            // btnPay
             // 
-            btnThanhToan.Location = new Point(653, 388);
-            btnThanhToan.Name = "btnThanhToan";
-            btnThanhToan.Size = new Size(106, 43);
-            btnThanhToan.TabIndex = 5;
-            btnThanhToan.Text = "Thanh toán";
-            btnThanhToan.Click += btnThanhToan_Click;
+            btnPay.Location = new Point(653, 388);
+            btnPay.Name = "btnPay";
+            btnPay.Size = new Size(106, 43);
+            btnPay.TabIndex = 5;
+            btnPay.Text = "Thanh toán";
+            btnPay.Click += btnThanhToan_Click;
             // 
-            // textBox1
+            // txtTotal
             // 
-            textBox1.Location = new Point(244, 388);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 6;
+            txtTotal.Location = new Point(244, 388);
+            txtTotal.Name = "txtTotal";
+            txtTotal.Size = new Size(125, 27);
+            txtTotal.TabIndex = 6;
             // 
             // textBox2
             // 
@@ -294,19 +294,19 @@
             // 
             // ThanhToanVePhim
             // 
-            Controls.Add(textBox1);
+            Controls.Add(txtTotal);
             Controls.Add(labelTitle);
-            Controls.Add(groupBoxTicketInfo);
-            Controls.Add(groupBoxCustomerInfo);
-            Controls.Add(lblTongTien);
+            Controls.Add(gbTicketInfo);
+            Controls.Add(gbCustomerInfo);
+            Controls.Add(lblTotal);
             Controls.Add(btnCancel);
-            Controls.Add(btnThanhToan);
+            Controls.Add(btnPay);
             Name = "ThanhToanVePhim";
             Size = new Size(861, 476);
-            groupBoxTicketInfo.ResumeLayout(false);
-            groupBoxTicketInfo.PerformLayout();
-            groupBoxCustomerInfo.ResumeLayout(false);
-            groupBoxCustomerInfo.PerformLayout();
+            gbTicketInfo.ResumeLayout(false);
+            gbTicketInfo.PerformLayout();
+            gbCustomerInfo.ResumeLayout(false);
+            gbCustomerInfo.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -314,25 +314,25 @@
         #endregion
 
         private Label labelTitle;
-        private GroupBox groupBoxTicketInfo;
-        private Label lblMaVe;
-        private Label lblPhim;
-        private Label lblNgayChieu;
-        private Label lblCaChieu;
-        private Label lblPhongChieu;
-        private Label lblGhe;
-        private Label lblGiaVe;
-        private GroupBox groupBoxCustomerInfo;
-        private Label lblTenKhach;
-        private TextBox txtTenKhach;
-        private Label lblSoDienThoai;
-        private TextBox txtSoDienThoai;
-        private Label lblGioiTinh;
-        private RadioButton rbNam;
-        private RadioButton rbNu;
-        private Label lblTongTien;
+        private GroupBox gbTicketInfo;
+        private Label lblTicketID;
+        private Label lblFilmName;
+        private Label lblShowDate;
+        private Label lblScreening;
+        private Label lblRoom;
+        private Label lblChair;
+        private Label lblTicketPrice;
+        private GroupBox gbCustomerInfo;
+        private Label lblCustomerName;
+        private TextBox txtCustomerName;
+        private Label lblPhoneNumber;
+        private TextBox txtPhoneNumber;
+        private Label lblSex;
+        private RadioButton rbMale;
+        private RadioButton rbFemale;
+        private Label lblTotal;
         private Button btnCancel;
-        private Button btnThanhToan;
+        private Button btnPay;
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -345,7 +345,7 @@
         }
 
         private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtTotal;
         private TextBox textBox8;
         private TextBox textBox7;
         private TextBox textBox6;

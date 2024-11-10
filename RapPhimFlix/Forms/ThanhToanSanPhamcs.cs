@@ -21,5 +21,10 @@ namespace RapPhimFlix.Forms
         {
 
         }
+
+        private void txtTenKhach_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
