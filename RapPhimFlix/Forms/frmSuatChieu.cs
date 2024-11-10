@@ -6,27 +6,23 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RapPhimFlix.Forms
 {
-    public partial class frmSuatChieu : Form
+    public partial class frmSuatChieu : UserControl
     {
         private DataTable _suatChieuPhim;
         private DataContext _context;
-        public frmSuatChieu(string MaPhim)
+        private string MaPhim;
+        private display main;
+        public frmSuatChieu(string MaPhim, Form main)
         {
             InitializeComponent();
-            rtb_ThongTinPhim.BorderStyle = BorderStyle.None;
-            rtb_ThongTinPhim.SelectionIndent = 0;
-            rtb_ThongTinPhim.SelectionHangingIndent = 0;
-            _context = new DataContext();
-            _suatChieuPhim = _context.ReadData("select * from tblPhims inner join tblSuatChieu on tblPhims.MaPhim = tblSuatChieu.MaPhim where tblPhims.MaPhim = " + "N'" + MaPhim + "' order by tblSuatChieu.CaChieu asc");
-            if (_suatChieuPhim.Rows.Count > 0 )
-            {
-                GanCacBox();
-            }
+            this.MaPhim = MaPhim;
+            this.main = (display)main;
         }
         private void GanCacBox()
         {
@@ -35,7 +31,6 @@ namespace RapPhimFlix.Forms
             for (int i = 1, j = 0; i <= 5 && j < _suatChieuPhim.Rows.Count; i++, j++)
             {
                 Button btn = this.Controls.Find($"btn_SuatChieu{i}", true).FirstOrDefault() as Button;
-
                 if (btn != null)
                     while (j < _suatChieuPhim.Rows.Count)
                     {
@@ -74,7 +69,6 @@ namespace RapPhimFlix.Forms
                 try
                 {
                     string fullPath = Path.Combine(Application.StartupPath, $"Resources\\filedata\\{tenFile}");
-                    // E:\Mon Hoc\ki 5\Lap trinh truc quan\Bai tap lon\Git\RapPhimFlix\RapPhimFlix\bin\Debug\net8.0-windows\Resources\filedata\
                     rtb_ThongTinPhim.Text += "Mô tả: " + File.ReadAllText(fullPath);
                 }
                 catch (Exception e)
@@ -99,12 +93,48 @@ namespace RapPhimFlix.Forms
         private void btn_Them_Click(object sender, EventArgs e)
         {
             if (cbo_CacCaChieuKhac.Visible == false)
-                cbo_CacCaChieuKhac.Visible = true;
-            else
             {
-                cbo_CacCaChieuKhac.SelectedIndex = -1;
-                cbo_CacCaChieuKhac.Visible = false;
+                cbo_CacCaChieuKhac.Visible = true;
+                btn_Chon.Visible = true;
+                btn_Chon.Text = "Chọn";
             }
+            else if (cbo_CacCaChieuKhac.SelectedIndex == -1)
+            {
+                cbo_CacCaChieuKhac.Visible = false;
+                btn_Chon.Visible = false;
+            }
+        }
+        private void btn_click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            label1.Text = btn.Text;
+        }
+
+        private void frmSuatChieu_Load(object sender, EventArgs e)
+        {
+            rtb_ThongTinPhim.BorderStyle = BorderStyle.None;
+            rtb_ThongTinPhim.SelectionIndent = 0;
+            rtb_ThongTinPhim.SelectionHangingIndent = 0;
+            _context = new DataContext();
+            _suatChieuPhim = _context.ReadData("select * from tblPhims inner join tblSuatChieu on tblPhims.MaPhim = tblSuatChieu.MaPhim where tblPhims.MaPhim = " + "N'" + MaPhim + "' order by tblSuatChieu.CaChieu asc");
+            if (_suatChieuPhim.Rows.Count > 0) GanCacBox();
+        }
+
+        private void btn_Chon_Click(object sender, EventArgs e)
+        {
+            if (cbo_CacCaChieuKhac.SelectedIndex != -1)
+            {
+                Match match = Regex.Match(cbo_CacCaChieuKhac.Text, @"Ca:\s*(\d+-\d+).*Ngay Chieu:\s*(\d{4}-\d{2}-\d{2})");
+                if (match.Success)
+                    btn_Chon.Text = match.Groups[1].Value + '\n' + match.Groups[2].Value;
+                cbo_CacCaChieuKhac.SelectedIndex = -1;
+                btn_click(sender, e);
+            }
+        }
+
+        private void btn_QuayLai_Click(object sender, EventArgs e)
+        {
+            main.ShowUserControl(new frmListPhim(main));
         }
     }
 }
