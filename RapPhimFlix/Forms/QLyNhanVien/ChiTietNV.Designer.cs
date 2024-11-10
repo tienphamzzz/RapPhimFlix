@@ -30,28 +30,28 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
-            button3 = new Button();
-            pictureBox1 = new PictureBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            btn_TaiAnh = new Button();
+            pictureBox_anh = new PictureBox();
+            txt_SDT = new TextBox();
+            txt_Luong = new TextBox();
+            txt_GioiTinh = new TextBox();
+            txt_TenNV = new TextBox();
+            txt_MaNV = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             groupBox2 = new GroupBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
+            txt_ChucVu = new TextBox();
+            txt_MatKhau = new TextBox();
+            txt_TaiKhoan = new TextBox();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            button2 = new Button();
+            btn_XacNhan = new Button();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_anh).BeginInit();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,21 +59,22 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(242, 9);
+            label1.Location = new Point(221, 9);
             label1.Name = "label1";
-            label1.Size = new Size(306, 30);
+            label1.Size = new Size(305, 30);
             label1.TabIndex = 0;
-            label1.Text = "Chi Tiết Tài Khoản Nhân Viên";
+            label1.Text = "Chi Tiết Thông Tin Nhân Viên";
+            label1.Click += label1_Click;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(pictureBox1);
-            groupBox1.Controls.Add(textBox5);
-            groupBox1.Controls.Add(textBox4);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(btn_TaiAnh);
+            groupBox1.Controls.Add(pictureBox_anh);
+            groupBox1.Controls.Add(txt_SDT);
+            groupBox1.Controls.Add(txt_Luong);
+            groupBox1.Controls.Add(txt_GioiTinh);
+            groupBox1.Controls.Add(txt_TenNV);
+            groupBox1.Controls.Add(txt_MaNV);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
@@ -86,57 +87,57 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin Nhân Viên";
             // 
-            // button3
+            // btn_TaiAnh
             // 
-            button3.Location = new Point(541, 72);
-            button3.Name = "button3";
-            button3.Size = new Size(71, 70);
-            button3.TabIndex = 11;
-            button3.Text = "Tải ảnh";
-            button3.UseVisualStyleBackColor = true;
+            btn_TaiAnh.Location = new Point(541, 72);
+            btn_TaiAnh.Name = "btn_TaiAnh";
+            btn_TaiAnh.Size = new Size(71, 70);
+            btn_TaiAnh.TabIndex = 11;
+            btn_TaiAnh.Text = "Tải ảnh";
+            btn_TaiAnh.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pictureBox_anh
             // 
-            pictureBox1.Location = new Point(618, 19);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(132, 149);
-            pictureBox1.TabIndex = 10;
-            pictureBox1.TabStop = false;
+            pictureBox_anh.Location = new Point(618, 19);
+            pictureBox_anh.Name = "pictureBox_anh";
+            pictureBox_anh.Size = new Size(132, 149);
+            pictureBox_anh.TabIndex = 10;
+            pictureBox_anh.TabStop = false;
             // 
-            // textBox5
+            // txt_SDT
             // 
-            textBox5.Location = new Point(348, 85);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(158, 31);
-            textBox5.TabIndex = 9;
+            txt_SDT.Location = new Point(348, 85);
+            txt_SDT.Name = "txt_SDT";
+            txt_SDT.Size = new Size(158, 31);
+            txt_SDT.TabIndex = 9;
             // 
-            // textBox4
+            // txt_Luong
             // 
-            textBox4.Location = new Point(348, 37);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(158, 31);
-            textBox4.TabIndex = 8;
+            txt_Luong.Location = new Point(348, 37);
+            txt_Luong.Name = "txt_Luong";
+            txt_Luong.Size = new Size(158, 31);
+            txt_Luong.TabIndex = 8;
             // 
-            // textBox3
+            // txt_GioiTinh
             // 
-            textBox3.Location = new Point(108, 137);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(158, 31);
-            textBox3.TabIndex = 7;
+            txt_GioiTinh.Location = new Point(108, 137);
+            txt_GioiTinh.Name = "txt_GioiTinh";
+            txt_GioiTinh.Size = new Size(158, 31);
+            txt_GioiTinh.TabIndex = 7;
             // 
-            // textBox2
+            // txt_TenNV
             // 
-            textBox2.Location = new Point(108, 85);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(158, 31);
-            textBox2.TabIndex = 6;
+            txt_TenNV.Location = new Point(108, 85);
+            txt_TenNV.Name = "txt_TenNV";
+            txt_TenNV.Size = new Size(158, 31);
+            txt_TenNV.TabIndex = 6;
             // 
-            // textBox1
+            // txt_MaNV
             // 
-            textBox1.Location = new Point(108, 31);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(158, 31);
-            textBox1.TabIndex = 5;
+            txt_MaNV.Location = new Point(108, 31);
+            txt_MaNV.Name = "txt_MaNV";
+            txt_MaNV.Size = new Size(158, 31);
+            txt_MaNV.TabIndex = 5;
             // 
             // label6
             // 
@@ -185,9 +186,9 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox8);
-            groupBox2.Controls.Add(textBox7);
-            groupBox2.Controls.Add(textBox6);
+            groupBox2.Controls.Add(txt_ChucVu);
+            groupBox2.Controls.Add(txt_MatKhau);
+            groupBox2.Controls.Add(txt_TaiKhoan);
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label7);
@@ -198,26 +199,26 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông Tin Tài Khoản";
             // 
-            // textBox8
+            // txt_ChucVu
             // 
-            textBox8.Location = new Point(356, 38);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(158, 31);
-            textBox8.TabIndex = 12;
+            txt_ChucVu.Location = new Point(356, 38);
+            txt_ChucVu.Name = "txt_ChucVu";
+            txt_ChucVu.Size = new Size(158, 31);
+            txt_ChucVu.TabIndex = 12;
             // 
-            // textBox7
+            // txt_MatKhau
             // 
-            textBox7.Location = new Point(108, 77);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(158, 31);
-            textBox7.TabIndex = 11;
+            txt_MatKhau.Location = new Point(108, 77);
+            txt_MatKhau.Name = "txt_MatKhau";
+            txt_MatKhau.Size = new Size(158, 31);
+            txt_MatKhau.TabIndex = 11;
             // 
-            // textBox6
+            // txt_TaiKhoan
             // 
-            textBox6.Location = new Point(108, 35);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(158, 31);
-            textBox6.TabIndex = 10;
+            txt_TaiKhoan.Location = new Point(108, 35);
+            txt_TaiKhoan.Name = "txt_TaiKhoan";
+            txt_TaiKhoan.Size = new Size(158, 31);
+            txt_TaiKhoan.TabIndex = 10;
             // 
             // label9
             // 
@@ -246,29 +247,29 @@
             label7.TabIndex = 5;
             label7.Text = "Tài Khoản";
             // 
-            // button2
+            // btn_XacNhan
             // 
-            button2.Location = new Point(587, 402);
-            button2.Name = "button2";
-            button2.Size = new Size(118, 53);
-            button2.TabIndex = 4;
-            button2.Text = "Xác Nhận";
-            button2.UseVisualStyleBackColor = true;
+            btn_XacNhan.Location = new Point(623, 402);
+            btn_XacNhan.Name = "btn_XacNhan";
+            btn_XacNhan.Size = new Size(118, 53);
+            btn_XacNhan.TabIndex = 4;
+            btn_XacNhan.Text = "Xác Nhận";
+            btn_XacNhan.UseVisualStyleBackColor = true;
             // 
             // ChiTietNV
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 467);
-            Controls.Add(button2);
+            Controls.Add(btn_XacNhan);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Name = "ChiTietNV";
-            Text = "7";
+            Text = "ThemNV";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_anh).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);
@@ -288,16 +289,16 @@
         private Label label9;
         private Label label8;
         private Label label7;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TextBox textBox5;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private Button button2;
-        private Button button3;
-        private PictureBox pictureBox1;
+        private TextBox txt_Luong;
+        private TextBox txt_GioiTinh;
+        private TextBox txt_TenNV;
+        private TextBox txt_MaNV;
+        private TextBox txt_SDT;
+        private TextBox txt_ChucVu;
+        private TextBox txt_MatKhau;
+        private TextBox txt_TaiKhoan;
+        private Button btn_XacNhan;
+        private Button btn_TaiAnh;
+        private PictureBox pictureBox_anh;
     }
 }

@@ -45,6 +45,7 @@
             dtgv_ThongTinNV.RowHeadersWidth = 62;
             dtgv_ThongTinNV.Size = new Size(802, 303);
             dtgv_ThongTinNV.TabIndex = 0;
+            dtgv_ThongTinNV.CellDoubleClick += dtgv_ThongTinNV_CellDoubleClick;
             // 
             // btn_TimMaNV
             // 
@@ -54,6 +55,7 @@
             btn_TimMaNV.TabIndex = 1;
             btn_TimMaNV.Text = "Tìm";
             btn_TimMaNV.UseVisualStyleBackColor = true;
+            btn_TimMaNV.Click += btn_TimMaNV_Click;
             // 
             // txt_TimMaNV
             // 
@@ -70,6 +72,7 @@
             btn_Them.TabIndex = 4;
             btn_Them.Text = "Thêm ";
             btn_Them.UseVisualStyleBackColor = true;
+            btn_Them.Click += btn_Them_Click;
             // 
             // btn_Sua
             // 
@@ -79,6 +82,7 @@
             btn_Sua.TabIndex = 5;
             btn_Sua.Text = "Sửa";
             btn_Sua.UseVisualStyleBackColor = true;
+            btn_Sua.Click += btn_Sua_Click;
             // 
             // btn_Xoa
             // 
@@ -88,6 +92,7 @@
             btn_Xoa.TabIndex = 6;
             btn_Xoa.Text = "Xóa";
             btn_Xoa.UseVisualStyleBackColor = true;
+            btn_Xoa.Click += btn_Xoa_Click;
             // 
             // Ql_TaiKhoan
             // 
