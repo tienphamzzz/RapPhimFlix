@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Forms\QLyNhanVien\NewFolder\**" />
+    <EmbeddedResource Remove="Forms\QLyNhanVien\NewFolder\**" />
+    <None Remove="Forms\QLyNhanVien\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
 
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.deps.json" />
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.runtimeconfig.json" />
@@ -20,14 +26,12 @@
  
     <Folder Include="Forms\DangNhap\" />
     <Folder Include="Forms\MenuNav\" />
-    <Folder Include="Forms\QLyNhanVien\NewFolder\" />
 
     <Folder Include="Forms\ThongKeDoanhThu\" />
-    <Folder Include="Forms\QLySanPham\" />
-    <Folder Include="Forms\QLySuatChieu\" />
-    <Folder Include="Forms\QLyPhim\" />
-    <Folder Include="Icon\" />
-    <Folder Include="Poster\" />
+
+    <Folder Include="Resources\Icon\" />
+
+    <Folder Include="Resources\Poster\" />
   </ItemGroup>
 
   <ItemGroup>
