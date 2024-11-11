@@ -1,6 +1,6 @@
 ﻿namespace RapPhimFlix.Forms
 {
-    partial class ChonSanPham
+    partial class frmChonSanPham
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -17,22 +17,23 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChonSanPham));
             gbOrder = new GroupBox();
-            lblProductName = new Label();
-            txtProductName = new TextBox();
+            lvSelectedProducts = new ListView();
+            panel2 = new Panel();
             lblTotal = new Label();
             btnConfirm = new Button();
-            nudProductQuantity = new NumericUpDown();
             panel1 = new Panel();
             btnAddProduct = new Button();
-            panel2 = new Panel();
-            lvSelectedProducts = new ListView();
+            lblProductName = new Label();
+            nudProductQuantity = new NumericUpDown();
+            txtProductName = new TextBox();
             gbProductsList = new GroupBox();
             flpProducts = new FlowLayoutPanel();
             gbOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nudProductQuantity).BeginInit();
-            panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudProductQuantity).BeginInit();
             gbProductsList.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,20 +50,22 @@
             gbOrder.Text = "Thông tin đặt hàng";
             gbOrder.Enter += groupBoxOrder_Enter;
             // 
-            // lblProductName
+            // lvSelectedProducts
             // 
-            lblProductName.Location = new Point(14, 10);
-            lblProductName.Name = "lblProductName";
-            lblProductName.Size = new Size(100, 23);
-            lblProductName.TabIndex = 0;
-            lblProductName.Text = "Tên sản phẩm";
+            lvSelectedProducts.Location = new Point(6, 139);
+            lvSelectedProducts.Name = "lvSelectedProducts";
+            lvSelectedProducts.Size = new Size(395, 306);
+            lvSelectedProducts.TabIndex = 21;
+            lvSelectedProducts.UseCompatibleStateImageBehavior = false;
             // 
-            // txtProductName
+            // panel2
             // 
-            txtProductName.Location = new Point(120, 7);
-            txtProductName.Name = "txtProductName";
-            txtProductName.Size = new Size(180, 27);
-            txtProductName.TabIndex = 1;
+            panel2.Controls.Add(lblTotal);
+            panel2.Controls.Add(btnConfirm);
+            panel2.Location = new Point(6, 451);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(391, 88);
+            panel2.TabIndex = 20;
             // 
             // lblTotal
             // 
@@ -80,13 +83,6 @@
             btnConfirm.Size = new Size(118, 40);
             btnConfirm.TabIndex = 5;
             btnConfirm.Text = "Xác nhận";
-            // 
-            // nudProductQuantity
-            // 
-            nudProductQuantity.Location = new Point(330, 6);
-            nudProductQuantity.Name = "nudProductQuantity";
-            nudProductQuantity.Size = new Size(49, 27);
-            nudProductQuantity.TabIndex = 18;
             // 
             // panel1
             // 
@@ -107,22 +103,27 @@
             btnAddProduct.TabIndex = 20;
             btnAddProduct.Text = "Thêm";
             // 
-            // panel2
+            // lblProductName
             // 
-            panel2.Controls.Add(lblTotal);
-            panel2.Controls.Add(btnConfirm);
-            panel2.Location = new Point(6, 451);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(391, 88);
-            panel2.TabIndex = 20;
+            lblProductName.Location = new Point(14, 10);
+            lblProductName.Name = "lblProductName";
+            lblProductName.Size = new Size(100, 23);
+            lblProductName.TabIndex = 0;
+            lblProductName.Text = "Tên sản phẩm";
             // 
-            // lvSelectedProducts
+            // nudProductQuantity
             // 
-            lvSelectedProducts.Location = new Point(6, 139);
-            lvSelectedProducts.Name = "lvSelectedProducts";
-            lvSelectedProducts.Size = new Size(395, 306);
-            lvSelectedProducts.TabIndex = 21;
-            lvSelectedProducts.UseCompatibleStateImageBehavior = false;
+            nudProductQuantity.Location = new Point(330, 6);
+            nudProductQuantity.Name = "nudProductQuantity";
+            nudProductQuantity.Size = new Size(49, 27);
+            nudProductQuantity.TabIndex = 18;
+            // 
+            // txtProductName
+            // 
+            txtProductName.Location = new Point(120, 7);
+            txtProductName.Name = "txtProductName";
+            txtProductName.Size = new Size(180, 27);
+            txtProductName.TabIndex = 1;
             // 
             // gbProductsList
             // 
@@ -141,17 +142,18 @@
             flpProducts.Size = new Size(555, 513);
             flpProducts.TabIndex = 0;
             // 
-            // ChonSanPham
+            // frmChonSanPham
             // 
+            ClientSize = new Size(1006, 539);
             Controls.Add(gbProductsList);
             Controls.Add(gbOrder);
-            Name = "ChonSanPham";
-            Size = new Size(1024, 586);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "frmChonSanPham";
             gbOrder.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)nudProductQuantity).EndInit();
+            panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)nudProductQuantity).EndInit();
             gbProductsList.ResumeLayout(false);
             ResumeLayout(false);
         }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace RapPhimFlix.Forms
 {
-    public partial class frmPhongChieu : UserControl
+    public partial class frmPhongChieu : Form
     {
         private Form main;
         public frmPhongChieu()

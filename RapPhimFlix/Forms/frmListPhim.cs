@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Formats.Tar;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +11,9 @@ using System.Windows.Forms;
 
 namespace RapPhimFlix.Forms
 {
-    public partial class frmListPhim : UserControl
+    public partial class frmListPhim : Form
     {
+
         private string _maPhim = "";
         private display main;
         public string MaPhim { get { return _maPhim; } }
@@ -86,6 +86,5 @@ namespace RapPhimFlix.Forms
         {
             grb.Text = tenPhim;
         }
-
     }
 }

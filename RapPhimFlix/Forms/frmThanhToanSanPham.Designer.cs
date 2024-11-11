@@ -1,6 +1,6 @@
 ﻿namespace RapPhimFlix.Forms
 {
-    partial class ThanhToanSanPhamcs
+    partial class frmThanhToanSanPham
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThanhToanSanPham));
             labelTitle = new Label();
             gbProductsInfor = new GroupBox();
+            lvProductsInfomations = new ListView();
             gbCustomerInfor = new GroupBox();
             lblCustomerName = new Label();
             txtTenKhach = new TextBox();
@@ -38,7 +40,6 @@
             lblSex = new Label();
             rbMale = new RadioButton();
             rbFemale = new RadioButton();
-            lvProductsInfomations = new ListView();
             lblTotal = new Label();
             txtTotal = new TextBox();
             btnCancel = new Button();
@@ -66,6 +67,14 @@
             gbProductsInfor.TabIndex = 2;
             gbProductsInfor.TabStop = false;
             gbProductsInfor.Text = "Thông tin sản phẩm";
+            // 
+            // lvProductsInfomations
+            // 
+            lvProductsInfomations.Location = new Point(13, 33);
+            lvProductsInfomations.Name = "lvProductsInfomations";
+            lvProductsInfomations.Size = new Size(445, 332);
+            lvProductsInfomations.TabIndex = 0;
+            lvProductsInfomations.UseCompatibleStateImageBehavior = false;
             // 
             // gbCustomerInfor
             // 
@@ -138,14 +147,6 @@
             rbFemale.TabIndex = 13;
             rbFemale.Text = "Nữ";
             // 
-            // lvProductsInfomations
-            // 
-            lvProductsInfomations.Location = new Point(13, 33);
-            lvProductsInfomations.Name = "lvProductsInfomations";
-            lvProductsInfomations.Size = new Size(445, 332);
-            lvProductsInfomations.TabIndex = 0;
-            lvProductsInfomations.UseCompatibleStateImageBehavior = false;
-            // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
@@ -179,10 +180,11 @@
             btnPay.TabIndex = 7;
             btnPay.Text = "Thanh toán";
             // 
-            // ThanhToanSanPhamcs
+            // frmThanhToanSanPham
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(997, 524);
             Controls.Add(btnCancel);
             Controls.Add(btnPay);
             Controls.Add(txtTotal);
@@ -190,8 +192,8 @@
             Controls.Add(gbCustomerInfor);
             Controls.Add(gbProductsInfor);
             Controls.Add(labelTitle);
-            Name = "ThanhToanSanPhamcs";
-            Size = new Size(1015, 571);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "frmThanhToanSanPham";
             gbProductsInfor.ResumeLayout(false);
             gbCustomerInfor.ResumeLayout(false);
             gbCustomerInfor.PerformLayout();

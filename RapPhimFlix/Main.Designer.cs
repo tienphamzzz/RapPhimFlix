@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             btn_vo = new Button();
             SuspendLayout();
             // 
             // btn_vo
             // 
-            btn_vo.Location = new Point(188, 111);
+            btn_vo.Location = new Point(150, 89);
+            btn_vo.Margin = new Padding(2, 2, 2, 2);
             btn_vo.Name = "btn_vo";
-            btn_vo.Size = new Size(192, 59);
+            btn_vo.Size = new Size(154, 47);
             btn_vo.TabIndex = 0;
             btn_vo.Text = "vô";
             btn_vo.UseVisualStyleBackColor = true;
@@ -43,10 +45,12 @@
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(640, 360);
             Controls.Add(btn_vo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Main";
             Text = "Main";
             ResumeLayout(false);

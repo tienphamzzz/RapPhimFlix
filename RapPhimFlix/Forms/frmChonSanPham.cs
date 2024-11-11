@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace RapPhimFlix.Forms
 {
-    public partial class ChonSanPham : UserControl
+    public partial class frmChonSanPham : Form
     {
-        public ChonSanPham()
+        public frmChonSanPham()
         {
             InitializeComponent();
         }
-
         private void lblQuantity_Click(object sender, EventArgs e)
         {
 

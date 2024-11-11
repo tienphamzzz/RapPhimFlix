@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace RapPhimFlix.Forms
 {
-    public partial class frmSuatChieu : UserControl
+    public partial class frmSuatChieu : Form
     {
         private DataTable _suatChieuPhim;
         private string MaPhim;
@@ -132,7 +133,9 @@ namespace RapPhimFlix.Forms
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
-            main.ShowUserControl(new frmListPhim(main));
+            frmListPhim frm = new frmListPhim(main);
+            frm.Show();
+            this.Close();
         }
     }
 }

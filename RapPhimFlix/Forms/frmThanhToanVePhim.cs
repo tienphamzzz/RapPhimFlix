@@ -10,19 +10,23 @@ using System.Windows.Forms;
 
 namespace RapPhimFlix.Forms
 {
-    public partial class ThanhToanSanPhamcs : UserControl
+    public partial class frmThanhToanVePhim : Form
     {
-        public ThanhToanSanPhamcs()
+        public frmThanhToanVePhim()
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void ThanhToanVePhim_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void txtTenKhach_TextChanged(object sender, EventArgs e)
+        private void rbNu_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTenKhach_Click(object sender, EventArgs e)
         {
 
         }

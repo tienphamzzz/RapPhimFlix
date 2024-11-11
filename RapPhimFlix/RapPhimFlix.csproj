@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Resources\Icon\app-icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,14 +23,13 @@
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\No Infomation.jpg" />
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\SuperGirl 1.jpg" />
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Superman 1.jpg" />
+    <Content Include="Resources\Icon\app-icon.ico" />
 
  
     <Folder Include="Forms\DangNhap\" />
     <Folder Include="Forms\MenuNav\" />
 
     <Folder Include="Forms\ThongKeDoanhThu\" />
-
-    <Folder Include="Resources\Icon\" />
 
     <Folder Include="Resources\Poster\" />
   </ItemGroup>

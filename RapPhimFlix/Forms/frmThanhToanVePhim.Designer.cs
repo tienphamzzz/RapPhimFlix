@@ -1,6 +1,6 @@
 ﻿namespace RapPhimFlix.Forms
 {
-    partial class ThanhToanVePhim
+    partial class frmThanhToanVePhim
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -19,6 +19,13 @@
         {
             labelTitle = new Label();
             gbTicketInfo = new GroupBox();
+            textBox8 = new TextBox();
+            textBox7 = new TextBox();
+            textBox6 = new TextBox();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
             lblTicketID = new Label();
             lblFilmName = new Label();
             lblShowDate = new Label();
@@ -38,13 +45,6 @@
             btnCancel = new Button();
             btnPay = new Button();
             txtTotal = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
             gbTicketInfo.SuspendLayout();
             gbCustomerInfo.SuspendLayout();
             SuspendLayout();
@@ -81,6 +81,55 @@
             gbTicketInfo.TabIndex = 1;
             gbTicketInfo.TabStop = false;
             gbTicketInfo.Text = "Thông tin vé";
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(155, 235);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(184, 27);
+            textBox8.TabIndex = 8;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(155, 273);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(184, 27);
+            textBox7.TabIndex = 12;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(155, 195);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(184, 27);
+            textBox6.TabIndex = 11;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(155, 155);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(184, 27);
+            textBox5.TabIndex = 10;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(155, 112);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(184, 27);
+            textBox4.TabIndex = 9;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(155, 72);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(184, 27);
+            textBox3.TabIndex = 8;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(155, 31);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(184, 27);
+            textBox2.TabIndex = 7;
             // 
             // lblTicketID
             // 
@@ -243,57 +292,9 @@
             txtTotal.Size = new Size(125, 27);
             txtTotal.TabIndex = 6;
             // 
-            // textBox2
+            // frmThanhToanVePhim
             // 
-            textBox2.Location = new Point(155, 31);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(184, 27);
-            textBox2.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(155, 72);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(184, 27);
-            textBox3.TabIndex = 8;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(155, 112);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(184, 27);
-            textBox4.TabIndex = 9;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(155, 155);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(184, 27);
-            textBox5.TabIndex = 10;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(155, 195);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(184, 27);
-            textBox6.TabIndex = 11;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(155, 273);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(184, 27);
-            textBox7.TabIndex = 12;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(155, 235);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(184, 27);
-            textBox8.TabIndex = 8;
-            // 
-            // ThanhToanVePhim
-            // 
+            ClientSize = new Size(843, 455);
             Controls.Add(txtTotal);
             Controls.Add(labelTitle);
             Controls.Add(gbTicketInfo);
@@ -301,8 +302,7 @@
             Controls.Add(lblTotal);
             Controls.Add(btnCancel);
             Controls.Add(btnPay);
-            Name = "ThanhToanVePhim";
-            Size = new Size(861, 476);
+            Name = "frmThanhToanVePhim";
             gbTicketInfo.ResumeLayout(false);
             gbTicketInfo.PerformLayout();
             gbCustomerInfo.ResumeLayout(false);
