@@ -28,6 +28,7 @@
  
     <Folder Include="Forms\DangNhap\" />
     <Folder Include="Forms\MenuNav\" />
+    <Folder Include="Forms\UserControls\" />
 
     <Folder Include="Forms\ThongKeDoanhThu\" />
 

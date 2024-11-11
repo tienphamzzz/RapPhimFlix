@@ -37,7 +37,6 @@
             ClientSize = new Size(912, 491);
             Name = "display";
             Text = "frmSuatChieu";
-            Load += frmSuatChieu1_Load;
             ResumeLayout(false);
         }
 

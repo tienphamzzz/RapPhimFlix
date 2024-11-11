@@ -29,7 +29,7 @@ namespace RapPhimFlix.Forms
         {
             Button btn = (Button)sender;
             _maPhim = (btn.Text.Split('\n')[1]);
-            main.ShowUserControl(new frmSuatChieu(_maPhim, main));
+            
         }
 
         private void frmListPhim_Load(object sender, EventArgs e)
