@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RapPhimFlix.Appsetting;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -20,7 +21,7 @@ namespace RapPhimFlix.Controllers
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=TienPham\\SQLEXPRESS;Initial Catalog=QLCinema;Integrated Security=True;";
+        private string connectionSTR = AppSetting.ConnectionString;
 
         public DataTable ExcuteQuery(string query, object[] parameter = null)
         {
