@@ -59,15 +59,18 @@ namespace RapPhimFlix.Properties {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap back_arrow {
-            get {
+        internal static System.Drawing.Bitmap back_arrow
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("back-arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
 }
+
