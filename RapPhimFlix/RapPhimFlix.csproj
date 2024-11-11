@@ -9,8 +9,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+
+    <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.deps.json" />
+    <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.runtimeconfig.json" />
+
+    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\No Infomation.jpg" />
+    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\SuperGirl 1.jpg" />
+    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Superman 1.jpg" />
+
+ 
+    <Folder Include="Forms\DangNhap\" />
+    <Folder Include="Forms\MenuNav\" />
+    <Folder Include="Forms\QLyNhanVien\NewFolder\" />
+
     <Folder Include="Forms\ThongKeDoanhThu\" />
-    <Folder Include="Forms\QLyNhanVien\" />
     <Folder Include="Forms\QLySanPham\" />
     <Folder Include="Forms\QLySuatChieu\" />
     <Folder Include="Forms\QLyPhim\" />
