@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RapPhimFlix.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,6 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 {
     public partial class ThemNV : Form
     {
-        Controllers.DataContext dtbase = new Controllers.DataContext();
         public ThemNV()
         {
             InitializeComponent();
@@ -42,8 +42,8 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 
             string sqlTaiKhoan = "INSERT INTO tblTaiKhoan (MaNhanVien, MatKhau) VALUES ('" + maNV + "', '" + matKhau + "');";
 
-            dtbase.ChangeData(sqlNhanVien);
-            dtbase.ChangeData(sqlTaiKhoan);
+            DataProvider.Instance.ExcuteNonQuery(sqlNhanVien);
+            DataProvider.Instance.ExcuteNonQuery(sqlTaiKhoan);
             MessageBox.Show("thêm thông tin nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.DialogResult = DialogResult.OK; // 
             this.Close(); // 

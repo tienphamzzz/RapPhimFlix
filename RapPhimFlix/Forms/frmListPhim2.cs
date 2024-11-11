@@ -13,14 +13,14 @@ namespace RapPhimFlix.Forms
 {
     public partial class frmListPhim2 : UserControl
     {
-        private DataContext _context = new Controllers.DataContext();
+
         public DataTable _phim;
 
         public frmListPhim2()
         {
             InitializeComponent();
             //main = (display)form;
-            _phim = _context.ReadData("select * from tblPhims");
+            _phim = DataProvider.Instance.ExcuteQuery("select * from tblPhims");
         }
 
         private void frmListPhim2_Load(object sender, EventArgs e)

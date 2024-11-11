@@ -18,12 +18,11 @@ namespace RapPhimFlix.Forms
         private display main;
         public string MaPhim { get { return _maPhim; } }
         public DataTable _phim;
-        public DataContext _context = new Controllers.DataContext();
         public frmListPhim(Form form)
         {
             InitializeComponent();
             main = (display)form;
-            _phim = _context.ReadData("select * from tblPhims");
+            _phim = DataProvider.Instance.ExcuteQuery("select * from tblPhims");
         }
 
         private void btn_Them(object sender, EventArgs e)

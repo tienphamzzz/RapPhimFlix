@@ -15,7 +15,6 @@ namespace RapPhimFlix.Forms
     public partial class frmSuatChieu : UserControl
     {
         private DataTable _suatChieuPhim;
-        private DataContext _context;
         private string MaPhim;
         private display main;
         public frmSuatChieu(string MaPhim, Form main)
@@ -115,8 +114,7 @@ namespace RapPhimFlix.Forms
             rtb_ThongTinPhim.BorderStyle = BorderStyle.None;
             rtb_ThongTinPhim.SelectionIndent = 0;
             rtb_ThongTinPhim.SelectionHangingIndent = 0;
-            _context = new DataContext();
-            _suatChieuPhim = _context.ReadData("select * from tblPhims inner join tblSuatChieu on tblPhims.MaPhim = tblSuatChieu.MaPhim where tblPhims.MaPhim = " + "N'" + MaPhim + "' order by tblSuatChieu.CaChieu asc");
+            _suatChieuPhim = DataProvider.Instance.ExcuteQuery("select * from tblPhims inner join tblSuatChieu on tblPhims.MaPhim = tblSuatChieu.MaPhim where tblPhims.MaPhim = " + "N'" + MaPhim + "' order by tblSuatChieu.CaChieu asc");
             if (_suatChieuPhim.Rows.Count > 0) GanCacBox();
         }
 
