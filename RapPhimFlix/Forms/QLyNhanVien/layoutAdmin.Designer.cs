@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnl_Trai = new Panel();
+            btn_thu = new Button();
             btn_DangXuat = new Button();
             label1 = new Label();
             btn_ThongKeDoanhThu = new Button();
@@ -47,6 +48,7 @@
             // pnl_Trai
             // 
             pnl_Trai.BackColor = SystemColors.ButtonShadow;
+            pnl_Trai.Controls.Add(btn_thu);
             pnl_Trai.Controls.Add(btn_DangXuat);
             pnl_Trai.Controls.Add(label1);
             pnl_Trai.Controls.Add(btn_ThongKeDoanhThu);
@@ -56,6 +58,16 @@
             pnl_Trai.Name = "pnl_Trai";
             pnl_Trai.Size = new Size(145, 513);
             pnl_Trai.TabIndex = 0;
+            // 
+            // btn_thu
+            // 
+            btn_thu.Location = new Point(9, 306);
+            btn_thu.Name = "btn_thu";
+            btn_thu.Size = new Size(121, 63);
+            btn_thu.TabIndex = 4;
+            btn_thu.Text = "thu";
+            btn_thu.UseVisualStyleBackColor = true;
+            btn_thu.Click += btn_thu_Click;
             // 
             // btn_DangXuat
             // 
@@ -183,5 +195,6 @@
         private Label label3;
         private Label label2;
         private Label lbl_HienThiChucNang;
+        private Button btn_thu;
     }
 }

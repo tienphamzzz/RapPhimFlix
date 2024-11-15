@@ -16,6 +16,8 @@ namespace RapPhimFlix.Forms.QLyNhanVien
         public layoutAdmin()
         {
             InitializeComponent();
+          
+
         }
 
 
@@ -47,7 +49,12 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 
         private void btn_ThongKeDoanhThu_Click(object sender, EventArgs e)
         {
-            
+            OpenChildForm(new ThongKeDoanhThu());
+        }
+
+        private void btn_thu_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new thu());
         }
     }
 }
