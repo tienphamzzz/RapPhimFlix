@@ -35,14 +35,9 @@
             ptb_Anh = new PictureBox();
             lbl_TenPhim = new Label();
             btn_Them = new Button();
-            btn_SuatChieu5 = new Button();
-            btn_SuatChieu4 = new Button();
-            btn_SuatChieu3 = new Button();
-            btn_SuatChieu2 = new Button();
             lbl_SuatChieu = new Label();
-            btn_SuatChieu1 = new Button();
-            label1 = new Label();
             btn_Chon = new Button();
+            flp_CaChieu = new FlowLayoutPanel();
             grb_Anh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ptb_Anh).BeginInit();
             SuspendLayout();
@@ -60,7 +55,7 @@
             // 
             cbo_CacCaChieuKhac.DropDownStyle = ComboBoxStyle.DropDownList;
             cbo_CacCaChieuKhac.FormattingEnabled = true;
-            cbo_CacCaChieuKhac.Location = new Point(326, 434);
+            cbo_CacCaChieuKhac.Location = new Point(326, 439);
             cbo_CacCaChieuKhac.Name = "cbo_CacCaChieuKhac";
             cbo_CacCaChieuKhac.Size = new Size(331, 23);
             cbo_CacCaChieuKhac.TabIndex = 25;
@@ -102,9 +97,8 @@
             lbl_TenPhim.AutoSize = true;
             lbl_TenPhim.Location = new Point(290, 69);
             lbl_TenPhim.Name = "lbl_TenPhim";
-            lbl_TenPhim.Size = new Size(38, 15);
+            lbl_TenPhim.Size = new Size(0, 15);
             lbl_TenPhim.TabIndex = 22;
-            lbl_TenPhim.Text = "label3";
             // 
             // btn_Them
             // 
@@ -116,42 +110,6 @@
             btn_Them.UseVisualStyleBackColor = true;
             btn_Them.Click += btn_Them_Click;
             // 
-            // btn_SuatChieu5
-            // 
-            btn_SuatChieu5.Location = new Point(579, 371);
-            btn_SuatChieu5.Name = "btn_SuatChieu5";
-            btn_SuatChieu5.Size = new Size(78, 51);
-            btn_SuatChieu5.TabIndex = 20;
-            btn_SuatChieu5.UseVisualStyleBackColor = true;
-            btn_SuatChieu5.Click += btn_click;
-            // 
-            // btn_SuatChieu4
-            // 
-            btn_SuatChieu4.Location = new Point(495, 371);
-            btn_SuatChieu4.Name = "btn_SuatChieu4";
-            btn_SuatChieu4.Size = new Size(78, 51);
-            btn_SuatChieu4.TabIndex = 19;
-            btn_SuatChieu4.UseVisualStyleBackColor = true;
-            btn_SuatChieu4.Click += btn_click;
-            // 
-            // btn_SuatChieu3
-            // 
-            btn_SuatChieu3.Location = new Point(411, 371);
-            btn_SuatChieu3.Name = "btn_SuatChieu3";
-            btn_SuatChieu3.Size = new Size(78, 51);
-            btn_SuatChieu3.TabIndex = 18;
-            btn_SuatChieu3.UseVisualStyleBackColor = true;
-            btn_SuatChieu3.Click += btn_click;
-            // 
-            // btn_SuatChieu2
-            // 
-            btn_SuatChieu2.Location = new Point(326, 371);
-            btn_SuatChieu2.Name = "btn_SuatChieu2";
-            btn_SuatChieu2.Size = new Size(78, 51);
-            btn_SuatChieu2.TabIndex = 17;
-            btn_SuatChieu2.UseVisualStyleBackColor = true;
-            btn_SuatChieu2.Click += btn_click;
-            // 
             // lbl_SuatChieu
             // 
             lbl_SuatChieu.AutoSize = true;
@@ -162,27 +120,9 @@
             lbl_SuatChieu.TabIndex = 16;
             lbl_SuatChieu.Text = "Suất chiếu:";
             // 
-            // btn_SuatChieu1
-            // 
-            btn_SuatChieu1.Location = new Point(242, 371);
-            btn_SuatChieu1.Name = "btn_SuatChieu1";
-            btn_SuatChieu1.Size = new Size(78, 51);
-            btn_SuatChieu1.TabIndex = 15;
-            btn_SuatChieu1.UseVisualStyleBackColor = true;
-            btn_SuatChieu1.Click += btn_click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(554, 56);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 27;
-            label1.Text = "label1";
-            // 
             // btn_Chon
             // 
-            btn_Chon.Location = new Point(242, 434);
+            btn_Chon.Location = new Point(242, 439);
             btn_Chon.Name = "btn_Chon";
             btn_Chon.Size = new Size(75, 23);
             btn_Chon.TabIndex = 28;
@@ -191,27 +131,30 @@
             btn_Chon.Visible = false;
             btn_Chon.Click += btn_Chon_Click;
             // 
+            // flp_CaChieu
+            // 
+            flp_CaChieu.AutoScroll = true;
+            flp_CaChieu.Location = new Point(242, 371);
+            flp_CaChieu.Name = "flp_CaChieu";
+            flp_CaChieu.Size = new Size(415, 66);
+            flp_CaChieu.TabIndex = 29;
+            flp_CaChieu.WrapContents = false;
+            // 
             // frmSuatChieu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(896, 474);
+            Controls.Add(flp_CaChieu);
             Controls.Add(btn_Chon);
-            Controls.Add(label1);
             Controls.Add(rtb_ThongTinPhim);
             Controls.Add(cbo_CacCaChieuKhac);
             Controls.Add(btn_QuayLai);
             Controls.Add(grb_Anh);
             Controls.Add(lbl_TenPhim);
             Controls.Add(btn_Them);
-            Controls.Add(btn_SuatChieu5);
-            Controls.Add(btn_SuatChieu4);
-            Controls.Add(btn_SuatChieu3);
-            Controls.Add(btn_SuatChieu2);
             Controls.Add(lbl_SuatChieu);
-            Controls.Add(btn_SuatChieu1);
             Name = "frmSuatChieu";
-            Size = new Size(912, 513);
-            Load += frmSuatChieu_Load;
             grb_Anh.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ptb_Anh).EndInit();
             ResumeLayout(false);
@@ -227,13 +170,8 @@
         private PictureBox ptb_Anh;
         private Label lbl_TenPhim;
         private Button btn_Them;
-        private Button btn_SuatChieu5;
-        private Button btn_SuatChieu4;
-        private Button btn_SuatChieu3;
-        private Button btn_SuatChieu2;
         private Label lbl_SuatChieu;
-        private Button btn_SuatChieu1;
-        private Label label1;
         private Button btn_Chon;
+        private FlowLayoutPanel flp_CaChieu;
     }
 }
