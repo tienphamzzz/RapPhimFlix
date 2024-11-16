@@ -1,7 +1,7 @@
-
-
+using System.Windows.Forms;
+using System;
 using RapPhimFlix.Forms;
-
+using RapPhimFlix.Forms.DangNhap;
 
 namespace RapPhimFlix
 {
@@ -19,8 +19,8 @@ namespace RapPhimFlix
             ApplicationConfiguration.Initialize();
 
 
-            Application.Run(new Main());
-
+           // Application.Run(new Main());
+           Application.Run(new FormDangNhap());
         }
     }
 }
