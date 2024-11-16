@@ -51,6 +51,7 @@ namespace RapPhimFlix.Forms
             txtTotal.Text = $"{_listGhes.Count * decimal.Parse(_suatChieu["GiaVe"].ToString())}";
             ExportFile.loadImage(ptb_Image, _phim["TenAnh"].ToString());
             btnPay.Enabled = false;
+
         }
         private bool check()
         {
@@ -69,7 +70,7 @@ namespace RapPhimFlix.Forms
                 if (MessageBox.Show("In hoá đơn luôn không!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     XuatHoaDon();
-                }// C:\Users\ADMIN\.nuget\packages\epplus\7.4.2\readme.txt
+                }
             }
         }
         private void XuatHoaDon()
@@ -164,7 +165,7 @@ namespace RapPhimFlix.Forms
         private string MaHoaDon()
         {
             Random ran = new Random();
-            return ran.Next(99999, 999999).ToString();
+            return ran.Next(99, 999).ToString() + ran.Next(99, 999).ToString();
         }
         private void btnCancel_Click(object sender, EventArgs e) { AddButtonHuyClicked?.Invoke(this, _suatChieu); }
     }

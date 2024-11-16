@@ -53,28 +53,32 @@ namespace RapPhimFlix.Forms
                     break;
             }
         }
-
-
+        // chuyển từ ListFilm sang form suất chiếu
         private void btn_ListPhim_SuatChieu_Click(object? sender, DataRow phim)
         {
             OpenChildForm(new frmSuatChieu(phim));
         }
+        // chuyển từ suất chiếu sang form phong chiếu
         private void btn_SuatChieu_PhongChieu_Click(Object sender, DataRow suatChieu)
         {
             OpenChildForm(new frmPhongChieu(suatChieu));
         }
+        // chuyển từ suất chiếu sang ListFilm
         private void btn_QuayLaiListPhim_Click(object? sender, EventArgs e)
         {
             OpenChildForm(new frmListPhim());
         }
+        // chuyển từ phòng chiếu sang suất chiếu
         private void btn_QuayLaiSuatChieu(object? sender, DataRow phim)
         {
             OpenChildForm(new frmSuatChieu(phim));
         }
+        // chuyển từ phòng chiếu sang form thanh toán
         private void btn_PhongChieu_ThanhToan(object? sender, Pair<DataRow, List<string>> e)
         {
             OpenChildForm(new frmThanhToanVePhim(e.First, e.Second));
         }
+        // chuyển từ form thanh toán về form phòng chiếu
         private void btn_QuayLaiPhongChieu(object? sender, DataRow _phongChieu)
         {
             OpenChildForm(new frmPhongChieu(_phongChieu));

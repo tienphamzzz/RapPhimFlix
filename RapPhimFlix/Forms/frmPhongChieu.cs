@@ -20,8 +20,7 @@ namespace RapPhimFlix.Forms
         private DataTable _ghes;
         private List<string> _listGhesSelected = new List<string>();
         public event EventHandler<DataRow> AddButtonQuayLaiClicked;
-        //public event EventHandler<List<string>> AddButtonTiepTheo_ListGhesClicked;
-        //public event EventHandler<DataRow> AddButtonTiepTheo_SuatChieuClicked;
+
         public event EventHandler<Pair<DataRow, List<string>>> AddButtonClicked;
         public frmPhongChieu(DataRow suatChieu)
         {
