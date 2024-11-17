@@ -16,79 +16,61 @@ namespace RapPhimFlix.Forms
     public partial class frmSuatChieu : Form
     {
         private DataTable _suatChieuPhim;
-        private string MaPhim;
-        private display main;
-        public frmSuatChieu(string MaPhim, Form main)
+        private DataRow _rowPhim;
+        private DataRow[] _rows;
+        public event EventHandler AddButtonQuayLayClicked;
+        public event EventHandler<DataRow> AddButtonClicked;
+        public frmSuatChieu(DataRow Phim)
         {
             InitializeComponent();
-            this.MaPhim = MaPhim;
-            this.main = (display)main;
+            _rowPhim = Phim;
+            object[] pr = { _rowPhim["MaPhim"].ToString() };
+            _suatChieuPhim = DataProvider.Instance.ExcuteQuery("select * from tblSuatChieu sc where sc.MaPhim = @MaPhim", pr);
+            if (_suatChieuPhim.Rows.Count > 0)
+            {
+                lbl_TenPhim.Text = _rowPhim["Ten"].ToString();
+                _rows = new DataRow[_suatChieuPhim.Rows.Count];
+                Load();
+            }
+            
         }
-        private void GanCacBox()
+        private void Load()
         {
+            designRtb();
             string[] CaChieuThuc = DateTime.Now.ToString("HH:mm").Split(":");
             DateTime NgayChieuThuc = DateTime.Now;
-            for (int i = 1, j = 0; i <= 5 && j < _suatChieuPhim.Rows.Count; i++, j++)
+            int i = 0;
+            foreach (DataRow row in _suatChieuPhim.Rows)
             {
-                Button btn = this.Controls.Find($"btn_SuatChieu{i}", true).FirstOrDefault() as Button;
-                if (btn != null)
-                    while (j < _suatChieuPhim.Rows.Count)
-                    {
-                        DataRow bangTam = _suatChieuPhim.Rows[j];
-                        string[] gio = bangTam["CaChieu"].ToString().Split("-");
-                        DateTime NgayChieu = (DateTime)bangTam["NgayChieu"];
-                        if (NgayChieuThuc.Date < NgayChieu.Date || NgayChieuThuc.Date == NgayChieu.Date && int.Parse(CaChieuThuc[0]) < int.Parse(gio[0]))
-                        {
-                            btn.Text = bangTam["CaChieu"].ToString() + '\n';
-                            btn.Text += NgayChieu.Date.ToString("yyyy-MM-dd");
-                            j++;
-                            break;
-                        }
-                        j++;
-                    }
-            }
-            for (int i = 0; i < _suatChieuPhim.Rows.Count; i++)
-            {
-                DataRow bangTam = _suatChieuPhim.Rows[i];
-                string[] gio = bangTam["CaChieu"].ToString().Split("-");
-                DateTime NgayChieu = (DateTime)bangTam["NgayChieu"];
+                Button btn = new Button();
+                string[] gio = row["CaChieu"].ToString().Split("-");
+                DateTime NgayChieu = (DateTime)row["NgayChieu"];
                 if (NgayChieuThuc.Date < NgayChieu.Date || NgayChieuThuc.Date == NgayChieu.Date && int.Parse(CaChieuThuc[0]) < int.Parse(gio[0]))
-                    cbo_CacCaChieuKhac.Items.Add("Ca: " + bangTam["CaChieu"].ToString() + " Ngay Chieu: " + NgayChieu.Date.ToString("yyyy-MM-dd"));
+                {
+                    btn.Text = row["CaChieu"].ToString() + '\n';
+                    btn.Text += NgayChieu.Date.ToString("yyyy-MM-dd");
+                    btn.Tag = i;
+                    btn.Size = new Size(btn.Width, btn.Height * 2);
+                    addBtnInFlp(btn);
+                    cbo_CacCaChieuKhac.Items.Add("Ca: " + row["CaChieu"].ToString() + " Ngay Chieu: " + NgayChieu.Date.ToString("yyyy-MM-dd"));
+                }
+                i++;
             }
-            DataRow bang = _suatChieuPhim.Rows[0];
-            lbl_TenPhim.Text = bang["Ten"].ToString();
-            rtb_ThongTinPhim.Text += "Thời lượng: " + bang["ThoiLuong"].ToString() + '\n';
-            rtb_ThongTinPhim.Text += "Đạo diễn:   " + bang["DaoDien"].ToString() + '\n';
-            DocFile(bang["MoTa"].ToString());
-            DocFile(bang["TenAnh"].ToString(), 1);
         }
-        private void DocFile(string tenFile, int kieu = 0)
+        private void addBtnInFlp(Button btn) {
+            btn.Click += btn_Click;
+            flp_CaChieu.Controls.Add(btn); 
+        }
+        private void designRtb()
         {
-            if (kieu == 0)
-            {
-                try
-                {
-                    string fullPath = Path.Combine(Application.StartupPath, $"Resources\\filedata\\{tenFile}");
-                    rtb_ThongTinPhim.Text += "Mô tả: " + File.ReadAllText(fullPath);
-                }
-                catch (Exception e)
-                {
-                    //textBox1.Text = "Lỗi lòi mắt " + e.Message;
-                }
-            }
-            else if (kieu == 1)
-            {
-                try
-                {
-                    ptb_Anh.SizeMode = PictureBoxSizeMode.StretchImage;
-                    string fullPath = Path.Combine(Application.StartupPath, $"Resources\\images\\phims\\{tenFile}");
-                    ptb_Anh.Image = Image.FromFile(fullPath);
-                }
-                catch (Exception e)
-                {
-                    //textBox1.Text = "Lỗi lòi mắt " + e.Message;
-                }
-            }
+            rtb_ThongTinPhim.BorderStyle = BorderStyle.None;
+            rtb_ThongTinPhim.SelectionIndent = 0;
+            rtb_ThongTinPhim.SelectionHangingIndent = 0;
+
+            rtb_ThongTinPhim.Text += "Thời lượng: " + _rowPhim["ThoiLuong"].ToString() + '\n';
+            rtb_ThongTinPhim.Text += "Đạo diễn:   " + _rowPhim["DaoDien"].ToString() + '\n';
+            ExportFile.loadImage(ptb_Anh, _rowPhim["TenAnh"].ToString());
+            rtb_ThongTinPhim.Text += "Mô tả: " + ExportFile.ReadFileOrDefault(_rowPhim["MoTa"].ToString());
         }
         private void btn_Them_Click(object sender, EventArgs e)
         {
@@ -104,38 +86,30 @@ namespace RapPhimFlix.Forms
                 btn_Chon.Visible = false;
             }
         }
-        private void btn_click(object sender, EventArgs e)
+        private void btn_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            label1.Text = btn.Text;
+            AddButtonClicked?.Invoke(this, _suatChieuPhim.Rows[(int)btn.Tag]);
         }
-
-        private void frmSuatChieu_Load(object sender, EventArgs e)
-        {
-            rtb_ThongTinPhim.BorderStyle = BorderStyle.None;
-            rtb_ThongTinPhim.SelectionIndent = 0;
-            rtb_ThongTinPhim.SelectionHangingIndent = 0;
-            _suatChieuPhim = DataProvider.Instance.ExcuteQuery("select * from tblPhims inner join tblSuatChieu on tblPhims.MaPhim = tblSuatChieu.MaPhim where tblPhims.MaPhim = " + "N'" + MaPhim + "' order by tblSuatChieu.CaChieu asc");
-            if (_suatChieuPhim.Rows.Count > 0) GanCacBox();
-        }
-
         private void btn_Chon_Click(object sender, EventArgs e)
         {
             if (cbo_CacCaChieuKhac.SelectedIndex != -1)
             {
                 Match match = Regex.Match(cbo_CacCaChieuKhac.Text, @"Ca:\s*(\d+-\d+).*Ngay Chieu:\s*(\d{4}-\d{2}-\d{2})");
                 if (match.Success)
+                {
                     btn_Chon.Text = match.Groups[1].Value + '\n' + match.Groups[2].Value;
+                    btn_Chon.Tag = cbo_CacCaChieuKhac.SelectedIndex;
+                }    
                 cbo_CacCaChieuKhac.SelectedIndex = -1;
-                btn_click(sender, e);
+                btn_Click(sender, e);
             }
         }
 
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
-            frmListPhim frm = new frmListPhim(main);
-            frm.Show();
-            this.Close();
+            AddButtonQuayLayClicked?.Invoke(this, e);
         }
+
     }
 }

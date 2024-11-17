@@ -19,14 +19,12 @@
         {
             labelTitle = new Label();
             gbTicketInfo = new GroupBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            lblTicketID = new Label();
+            txt_Ghes = new TextBox();
+            txt_GiaVe = new TextBox();
+            txt_PhongChieu = new TextBox();
+            txt_CaChieu = new TextBox();
+            txt_NgayChieu = new TextBox();
+            txt_Phim = new TextBox();
             lblFilmName = new Label();
             lblShowDate = new Label();
             lblScreening = new Label();
@@ -34,6 +32,9 @@
             lblChair = new Label();
             lblTicketPrice = new Label();
             gbCustomerInfo = new GroupBox();
+            txt_Discount = new TextBox();
+            lbl_Discount = new Label();
+            ptb_Image = new PictureBox();
             lblCustomerName = new Label();
             txtCustomerName = new TextBox();
             lblPhoneNumber = new Label();
@@ -47,6 +48,7 @@
             txtTotal = new TextBox();
             gbTicketInfo.SuspendLayout();
             gbCustomerInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ptb_Image).BeginInit();
             SuspendLayout();
             // 
             // labelTitle
@@ -55,20 +57,18 @@
             labelTitle.Font = new Font("Arial", 16F, FontStyle.Bold);
             labelTitle.Location = new Point(350, 20);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(164, 32);
+            labelTitle.Size = new Size(129, 26);
             labelTitle.TabIndex = 0;
             labelTitle.Text = "Thanh toán";
             // 
             // gbTicketInfo
             // 
-            gbTicketInfo.Controls.Add(textBox8);
-            gbTicketInfo.Controls.Add(textBox7);
-            gbTicketInfo.Controls.Add(textBox6);
-            gbTicketInfo.Controls.Add(textBox5);
-            gbTicketInfo.Controls.Add(textBox4);
-            gbTicketInfo.Controls.Add(textBox3);
-            gbTicketInfo.Controls.Add(textBox2);
-            gbTicketInfo.Controls.Add(lblTicketID);
+            gbTicketInfo.Controls.Add(txt_Ghes);
+            gbTicketInfo.Controls.Add(txt_GiaVe);
+            gbTicketInfo.Controls.Add(txt_PhongChieu);
+            gbTicketInfo.Controls.Add(txt_CaChieu);
+            gbTicketInfo.Controls.Add(txt_NgayChieu);
+            gbTicketInfo.Controls.Add(txt_Phim);
             gbTicketInfo.Controls.Add(lblFilmName);
             gbTicketInfo.Controls.Add(lblShowDate);
             gbTicketInfo.Controls.Add(lblScreening);
@@ -82,66 +82,57 @@
             gbTicketInfo.TabStop = false;
             gbTicketInfo.Text = "Thông tin vé";
             // 
-            // textBox8
+            // txt_Ghes
             // 
-            textBox8.Location = new Point(155, 235);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(184, 27);
-            textBox8.TabIndex = 8;
+            txt_Ghes.Location = new Point(155, 214);
+            txt_Ghes.Name = "txt_Ghes";
+            txt_Ghes.ReadOnly = true;
+            txt_Ghes.Size = new Size(184, 23);
+            txt_Ghes.TabIndex = 8;
             // 
-            // textBox7
+            // txt_GiaVe
             // 
-            textBox7.Location = new Point(155, 273);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(184, 27);
-            textBox7.TabIndex = 12;
+            txt_GiaVe.Location = new Point(155, 252);
+            txt_GiaVe.Name = "txt_GiaVe";
+            txt_GiaVe.ReadOnly = true;
+            txt_GiaVe.Size = new Size(184, 23);
+            txt_GiaVe.TabIndex = 12;
             // 
-            // textBox6
+            // txt_PhongChieu
             // 
-            textBox6.Location = new Point(155, 195);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(184, 27);
-            textBox6.TabIndex = 11;
+            txt_PhongChieu.Location = new Point(155, 174);
+            txt_PhongChieu.Name = "txt_PhongChieu";
+            txt_PhongChieu.ReadOnly = true;
+            txt_PhongChieu.Size = new Size(184, 23);
+            txt_PhongChieu.TabIndex = 11;
             // 
-            // textBox5
+            // txt_CaChieu
             // 
-            textBox5.Location = new Point(155, 155);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(184, 27);
-            textBox5.TabIndex = 10;
+            txt_CaChieu.Location = new Point(155, 134);
+            txt_CaChieu.Name = "txt_CaChieu";
+            txt_CaChieu.ReadOnly = true;
+            txt_CaChieu.Size = new Size(184, 23);
+            txt_CaChieu.TabIndex = 10;
             // 
-            // textBox4
+            // txt_NgayChieu
             // 
-            textBox4.Location = new Point(155, 112);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(184, 27);
-            textBox4.TabIndex = 9;
+            txt_NgayChieu.Location = new Point(155, 91);
+            txt_NgayChieu.Name = "txt_NgayChieu";
+            txt_NgayChieu.ReadOnly = true;
+            txt_NgayChieu.Size = new Size(184, 23);
+            txt_NgayChieu.TabIndex = 9;
             // 
-            // textBox3
+            // txt_Phim
             // 
-            textBox3.Location = new Point(155, 72);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(184, 27);
-            textBox3.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(155, 31);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(184, 27);
-            textBox2.TabIndex = 7;
-            // 
-            // lblTicketID
-            // 
-            lblTicketID.Location = new Point(10, 35);
-            lblTicketID.Name = "lblTicketID";
-            lblTicketID.Size = new Size(100, 23);
-            lblTicketID.TabIndex = 0;
-            lblTicketID.Text = "Mã vé:";
+            txt_Phim.Location = new Point(155, 51);
+            txt_Phim.Name = "txt_Phim";
+            txt_Phim.ReadOnly = true;
+            txt_Phim.Size = new Size(184, 23);
+            txt_Phim.TabIndex = 8;
             // 
             // lblFilmName
             // 
-            lblFilmName.Location = new Point(10, 75);
+            lblFilmName.Location = new Point(10, 54);
             lblFilmName.Name = "lblFilmName";
             lblFilmName.Size = new Size(100, 23);
             lblFilmName.TabIndex = 1;
@@ -149,7 +140,7 @@
             // 
             // lblShowDate
             // 
-            lblShowDate.Location = new Point(10, 115);
+            lblShowDate.Location = new Point(10, 94);
             lblShowDate.Name = "lblShowDate";
             lblShowDate.Size = new Size(100, 23);
             lblShowDate.TabIndex = 2;
@@ -157,7 +148,7 @@
             // 
             // lblScreening
             // 
-            lblScreening.Location = new Point(10, 159);
+            lblScreening.Location = new Point(10, 138);
             lblScreening.Name = "lblScreening";
             lblScreening.Size = new Size(100, 23);
             lblScreening.TabIndex = 3;
@@ -165,7 +156,7 @@
             // 
             // lblRoom
             // 
-            lblRoom.Location = new Point(10, 198);
+            lblRoom.Location = new Point(10, 177);
             lblRoom.Name = "lblRoom";
             lblRoom.Size = new Size(100, 23);
             lblRoom.TabIndex = 4;
@@ -173,7 +164,7 @@
             // 
             // lblChair
             // 
-            lblChair.Location = new Point(10, 235);
+            lblChair.Location = new Point(10, 214);
             lblChair.Name = "lblChair";
             lblChair.Size = new Size(100, 23);
             lblChair.TabIndex = 5;
@@ -181,7 +172,7 @@
             // 
             // lblTicketPrice
             // 
-            lblTicketPrice.Location = new Point(10, 277);
+            lblTicketPrice.Location = new Point(10, 256);
             lblTicketPrice.Name = "lblTicketPrice";
             lblTicketPrice.Size = new Size(100, 23);
             lblTicketPrice.TabIndex = 6;
@@ -189,6 +180,9 @@
             // 
             // gbCustomerInfo
             // 
+            gbCustomerInfo.Controls.Add(txt_Discount);
+            gbCustomerInfo.Controls.Add(lbl_Discount);
+            gbCustomerInfo.Controls.Add(ptb_Image);
             gbCustomerInfo.Controls.Add(lblCustomerName);
             gbCustomerInfo.Controls.Add(txtCustomerName);
             gbCustomerInfo.Controls.Add(lblPhoneNumber);
@@ -203,25 +197,48 @@
             gbCustomerInfo.TabStop = false;
             gbCustomerInfo.Text = "Thông tin khách hàng";
             // 
+            // txt_Discount
+            // 
+            txt_Discount.Location = new Point(120, 146);
+            txt_Discount.Name = "txt_Discount";
+            txt_Discount.Size = new Size(200, 23);
+            txt_Discount.TabIndex = 9;
+            // 
+            // lbl_Discount
+            // 
+            lbl_Discount.Location = new Point(10, 146);
+            lbl_Discount.Name = "lbl_Discount";
+            lbl_Discount.Size = new Size(100, 23);
+            lbl_Discount.TabIndex = 8;
+            lbl_Discount.Text = "Giảm giá:";
+            // 
+            // ptb_Image
+            // 
+            ptb_Image.Location = new Point(10, 175);
+            ptb_Image.Name = "ptb_Image";
+            ptb_Image.Size = new Size(124, 130);
+            ptb_Image.TabIndex = 7;
+            ptb_Image.TabStop = false;
+            // 
             // lblCustomerName
             // 
-            lblCustomerName.Location = new Point(10, 30);
+            lblCustomerName.Location = new Point(10, 33);
             lblCustomerName.Name = "lblCustomerName";
             lblCustomerName.Size = new Size(100, 23);
             lblCustomerName.TabIndex = 0;
             lblCustomerName.Text = "Tên khách:";
-            lblCustomerName.Click += lblTenKhach_Click;
             // 
             // txtCustomerName
             // 
             txtCustomerName.Location = new Point(120, 30);
             txtCustomerName.Name = "txtCustomerName";
-            txtCustomerName.Size = new Size(200, 27);
+            txtCustomerName.Size = new Size(200, 23);
             txtCustomerName.TabIndex = 1;
+            txtCustomerName.TextChanged += txt_TextChanged;
             // 
             // lblPhoneNumber
             // 
-            lblPhoneNumber.Location = new Point(10, 70);
+            lblPhoneNumber.Location = new Point(10, 73);
             lblPhoneNumber.Name = "lblPhoneNumber";
             lblPhoneNumber.Size = new Size(100, 23);
             lblPhoneNumber.TabIndex = 2;
@@ -231,12 +248,13 @@
             // 
             txtPhoneNumber.Location = new Point(120, 70);
             txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.Size = new Size(200, 27);
+            txtPhoneNumber.Size = new Size(200, 23);
             txtPhoneNumber.TabIndex = 3;
+            txtPhoneNumber.TextChanged += txt_TextChanged;
             // 
             // lblSex
             // 
-            lblSex.Location = new Point(10, 110);
+            lblSex.Location = new Point(10, 111);
             lblSex.Name = "lblSex";
             lblSex.Size = new Size(100, 23);
             lblSex.TabIndex = 4;
@@ -249,6 +267,7 @@
             rbMale.Size = new Size(71, 24);
             rbMale.TabIndex = 5;
             rbMale.Text = "Nam";
+            rbMale.Click += rbSex_Click;
             // 
             // rbFemale
             // 
@@ -257,7 +276,7 @@
             rbFemale.Size = new Size(80, 24);
             rbFemale.TabIndex = 6;
             rbFemale.Text = "Nữ";
-            rbFemale.CheckedChanged += rbNu_CheckedChanged;
+            rbFemale.Click += rbSex_Click;
             // 
             // lblTotal
             // 
@@ -289,7 +308,8 @@
             // 
             txtTotal.Location = new Point(244, 388);
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(125, 27);
+            txtTotal.ReadOnly = true;
+            txtTotal.Size = new Size(125, 23);
             txtTotal.TabIndex = 6;
             // 
             // frmThanhToanVePhim
@@ -307,6 +327,7 @@
             gbTicketInfo.PerformLayout();
             gbCustomerInfo.ResumeLayout(false);
             gbCustomerInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ptb_Image).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -315,7 +336,6 @@
 
         private Label labelTitle;
         private GroupBox gbTicketInfo;
-        private Label lblTicketID;
         private Label lblFilmName;
         private Label lblShowDate;
         private Label lblScreening;
@@ -334,23 +354,18 @@
         private Button btnCancel;
         private Button btnPay;
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.ParentForm.Close();
-        }
+        
 
-        private void btnThanhToan_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Thanh toán thành công!");
-        }
-
-        private TextBox textBox2;
+        
         private TextBox txtTotal;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
+        private TextBox txt_Ghes;
+        private TextBox txt_GiaVe;
+        private TextBox txt_PhongChieu;
+        private TextBox txt_CaChieu;
+        private TextBox txt_NgayChieu;
+        private TextBox txt_Phim;
+        private PictureBox ptb_Image;
+        private TextBox txt_Discount;
+        private Label lbl_Discount;
     }
 }

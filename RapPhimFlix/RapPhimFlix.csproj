@@ -21,9 +21,12 @@
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.runtimeconfig.json" />
 
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\No Infomation.jpg" />
-    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\SuperGirl 1.jpg" />
+    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Supergirl 1.jpg" />
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Superman 1.jpg" />
     <Content Include="Resources\Icon\app-icon.ico" />
+    <Folder Include="bin\Debug\net8.0-windows\Resources\filedata\" />
+    <Folder Include="bin\Debug\net8.0-windows\Resources\images\icons\" />
+    <Folder Include="bin\Debug\net8.0-windows\Resources\ve\" />
 
  
     <Folder Include="Forms\DangNhap\" />
@@ -37,7 +40,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <None Include="bin\debug\net8.0-windows\resources\filedata\Supergirl 1.rtf" />
+    <None Include="bin\debug\net8.0-windows\resources\filedata\Superman 1.rtf" />
+    <None Include="bin\Debug\net8.0-windows\Resources\hoadon\HoaDonExcel.xlsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.4.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
 
 </Project>

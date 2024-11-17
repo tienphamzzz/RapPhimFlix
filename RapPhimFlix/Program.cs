@@ -1,6 +1,7 @@
 
 
 using RapPhimFlix.Forms;
+using RapPhimFlix.Forms.MenuNav;
 
 
 namespace RapPhimFlix
@@ -18,8 +19,7 @@ namespace RapPhimFlix
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-
-            Application.Run(new frmChonSanPham());
+            Application.Run(new FormNhanVien());
 
         }
     }
