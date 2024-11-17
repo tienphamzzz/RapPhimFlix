@@ -37,8 +37,5 @@ namespace RapPhimFlix.Forms
             DataTable phim = DataProvider.Instance.ExcuteQuery("select * from tblPhims where MaPhim = @MaPhim", parameter);
             AddButtonClicked?.Invoke(this, phim.Rows[0]);
         }
-
-        
-
     }
 }
