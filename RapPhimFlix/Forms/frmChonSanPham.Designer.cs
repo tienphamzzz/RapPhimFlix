@@ -176,11 +176,13 @@
             // nudProductQuantity
             // 
             nudProductQuantity.Location = new Point(330, 6);
+            nudProductQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudProductQuantity.Name = "nudProductQuantity";
             nudProductQuantity.ReadOnly = true;
             nudProductQuantity.Size = new Size(49, 27);
             nudProductQuantity.TabIndex = 18;
             nudProductQuantity.TabStop = false;
+            nudProductQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // txtProductName
             // 
