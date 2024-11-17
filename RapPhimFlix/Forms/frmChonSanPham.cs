@@ -7,33 +7,115 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RapPhimFlix.Controllers;
 
 namespace RapPhimFlix.Forms
 {
     public partial class frmChonSanPham : Form
     {
+
+        #region Methods
         public frmChonSanPham()
         {
             InitializeComponent();
-        }
-        private void lblQuantity_Click(object sender, EventArgs e)
-        {
 
+            LoadProduct();
         }
 
-        private void groupBoxOrder_Enter(object sender, EventArgs e)
+        public void LoadProduct()
         {
+            List<Product> products = DAO.ProductDAO.Instance.LoadProductList();
 
+            foreach (Product product in products)
+            {
+                uclProduct ucl = new uclProduct(product);
+
+                flpProducts.Controls.Add(ucl);
+
+                ucl.ProductClick += Ucl_ProductClick;
+            }
         }
+        #endregion
 
-        private void groupBoxProducts_Enter(object sender, EventArgs e)
+        #region Events
+        private void Ucl_ProductClick(object sender, EventArgs e)
         {
-
+            uclProduct ucl = sender as uclProduct;
+            txtProductName.Text = ucl.getProductName();
         }
+        #endregion
 
-        private void lblTotal_Click(object sender, EventArgs e)
+        private void btnAddProduct_Click(object sender, EventArgs e)
         {
+            if (txtProductName.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                string productName = txtProductName.Text;
+                int quantity = (int)nudProductQuantity.Value;
 
+                Product product = DAO.ProductDAO.Instance.GetProductByName(productName);
+
+                string type = product.Type;
+                float price = (float)product.Price;
+                float totalPrice = price * quantity;
+
+                bool isExist = false;
+
+                foreach (ListViewItem item in lvSelectedProducts.Items)
+                {
+                    if (item.SubItems[0].Text == productName)
+                    {
+                        item.SubItems[2].Text = (int.Parse(item.SubItems[2].Text) + quantity).ToString();
+                        item.SubItems[3].Text = (float.Parse(item.SubItems[3].Text) + totalPrice).ToString();
+                        isExist = true;
+                        lblTotalPrice.Text = (float.Parse(lblTotalPrice.Text) + totalPrice).ToString();
+                        break;
+                    }
+                }
+                if (!isExist)
+                {
+                    ListViewItem item = new ListViewItem(productName);
+                    item.SubItems.Add(type);
+                    item.SubItems.Add(quantity.ToString());
+                    item.SubItems.Add(totalPrice.ToString());
+                    lblTotalPrice.Text = (float.Parse(lblTotalPrice.Text) + totalPrice).ToString();
+
+                    lvSelectedProducts.Items.Add(item);
+                }
+
+                nudProductQuantity.Value = 1;
+            }
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            lvSelectedProducts.Items.Clear();
+            lblTotalPrice.Text = "0";
+        }
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            if(lvSelectedProducts.Items.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm trước khi thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else 
+            {
+                List<ListViewItem> items = new List<ListViewItem>();
+                foreach (ListViewItem item in lvSelectedProducts.Items)
+                {
+                    items.Add((ListViewItem)item.Clone());
+                }
+
+                frmThanhToanSanPham frm = new frmThanhToanSanPham(items, this);
+
+                this.Hide();
+
+                frm.Show();
+            }
         }
     }
 }

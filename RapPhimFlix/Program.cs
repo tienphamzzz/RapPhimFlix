@@ -19,8 +19,6 @@ namespace RapPhimFlix
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-
-            //Application.Run(new display());
             Application.Run(new FormNhanVien());
 
         }

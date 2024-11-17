@@ -34,6 +34,8 @@
 
     <Folder Include="Forms\ThongKeDoanhThu\" />
 
+    <Folder Include="Resources\Img\Products\" />
+
     <Folder Include="Resources\Poster\" />
   </ItemGroup>
 
