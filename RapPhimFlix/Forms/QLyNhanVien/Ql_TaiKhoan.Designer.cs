@@ -43,7 +43,7 @@
             dtgv_ThongTinNV.Location = new Point(-1, 51);
             dtgv_ThongTinNV.Name = "dtgv_ThongTinNV";
             dtgv_ThongTinNV.RowHeadersWidth = 62;
-            dtgv_ThongTinNV.Size = new Size(802, 303);
+            dtgv_ThongTinNV.Size = new Size(895, 303);
             dtgv_ThongTinNV.TabIndex = 0;
             dtgv_ThongTinNV.CellDoubleClick += dtgv_ThongTinNV_CellDoubleClick;
             // 
@@ -76,7 +76,7 @@
             // 
             // btn_Sua
             // 
-            btn_Sua.Location = new Point(237, 373);
+            btn_Sua.Location = new Point(219, 373);
             btn_Sua.Name = "btn_Sua";
             btn_Sua.Size = new Size(113, 44);
             btn_Sua.TabIndex = 5;
@@ -86,7 +86,7 @@
             // 
             // btn_Xoa
             // 
-            btn_Xoa.Location = new Point(425, 373);
+            btn_Xoa.Location = new Point(362, 373);
             btn_Xoa.Name = "btn_Xoa";
             btn_Xoa.Size = new Size(113, 44);
             btn_Xoa.TabIndex = 6;
@@ -98,7 +98,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(816, 465);
+            ClientSize = new Size(900, 437);
             Controls.Add(btn_Xoa);
             Controls.Add(btn_Sua);
             Controls.Add(btn_Them);

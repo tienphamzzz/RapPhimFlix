@@ -134,7 +134,7 @@
             // 
             // txt_MaNV
             // 
-            txt_MaNV.Location = new Point(108, 31);
+            txt_MaNV.Location = new Point(108, 37);
             txt_MaNV.Name = "txt_MaNV";
             txt_MaNV.Size = new Size(158, 31);
             txt_MaNV.TabIndex = 5;
@@ -201,10 +201,11 @@
             // 
             // txt_ChucVu
             // 
-            txt_ChucVu.Location = new Point(356, 38);
+            txt_ChucVu.Location = new Point(377, 32);
             txt_ChucVu.Name = "txt_ChucVu";
             txt_ChucVu.Size = new Size(158, 31);
             txt_ChucVu.TabIndex = 12;
+            txt_ChucVu.TextChanged += txt_ChucVu_TextChanged;
             // 
             // txt_MatKhau
             // 
@@ -255,6 +256,7 @@
             btn_XacNhan.TabIndex = 4;
             btn_XacNhan.Text = "Xác Nhận";
             btn_XacNhan.UseVisualStyleBackColor = true;
+            btn_XacNhan.Click += btn_XacNhan_Click;
             // 
             // ChiTietNV
             // 
@@ -266,7 +268,7 @@
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Name = "ChiTietNV";
-            Text = "ThemNV";
+            Text = "Chi Tiết Thông Tin Nhân Viên";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_anh).EndInit();
@@ -300,5 +302,6 @@
         private Button btn_XacNhan;
         private Button btn_TaiAnh;
         private PictureBox pictureBox_anh;
+
     }
 }

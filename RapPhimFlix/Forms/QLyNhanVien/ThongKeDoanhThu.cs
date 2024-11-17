@@ -75,10 +75,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
             //series1.Label.TextPattern = "{A}: {VP:p0}";
         }
 
-        private void dateEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
 
 
@@ -159,7 +156,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 
             foreach (var item in list)
             {
-                series1.Points.Add(new SeriesPoint(item.ThoiGian, item.SoLuong,item.TongTienBan));
+                series1.Points.Add(new SeriesPoint(item.ThoiGian, item.SoLuong, item.TongTienBan));
             }
 
             chart_ThongKeVe.Series.Clear(); // Xóa các series cũ trước khi thêm mới
@@ -168,6 +165,15 @@ namespace RapPhimFlix.Forms.QLyNhanVien
             series1.Label.TextPattern = "{A}: SoLuong={V0}, TongTienBan={V1}";
 
 
+        }
+
+        private void btn_huy_Click(object sender, EventArgs e)
+        {
+            // Xóa tất cả các series trong biểu đồ chart_ThongKeSP
+            chart_ThongKeSP.Series.Clear();
+
+            // Xóa tất cả các series trong biểu đồ chart_ThongKeVe
+            chart_ThongKeVe.Series.Clear();
         }
     }
 }

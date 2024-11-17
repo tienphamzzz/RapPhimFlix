@@ -56,7 +56,7 @@
             pnl_Trai.Dock = DockStyle.Left;
             pnl_Trai.Location = new Point(0, 0);
             pnl_Trai.Name = "pnl_Trai";
-            pnl_Trai.Size = new Size(145, 513);
+            pnl_Trai.Size = new Size(145, 567);
             pnl_Trai.TabIndex = 0;
             // 
             // btn_thu
@@ -116,7 +116,7 @@
             pnl_Tren.Dock = DockStyle.Top;
             pnl_Tren.Location = new Point(145, 0);
             pnl_Tren.Name = "pnl_Tren";
-            pnl_Tren.Size = new Size(825, 74);
+            pnl_Tren.Size = new Size(922, 74);
             pnl_Tren.TabIndex = 1;
             // 
             // lbl_HienThiChucNang
@@ -152,7 +152,7 @@
             pnl_Body.Dock = DockStyle.Fill;
             pnl_Body.Location = new Point(145, 74);
             pnl_Body.Name = "pnl_Body";
-            pnl_Body.Size = new Size(825, 439);
+            pnl_Body.Size = new Size(922, 493);
             pnl_Body.TabIndex = 2;
             // 
             // button1
@@ -168,7 +168,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(970, 513);
+            ClientSize = new Size(1067, 567);
             Controls.Add(pnl_Body);
             Controls.Add(pnl_Tren);
             Controls.Add(pnl_Trai);

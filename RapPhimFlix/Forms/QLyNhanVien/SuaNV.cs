@@ -12,7 +12,6 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 {
     public partial class SuaNV : Form
     {
-
         Controllers.DataContext dtbase = new Controllers.DataContext();
         private string maNhanVien;
         public SuaNV(String maNhanVien)
@@ -21,7 +20,6 @@ namespace RapPhimFlix.Forms.QLyNhanVien
             InitializeComponent();
             LoadChiTietNhanVien();
         }
-
 
         private void LoadChiTietNhanVien()
         {
@@ -33,16 +31,31 @@ namespace RapPhimFlix.Forms.QLyNhanVien
                 if (dt.Rows.Count > 0)
                 {
                     DataRow row = dt.Rows[0];
-                    // Giả sử bạn có các TextBox để hiển thị thông tin chi tiết nhân viên
+
                     txt_MaNV.Text = row["MaNhanVien"].ToString();
                     txt_TenNV.Text = row["HovaTen"].ToString();
-                    txt_ChucVu.Text = row["ChucVu"].ToString();
                     txt_SDT.Text = row["SDT"].ToString();
                     txt_Luong.Text = row["Luong"].ToString();
-                    txt_GioiTinh.Text = row["GioiTinh"].ToString();
                     txt_MatKhau.Text = row["MatKhau"].ToString();
                     txt_TaiKhoan.Text = row["SDT"].ToString();
-                    // Thêm các trường khác tương tự
+
+                    if (row["ChucVu"].ToString() == "1")
+                    {
+                        rdo_ChucVuNhanVien.Checked = true;
+                    }
+                    else
+                    {
+                        rdo_ChucVu_QuanLy.Checked = true;
+                    }
+
+                    if (row["GioiTinh"].ToString() == "Nam")
+                    {
+                        rdo_GioiTinh_Nam.Checked = true;
+                    }
+                    else
+                    {
+                        rdo_GioiTinh_Nu.Checked = true;
+                    }
                 }
             }
             catch (Exception ex)
@@ -55,10 +68,10 @@ namespace RapPhimFlix.Forms.QLyNhanVien
         {
             string maNV = txt_MaNV.Text;
             string tenNV = txt_TenNV.Text;
-            string chucVu = txt_ChucVu.Text;
+            string chucVu = rdo_ChucVuNhanVien.Checked ? "1" : "0";
             string sdt = txt_SDT.Text;
             string luong = txt_Luong.Text;
-            string gioiTinh = txt_GioiTinh.Text;
+            string gioiTinh = rdo_GioiTinh_Nam.Checked ? "Nam" : "Nữ";
             string matKhau = txt_MatKhau.Text;
             string taiKhoan = txt_TaiKhoan.Text;
 
@@ -71,6 +84,11 @@ namespace RapPhimFlix.Forms.QLyNhanVien
             MessageBox.Show("Cập nhật thông tin nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.DialogResult = DialogResult.OK; // Đặt kết quả DialogResult là OK
             this.Close(); // Đóng form SuaNV
+        }
+
+        private void btn_Huy_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
