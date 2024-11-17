@@ -40,11 +40,11 @@ namespace RapPhimFlix.Forms.QLyNhanVien
         //    var t = listTk_SP.Count;
         //    return listTk_SP;
         //}
-        public List<SanPhamDoanhThu> ThongKeSanPham(DateTime ngayDau, DateTime ngayCuoi)
+        public List<SanPhamDoanhThu> ThongKeSanPham(DateTime ngayDau, DateTime ngayCuoi)// lấy dữ liệu từ databse trong khoảng tg r chuyển thành các đối tượng sp để sử dụng ở fille này
         {
             SanPhamDoanhThu sp;
             List<SanPhamDoanhThu> listTk_SP = new List<SanPhamDoanhThu>();
-            var lstNhom = dp.CallThongKeDoanhThuSanPham(ngayDau, ngayCuoi).ToList();
+            var lstNhom = dp.CallThongKeDoanhThuSanPham(ngayDau, ngayCuoi).ToList();// trả về 1 list các đối tượng của SanPhamDoanhThu đã có dữ liệu
             foreach (var item in lstNhom)
             {
                 sp = new SanPhamDoanhThu();
@@ -79,7 +79,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 
 
 
-        private void btn_ThongKeSP_Click(object sender, EventArgs e)
+        private void btn_ThongKeSP_Click(object sender, EventArgs e)// lấy dữ liệu đưa lên biểu đồ
         {
             DateTime ngayDau = dtpNgayBatDau.Value;
             DateTime ngayCuoi = dtp_NgayKetThuc.Value;
@@ -93,7 +93,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 
             // Lấy dữ liệu và cập nhật biểu đồ
             Series series1 = new Series("Doanh thu sản phẩm", ViewType.Doughnut);
-            var list = ThongKeSanPham(ngayDau, ngayCuoi);
+            var list = ThongKeSanPham(ngayDau, ngayCuoi);// gán đối tượng trong khoảng thời gian này vào list
 
             if (list.Count == 0)
             {
@@ -103,12 +103,12 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 
             foreach (var item in list)
             {
-                series1.Points.Add(new SeriesPoint(item.TenSanPham, item.TongTienBan));
+                series1.Points.Add(new SeriesPoint(item.TenSanPham, item.TongTienBan)); // thêm 2 dữ liệu vào biểu đồ
             }
 
             chart_ThongKeSP.Series.Clear(); // Xóa các series cũ trước khi thêm mới
-            chart_ThongKeSP.Series.Add(series1);
-            series1.Label.TextPattern = "{A}: {VP:p0}";
+            chart_ThongKeSP.Series.Add(series1);// cập nhật dữ liệu biểu đồ
+            series1.Label.TextPattern = "{A}: {VP:p0}"; // mẫu văn bản hiern thị trên biểu đồ
         }
 
 

@@ -142,9 +142,9 @@ namespace RapPhimFlix.DAO
                 MessageBox.Show("Không có dữ liệu trả về từ truy vấn SQL.");
             }
 
-            List<SanPhamDoanhThu> sanPhamDoanhThuList = new List<SanPhamDoanhThu>();
+            List<SanPhamDoanhThu> sanPhamDoanhThuList = new List<SanPhamDoanhThu>();// chuyên đổi các datatable sang list
 
-            foreach (DataRow row in dataTable.Rows)
+            foreach (DataRow row in dataTable.Rows) // lặp qua từng hàng trong datatable ,  chuyển từng hàng thành 1 đối tượng sanPhamDoanhThu và thêm vào list
             {
                 SanPhamDoanhThu sanPhamDoanhThu = new SanPhamDoanhThu
                 {
