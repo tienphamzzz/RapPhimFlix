@@ -24,14 +24,12 @@ namespace RapPhimFlix.Forms
         private void Load()
         {
             if (_phimTable.Rows.Count > 0)
-            {
                 foreach (DataRow row in _phimTable.Rows)
                 {
                     ucPhim uc = new ucPhim(row["MaPhim"].ToString(), row["Ten"].ToString(), row["TenAnh"].ToString());
                     uc.AddButtonClicked += btn_Click;
                     flp_main.Controls.Add(uc);
                 }
-            }
         }
         private void btn_Click(object? sender, string e)
         {

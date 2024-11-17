@@ -66,7 +66,7 @@
             btn_QuayLai.Location = new Point(3, 2);
             btn_QuayLai.Margin = new Padding(3, 2, 3, 2);
             btn_QuayLai.Name = "btn_QuayLai";
-            btn_QuayLai.Size = new Size(58, 27);
+            btn_QuayLai.Size = new Size(67, 27);
             btn_QuayLai.TabIndex = 24;
             btn_QuayLai.Text = "Quay lại";
             btn_QuayLai.UseVisualStyleBackColor = true;

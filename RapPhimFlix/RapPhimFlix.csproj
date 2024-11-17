@@ -25,6 +25,7 @@
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Superman 1.jpg" />
     <Content Include="Resources\Icon\app-icon.ico" />
     <Folder Include="bin\Debug\net8.0-windows\Resources\filedata\" />
+    <Folder Include="bin\Debug\net8.0-windows\Resources\images\icons\" />
     <Folder Include="bin\Debug\net8.0-windows\Resources\ve\" />
 
  

@@ -15,7 +15,7 @@ namespace RapPhimFlix.Forms
     public partial class display : Form
     {
         private Form _formChild;
-        
+
         public display()
         {
             InitializeComponent();
@@ -83,5 +83,6 @@ namespace RapPhimFlix.Forms
         {
             OpenChildForm(new frmPhongChieu(_phongChieu));
         }
+
     }
 }

@@ -39,6 +39,7 @@ namespace RapPhimFlix.Controllers
             }
             return null;
         }
+
         /*
         public static void CreateInvoice(DataTable tblCTHDVP, DataRow rowHD, DataRow rowK, string tenPhim, decimal giaVe)
         {
@@ -297,5 +298,7 @@ namespace RapPhimFlix.Controllers
                 throw new IOException("Không thể ghi file. Vui lòng kiểm tra xem file có đang mở không.", ex);
             }
         }
+        
+
     }
 }

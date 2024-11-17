@@ -195,6 +195,7 @@
             // 
             // splitC_HienThi.Panel2
             // 
+            splitC_HienThi.Panel2.BackColor = SystemColors.Control;
             splitC_HienThi.Panel2.Controls.Add(panel_Cua2);
             splitC_HienThi.Panel2.Controls.Add(panel_Cua1);
             splitC_HienThi.Panel2.Controls.Add(panel_ManHinh);
@@ -1732,6 +1733,7 @@
             // 
             // btn_A1
             // 
+            btn_A1.ForeColor = SystemColors.ActiveCaptionText;
             btn_A1.Location = new Point(141, 39);
             btn_A1.Name = "btn_A1";
             btn_A1.Size = new Size(30, 30);
@@ -1743,123 +1745,123 @@
             // 
             // lbl_L
             // 
-            lbl_L.AutoSize = true;
-            lbl_L.Location = new Point(32, 445);
+            lbl_L.Location = new Point(7, 445);
             lbl_L.Name = "lbl_L";
-            lbl_L.Size = new Size(13, 15);
+            lbl_L.Size = new Size(107, 15);
             lbl_L.TabIndex = 11;
             lbl_L.Tag = "12";
             lbl_L.Text = "L";
+            lbl_L.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_K
             // 
-            lbl_K.AutoSize = true;
-            lbl_K.Location = new Point(31, 409);
+            lbl_K.Location = new Point(6, 409);
             lbl_K.Name = "lbl_K";
-            lbl_K.Size = new Size(14, 15);
+            lbl_K.Size = new Size(107, 15);
             lbl_K.TabIndex = 10;
             lbl_K.Tag = "11";
             lbl_K.Text = "K";
+            lbl_K.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_J
             // 
-            lbl_J.AutoSize = true;
-            lbl_J.Location = new Point(34, 374);
+            lbl_J.Location = new Point(9, 374);
             lbl_J.Name = "lbl_J";
-            lbl_J.Size = new Size(11, 15);
+            lbl_J.Size = new Size(107, 15);
             lbl_J.TabIndex = 9;
             lbl_J.Tag = "10";
             lbl_J.Text = "J";
+            lbl_J.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_I
             // 
-            lbl_I.AutoSize = true;
-            lbl_I.Location = new Point(35, 338);
+            lbl_I.Location = new Point(10, 338);
             lbl_I.Name = "lbl_I";
-            lbl_I.Size = new Size(10, 15);
+            lbl_I.Size = new Size(107, 15);
             lbl_I.TabIndex = 8;
             lbl_I.Tag = "9";
             lbl_I.Text = "I";
+            lbl_I.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_H
             // 
-            lbl_H.AutoSize = true;
-            lbl_H.Location = new Point(32, 302);
+            lbl_H.Location = new Point(7, 302);
             lbl_H.Name = "lbl_H";
-            lbl_H.Size = new Size(16, 15);
+            lbl_H.Size = new Size(107, 15);
             lbl_H.TabIndex = 7;
             lbl_H.Tag = "8";
             lbl_H.Text = "H";
+            lbl_H.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_G
             // 
-            lbl_G.AutoSize = true;
-            lbl_G.Location = new Point(32, 266);
+            lbl_G.Location = new Point(7, 266);
             lbl_G.Name = "lbl_G";
-            lbl_G.Size = new Size(15, 15);
+            lbl_G.Size = new Size(107, 15);
             lbl_G.TabIndex = 6;
             lbl_G.Tag = "7";
             lbl_G.Text = "G";
+            lbl_G.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_F
             // 
-            lbl_F.AutoSize = true;
-            lbl_F.Location = new Point(32, 230);
+            lbl_F.Location = new Point(7, 230);
             lbl_F.Name = "lbl_F";
-            lbl_F.Size = new Size(13, 15);
+            lbl_F.Size = new Size(107, 15);
             lbl_F.TabIndex = 5;
             lbl_F.Tag = "6";
             lbl_F.Text = "F";
+            lbl_F.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_E
             // 
-            lbl_E.AutoSize = true;
-            lbl_E.Location = new Point(31, 191);
+            lbl_E.Location = new Point(6, 191);
             lbl_E.Name = "lbl_E";
-            lbl_E.Size = new Size(13, 15);
+            lbl_E.Size = new Size(107, 15);
             lbl_E.TabIndex = 4;
             lbl_E.Tag = "5";
             lbl_E.Text = "E";
+            lbl_E.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_D
             // 
-            lbl_D.AutoSize = true;
-            lbl_D.Location = new Point(30, 155);
+            lbl_D.Location = new Point(5, 155);
             lbl_D.Name = "lbl_D";
-            lbl_D.Size = new Size(15, 15);
+            lbl_D.Size = new Size(107, 15);
             lbl_D.TabIndex = 3;
             lbl_D.Tag = "4";
             lbl_D.Text = "D";
+            lbl_D.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_C
             // 
-            lbl_C.AutoSize = true;
-            lbl_C.Location = new Point(30, 119);
+            lbl_C.Location = new Point(5, 119);
             lbl_C.Name = "lbl_C";
-            lbl_C.Size = new Size(15, 15);
+            lbl_C.Size = new Size(107, 15);
             lbl_C.TabIndex = 2;
             lbl_C.Tag = "3";
             lbl_C.Text = "C";
+            lbl_C.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_B
             // 
-            lbl_B.AutoSize = true;
-            lbl_B.Location = new Point(30, 83);
+            lbl_B.Location = new Point(5, 83);
             lbl_B.Name = "lbl_B";
-            lbl_B.Size = new Size(14, 15);
+            lbl_B.Size = new Size(107, 15);
             lbl_B.TabIndex = 1;
             lbl_B.Tag = "2";
             lbl_B.Text = "B";
+            lbl_B.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_A
             // 
-            lbl_A.AutoSize = true;
-            lbl_A.Location = new Point(28, 47);
+            lbl_A.Location = new Point(3, 47);
             lbl_A.Name = "lbl_A";
-            lbl_A.Size = new Size(15, 15);
+            lbl_A.Size = new Size(107, 15);
             lbl_A.TabIndex = 0;
             lbl_A.Tag = "1";
             lbl_A.Text = "A";
+            lbl_A.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frmPhongChieu
             // 
@@ -1870,7 +1872,6 @@
             Name = "frmPhongChieu";
             splitC_HienThi.Panel1.ResumeLayout(false);
             splitC_HienThi.Panel2.ResumeLayout(false);
-            splitC_HienThi.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitC_HienThi).EndInit();
             splitC_HienThi.ResumeLayout(false);
             ResumeLayout(false);

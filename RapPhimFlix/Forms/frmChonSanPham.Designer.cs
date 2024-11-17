@@ -115,14 +115,14 @@
             // 
             nudProductQuantity.Location = new Point(330, 6);
             nudProductQuantity.Name = "nudProductQuantity";
-            nudProductQuantity.Size = new Size(49, 27);
+            nudProductQuantity.Size = new Size(49, 23);
             nudProductQuantity.TabIndex = 18;
             // 
             // txtProductName
             // 
             txtProductName.Location = new Point(120, 7);
             txtProductName.Name = "txtProductName";
-            txtProductName.Size = new Size(180, 27);
+            txtProductName.Size = new Size(180, 23);
             txtProductName.TabIndex = 1;
             // 
             // gbProductsList
@@ -144,7 +144,7 @@
             // 
             // frmChonSanPham
             // 
-            ClientSize = new Size(1006, 539);
+            ClientSize = new Size(1006, 568);
             Controls.Add(gbProductsList);
             Controls.Add(gbOrder);
             Icon = (Icon)resources.GetObject("$this.Icon");

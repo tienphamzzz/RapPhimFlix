@@ -68,9 +68,7 @@ namespace RapPhimFlix.Forms
             {
                 TaoHoaDon();
                 if (MessageBox.Show("In hoá đơn luôn không!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                {
                     XuatHoaDon();
-                }
             }
         }
         private void XuatHoaDon()

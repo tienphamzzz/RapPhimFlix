@@ -214,9 +214,9 @@
             // 
             // ptb_Image
             // 
-            ptb_Image.Location = new Point(106, 209);
+            ptb_Image.Location = new Point(10, 175);
             ptb_Image.Name = "ptb_Image";
-            ptb_Image.Size = new Size(137, 96);
+            ptb_Image.Size = new Size(124, 130);
             ptb_Image.TabIndex = 7;
             ptb_Image.TabStop = false;
             // 

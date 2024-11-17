@@ -67,6 +67,7 @@ namespace RapPhimFlix.Forms
                     {
                         btn.Tag = $"{_suatChieu["MaSuatChieu"].ToString()}-{_phongChieu["MaPhongChieu"].ToString()}-{tagOfLbl(i)}{j}";
                         MauBtn(btn);
+                        //ExportFile.loadIconButotn(btn, "iconchair.jpg");
                     }
                 }
         }
@@ -103,9 +104,11 @@ namespace RapPhimFlix.Forms
             if (check)
             {
                 btn.BackColor = Color.Red;
+                //ExportFile.loadIconButotn(btn, "rediconchair.png");
                 btn.Enabled = false;
             }
             else btn.BackColor = Color.FromArgb(128, 255, 128);
+                //ExportFile.loadIconButotn(btn, "greeniconchair.png");
         }
 
         private void btn_ChonGhe_Click(object sender, EventArgs e)
