@@ -20,7 +20,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChonSanPham));
             gbOrder = new GroupBox();
             lvSelectedProducts = new ListView();
+            columnHeader = new ColumnHeader();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
             panel2 = new Panel();
+            btnCancel = new Button();
+            label1 = new Label();
+            lblTotalPrice = new Label();
             lblTotal = new Label();
             btnConfirm = new Button();
             panel1 = new Panel();
@@ -48,24 +55,78 @@
             gbOrder.TabIndex = 1;
             gbOrder.TabStop = false;
             gbOrder.Text = "Thông tin đặt hàng";
-            gbOrder.Enter += groupBoxOrder_Enter;
             // 
             // lvSelectedProducts
             // 
+            lvSelectedProducts.Columns.AddRange(new ColumnHeader[] { columnHeader, columnHeader1, columnHeader2, columnHeader3 });
             lvSelectedProducts.Location = new Point(6, 139);
             lvSelectedProducts.Name = "lvSelectedProducts";
             lvSelectedProducts.Size = new Size(395, 306);
             lvSelectedProducts.TabIndex = 21;
             lvSelectedProducts.UseCompatibleStateImageBehavior = false;
+            lvSelectedProducts.View = View.Details;
+            // 
+            // columnHeader
+            // 
+            columnHeader.Text = "Tên SP";
+            columnHeader.Width = 130;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Loại";
+            columnHeader1.TextAlign = HorizontalAlignment.Center;
+            columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Số lượng";
+            columnHeader2.TextAlign = HorizontalAlignment.Center;
+            columnHeader2.Width = 80;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Giá";
+            columnHeader3.TextAlign = HorizontalAlignment.Center;
+            columnHeader3.Width = 80;
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnCancel);
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(lblTotalPrice);
             panel2.Controls.Add(lblTotal);
             panel2.Controls.Add(btnConfirm);
             panel2.Location = new Point(6, 451);
             panel2.Name = "panel2";
-            panel2.Size = new Size(391, 88);
+            panel2.Size = new Size(391, 98);
             panel2.TabIndex = 20;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(18, 45);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(118, 40);
+            btnCancel.TabIndex = 8;
+            btnCancel.Text = "Hủy";
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(355, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(33, 20);
+            label1.TabIndex = 7;
+            label1.Text = "vnđ";
+            // 
+            // lblTotalPrice
+            // 
+            lblTotalPrice.AutoSize = true;
+            lblTotalPrice.Location = new Point(294, 10);
+            lblTotalPrice.Name = "lblTotalPrice";
+            lblTotalPrice.Size = new Size(17, 20);
+            lblTotalPrice.TabIndex = 6;
+            lblTotalPrice.Text = "0";
             // 
             // lblTotal
             // 
@@ -73,16 +134,16 @@
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(100, 23);
             lblTotal.TabIndex = 4;
-            lblTotal.Text = "Tổng";
-            lblTotal.Click += lblTotal_Click;
+            lblTotal.Text = "Tổng tiền :";
             // 
             // btnConfirm
             // 
-            btnConfirm.Location = new Point(261, 34);
+            btnConfirm.Location = new Point(261, 45);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(118, 40);
             btnConfirm.TabIndex = 5;
             btnConfirm.Text = "Xác nhận";
+            btnConfirm.Click += btnConfirm_Click;
             // 
             // panel1
             // 
@@ -102,6 +163,7 @@
             btnAddProduct.Size = new Size(118, 40);
             btnAddProduct.TabIndex = 20;
             btnAddProduct.Text = "Thêm";
+            btnAddProduct.Click += btnAddProduct_Click;
             // 
             // lblProductName
             // 
@@ -114,16 +176,22 @@
             // nudProductQuantity
             // 
             nudProductQuantity.Location = new Point(330, 6);
+            nudProductQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudProductQuantity.Name = "nudProductQuantity";
+            nudProductQuantity.ReadOnly = true;
             nudProductQuantity.Size = new Size(49, 27);
             nudProductQuantity.TabIndex = 18;
+            nudProductQuantity.TabStop = false;
+            nudProductQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // txtProductName
             // 
             txtProductName.Location = new Point(120, 7);
             txtProductName.Name = "txtProductName";
+            txtProductName.ReadOnly = true;
             txtProductName.Size = new Size(180, 27);
             txtProductName.TabIndex = 1;
+            txtProductName.TabStop = false;
             // 
             // gbProductsList
             // 
@@ -137,20 +205,22 @@
             // 
             // flpProducts
             // 
+            flpProducts.AutoScroll = true;
             flpProducts.Location = new Point(6, 26);
             flpProducts.Name = "flpProducts";
-            flpProducts.Size = new Size(555, 513);
+            flpProducts.Size = new Size(555, 523);
             flpProducts.TabIndex = 0;
             // 
             // frmChonSanPham
             // 
-            ClientSize = new Size(1006, 539);
+            ClientSize = new Size(1006, 581);
             Controls.Add(gbProductsList);
             Controls.Add(gbOrder);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmChonSanPham";
             gbOrder.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudProductQuantity).EndInit();
@@ -171,5 +241,12 @@
         private ListView lvSelectedProducts;
         private GroupBox gbProductsList;
         private FlowLayoutPanel flpProducts;
+        private ColumnHeader columnHeader;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private Label lblTotalPrice;
+        private Label label1;
+        private Button btnCancel;
     }
 }

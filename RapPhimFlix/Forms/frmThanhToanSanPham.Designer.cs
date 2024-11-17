@@ -32,6 +32,10 @@
             labelTitle = new Label();
             gbProductsInfor = new GroupBox();
             lvProductsInfomations = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             gbCustomerInfor = new GroupBox();
             lblCustomerName = new Label();
             txtTenKhach = new TextBox();
@@ -70,11 +74,36 @@
             // 
             // lvProductsInfomations
             // 
+            lvProductsInfomations.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             lvProductsInfomations.Location = new Point(13, 33);
             lvProductsInfomations.Name = "lvProductsInfomations";
             lvProductsInfomations.Size = new Size(445, 332);
             lvProductsInfomations.TabIndex = 0;
             lvProductsInfomations.UseCompatibleStateImageBehavior = false;
+            lvProductsInfomations.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Tên sản phẩm";
+            columnHeader1.Width = 150;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Loại";
+            columnHeader2.TextAlign = HorizontalAlignment.Center;
+            columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Số lượng";
+            columnHeader3.TextAlign = HorizontalAlignment.Center;
+            columnHeader3.Width = 80;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Giá";
+            columnHeader4.TextAlign = HorizontalAlignment.Center;
+            columnHeader4.Width = 110;
             // 
             // gbCustomerInfor
             // 
@@ -161,8 +190,11 @@
             // 
             txtTotal.Location = new Point(373, 465);
             txtTotal.Name = "txtTotal";
+            txtTotal.ReadOnly = true;
             txtTotal.Size = new Size(125, 27);
             txtTotal.TabIndex = 5;
+            txtTotal.TabStop = false;
+            txtTotal.Text = "0";
             // 
             // btnCancel
             // 
@@ -171,6 +203,7 @@
             btnCancel.Size = new Size(75, 43);
             btnCancel.TabIndex = 6;
             btnCancel.Text = "Hủy";
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnPay
             // 
@@ -179,6 +212,7 @@
             btnPay.Size = new Size(106, 43);
             btnPay.TabIndex = 7;
             btnPay.Text = "Thanh toán";
+            btnPay.Click += btnPay_Click;
             // 
             // frmThanhToanSanPham
             // 
@@ -218,5 +252,9 @@
         private TextBox txtTotal;
         private Button btnCancel;
         private Button btnPay;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
     }
 }

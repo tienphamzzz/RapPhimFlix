@@ -22,8 +22,8 @@ namespace RapPhimFlix.Forms
         
         private void frmSuatChieu1_Load(object sender, EventArgs e)
         {
-            UserControl user = new frmListPhim(this);
-            ShowUserControl(user);
+            Form user = new frmListPhim(this);
+            //ShowUserControl(user);
         }
         public void ShowUserControl(UserControl user)
         {

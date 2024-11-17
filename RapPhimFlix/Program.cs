@@ -19,7 +19,7 @@ namespace RapPhimFlix
             ApplicationConfiguration.Initialize();
 
 
-            Application.Run(new Main());
+            Application.Run(new frmChonSanPham());
 
         }
     }
