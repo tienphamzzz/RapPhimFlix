@@ -9,17 +9,32 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Forms\ThongKeDoanhThu\" />
+    <Folder Include="Forms\MenuNav\SanPham\" />
+    <Folder Include="Forms\MenuNav\SuatChieu\" />
+    <Folder Include="Forms\MenuNav\ThongTinPhim\" />
     <Folder Include="Forms\QLyNhanVien\" />
-    <Folder Include="Forms\QLySanPham\" />
-    <Folder Include="Forms\QLySuatChieu\" />
-    <Folder Include="Forms\QLyPhim\" />
+    <Folder Include="Forms\ThongKeDoanhThu\" />
     <Folder Include="Icon\" />
     <Folder Include="Poster\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

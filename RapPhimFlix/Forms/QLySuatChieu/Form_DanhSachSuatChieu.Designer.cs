@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            grb_SuatChieu = new GroupBox();
-            btn_SuatChieu_Them = new Button();
-            btn_SuatChieu_Xoa = new Button();
-            btn_SuatChieu_Sua = new Button();
             panel1 = new Panel();
             btn_SuatPhim_Phong3 = new Button();
             btn_SuatPhim_Phong2 = new Button();
@@ -39,54 +35,12 @@
             btn_SuatChieu_All = new Button();
             panel2 = new Panel();
             label1 = new Label();
-            comboBox1 = new ComboBox();
-            dataGridView1 = new DataGridView();
-            grb_SuatChieu.SuspendLayout();
+            dgv_SuatChieu = new DataGridView();
+            dateTimePicker1 = new DateTimePicker();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_SuatChieu).BeginInit();
             SuspendLayout();
-            // 
-            // grb_SuatChieu
-            // 
-            grb_SuatChieu.Controls.Add(btn_SuatChieu_Them);
-            grb_SuatChieu.Controls.Add(btn_SuatChieu_Xoa);
-            grb_SuatChieu.Controls.Add(btn_SuatChieu_Sua);
-            grb_SuatChieu.Dock = DockStyle.Bottom;
-            grb_SuatChieu.Location = new Point(0, 370);
-            grb_SuatChieu.Name = "grb_SuatChieu";
-            grb_SuatChieu.Size = new Size(800, 80);
-            grb_SuatChieu.TabIndex = 2;
-            grb_SuatChieu.TabStop = false;
-            // 
-            // btn_SuatChieu_Them
-            // 
-            btn_SuatChieu_Them.Location = new Point(132, 22);
-            btn_SuatChieu_Them.Name = "btn_SuatChieu_Them";
-            btn_SuatChieu_Them.Size = new Size(95, 33);
-            btn_SuatChieu_Them.TabIndex = 4;
-            btn_SuatChieu_Them.Text = "Thêm";
-            btn_SuatChieu_Them.UseVisualStyleBackColor = true;
-            btn_SuatChieu_Them.Click += btn_SuatChieu_Them_Click;
-            // 
-            // btn_SuatChieu_Xoa
-            // 
-            btn_SuatChieu_Xoa.Location = new Point(443, 22);
-            btn_SuatChieu_Xoa.Name = "btn_SuatChieu_Xoa";
-            btn_SuatChieu_Xoa.Size = new Size(98, 33);
-            btn_SuatChieu_Xoa.TabIndex = 3;
-            btn_SuatChieu_Xoa.Text = "Xóa";
-            btn_SuatChieu_Xoa.UseVisualStyleBackColor = true;
-            // 
-            // btn_SuatChieu_Sua
-            // 
-            btn_SuatChieu_Sua.Location = new Point(299, 22);
-            btn_SuatChieu_Sua.Name = "btn_SuatChieu_Sua";
-            btn_SuatChieu_Sua.Size = new Size(98, 33);
-            btn_SuatChieu_Sua.TabIndex = 2;
-            btn_SuatChieu_Sua.Text = "Sửa";
-            btn_SuatChieu_Sua.UseVisualStyleBackColor = true;
-            btn_SuatChieu_Sua.Click += btn_SuatChieu_Sua_Click;
             // 
             // panel1
             // 
@@ -97,7 +51,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 40);
             panel1.Name = "panel1";
-            panel1.Size = new Size(169, 330);
+            panel1.Size = new Size(169, 410);
             panel1.TabIndex = 3;
             // 
             // btn_SuatPhim_Phong3
@@ -108,6 +62,7 @@
             btn_SuatPhim_Phong3.TabIndex = 3;
             btn_SuatPhim_Phong3.Text = "Phòng 3";
             btn_SuatPhim_Phong3.UseVisualStyleBackColor = true;
+            btn_SuatPhim_Phong3.Click += btn_SuatPhim_Phong3_Click;
             // 
             // btn_SuatPhim_Phong2
             // 
@@ -117,6 +72,7 @@
             btn_SuatPhim_Phong2.TabIndex = 2;
             btn_SuatPhim_Phong2.Text = "Phòng 2";
             btn_SuatPhim_Phong2.UseVisualStyleBackColor = true;
+            btn_SuatPhim_Phong2.Click += btn_SuatPhim_Phong2_Click;
             // 
             // btn_SuatPhim_Phong1
             // 
@@ -126,6 +82,7 @@
             btn_SuatPhim_Phong1.TabIndex = 1;
             btn_SuatPhim_Phong1.Text = "Phòng 1";
             btn_SuatPhim_Phong1.UseVisualStyleBackColor = true;
+            btn_SuatPhim_Phong1.Click += btn_SuatPhim_Phong1_Click;
             // 
             // btn_SuatChieu_All
             // 
@@ -135,11 +92,12 @@
             btn_SuatChieu_All.TabIndex = 0;
             btn_SuatChieu_All.Text = "Tất cả";
             btn_SuatChieu_All.UseVisualStyleBackColor = true;
+            btn_SuatChieu_All.Click += btn_SuatChieu_All_Click;
             // 
             // panel2
             // 
+            panel2.Controls.Add(dateTimePicker1);
             panel2.Controls.Add(label1);
-            panel2.Controls.Add(comboBox1);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -156,23 +114,23 @@
             label1.TabIndex = 1;
             label1.Text = "Chọn ngày";
             // 
-            // comboBox1
+            // dgv_SuatChieu
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(357, 8);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 0;
+            dgv_SuatChieu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_SuatChieu.Dock = DockStyle.Fill;
+            dgv_SuatChieu.EnableHeadersVisualStyles = false;
+            dgv_SuatChieu.Location = new Point(169, 40);
+            dgv_SuatChieu.Name = "dgv_SuatChieu";
+            dgv_SuatChieu.Size = new Size(631, 410);
+            dgv_SuatChieu.TabIndex = 5;
+            dgv_SuatChieu.CellClick += dgv_SuatChieu_CellClick;
             // 
-            // dataGridView1
+            // dateTimePicker1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(169, 40);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(631, 330);
-            dataGridView1.TabIndex = 5;
+            dateTimePicker1.Location = new Point(346, 6);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 2;
             // 
             // Form_DanhSachSuatChieu
             // 
@@ -180,34 +138,27 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgv_SuatChieu);
             Controls.Add(panel1);
-            Controls.Add(grb_SuatChieu);
             Controls.Add(panel2);
             Name = "Form_DanhSachSuatChieu";
             Text = "Form_DanhSachSuatChieu";
-            grb_SuatChieu.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_SuatChieu).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private GroupBox grb_SuatChieu;
-        private Button btn_SuatChieu_Them;
-        private Button btn_SuatChieu_Xoa;
-        private Button btn_SuatChieu_Sua;
         private Panel panel1;
         private Panel panel2;
         private Label label1;
-        private ComboBox comboBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dgv_SuatChieu;
         private Button btn_SuatPhim_Phong3;
         private Button btn_SuatPhim_Phong2;
         private Button btn_SuatPhim_Phong1;
         private Button btn_SuatChieu_All;
+        private DateTimePicker dateTimePicker1;
     }
 }

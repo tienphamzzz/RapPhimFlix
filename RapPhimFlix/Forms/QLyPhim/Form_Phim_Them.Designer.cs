@@ -30,13 +30,11 @@
         {
             cbb_ThemPhim_TheLoai = new ComboBox();
             tb_ThemPhim_QuocGia = new TextBox();
-            tb_ThemPhim_Nam = new TextBox();
             tb_ThemPhim_ThoiLuong = new TextBox();
             tb_ThemPhim_MaPhim = new TextBox();
             tb_ThemPhim_MoTa = new TextBox();
             tb_ThemPhim_DaoDien = new TextBox();
             tb_ThemPhim_Tenphim = new TextBox();
-            tb_TenQuanLy = new TextBox();
             btn_ThemPhim_XacNhan = new Button();
             label11 = new Label();
             ptB_Them_Anh = new PictureBox();
@@ -48,8 +46,10 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            label2 = new Label();
             label1 = new Label();
+            btn_Phim_ThemAnh = new Button();
+            btn_ThemPhim_quaylai = new Button();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)ptB_Them_Anh).BeginInit();
             SuspendLayout();
             // 
@@ -60,34 +60,30 @@
             cbb_ThemPhim_TheLoai.Name = "cbb_ThemPhim_TheLoai";
             cbb_ThemPhim_TheLoai.Size = new Size(135, 23);
             cbb_ThemPhim_TheLoai.TabIndex = 64;
+            cbb_ThemPhim_TheLoai.SelectedIndexChanged += cbb_ThemPhim_TheLoai_SelectedIndexChanged;
+            cbb_ThemPhim_TheLoai.TextChanged += cbb_ThemPhim_TheLoai_TextChanged;
             // 
             // tb_ThemPhim_QuocGia
             // 
-            tb_ThemPhim_QuocGia.Location = new Point(387, 323);
+            tb_ThemPhim_QuocGia.Location = new Point(386, 251);
             tb_ThemPhim_QuocGia.Name = "tb_ThemPhim_QuocGia";
             tb_ThemPhim_QuocGia.Size = new Size(115, 23);
             tb_ThemPhim_QuocGia.TabIndex = 63;
             // 
-            // tb_ThemPhim_Nam
-            // 
-            tb_ThemPhim_Nam.Location = new Point(387, 246);
-            tb_ThemPhim_Nam.Name = "tb_ThemPhim_Nam";
-            tb_ThemPhim_Nam.Size = new Size(115, 23);
-            tb_ThemPhim_Nam.TabIndex = 62;
-            // 
             // tb_ThemPhim_ThoiLuong
             // 
-            tb_ThemPhim_ThoiLuong.Location = new Point(387, 164);
+            tb_ThemPhim_ThoiLuong.Location = new Point(389, 81);
             tb_ThemPhim_ThoiLuong.Name = "tb_ThemPhim_ThoiLuong";
             tb_ThemPhim_ThoiLuong.Size = new Size(114, 23);
             tb_ThemPhim_ThoiLuong.TabIndex = 61;
             // 
             // tb_ThemPhim_MaPhim
             // 
-            tb_ThemPhim_MaPhim.Location = new Point(387, 81);
+            tb_ThemPhim_MaPhim.Location = new Point(116, 80);
             tb_ThemPhim_MaPhim.Name = "tb_ThemPhim_MaPhim";
-            tb_ThemPhim_MaPhim.Size = new Size(115, 23);
+            tb_ThemPhim_MaPhim.Size = new Size(135, 23);
             tb_ThemPhim_MaPhim.TabIndex = 60;
+            tb_ThemPhim_MaPhim.TextChanged += tb_ThemPhim_MaPhim_TextChanged;
             // 
             // tb_ThemPhim_MoTa
             // 
@@ -111,13 +107,6 @@
             tb_ThemPhim_Tenphim.Size = new Size(136, 23);
             tb_ThemPhim_Tenphim.TabIndex = 57;
             // 
-            // tb_TenQuanLy
-            // 
-            tb_TenQuanLy.Location = new Point(116, 80);
-            tb_TenQuanLy.Name = "tb_TenQuanLy";
-            tb_TenQuanLy.Size = new Size(136, 23);
-            tb_TenQuanLy.TabIndex = 56;
-            // 
             // btn_ThemPhim_XacNhan
             // 
             btn_ThemPhim_XacNhan.Location = new Point(623, 386);
@@ -126,12 +115,13 @@
             btn_ThemPhim_XacNhan.TabIndex = 55;
             btn_ThemPhim_XacNhan.Text = "Xác nhận";
             btn_ThemPhim_XacNhan.UseVisualStyleBackColor = true;
+            btn_ThemPhim_XacNhan.Click += btn_ThemPhim_XacNhan_Click;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(515, 80);
+            label11.Location = new Point(540, 84);
             label11.Name = "label11";
             label11.Size = new Size(49, 20);
             label11.TabIndex = 54;
@@ -150,7 +140,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(268, 322);
+            label10.Location = new Point(270, 250);
             label10.Name = "label10";
             label10.Size = new Size(69, 20);
             label10.TabIndex = 52;
@@ -160,7 +150,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(268, 250);
+            label9.Location = new Point(270, 167);
             label9.Name = "label9";
             label9.Size = new Size(111, 20);
             label9.TabIndex = 51;
@@ -170,7 +160,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(268, 163);
+            label8.Location = new Point(270, 80);
             label8.Name = "label8";
             label8.Size = new Size(84, 20);
             label8.TabIndex = 50;
@@ -180,7 +170,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(268, 81);
+            label7.Location = new Point(26, 80);
             label7.Name = "label7";
             label7.Size = new Size(68, 20);
             label7.TabIndex = 49;
@@ -226,16 +216,6 @@
             label3.TabIndex = 45;
             label3.Text = "Tên Phim";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(26, 80);
-            label2.Name = "label2";
-            label2.Size = new Size(84, 20);
-            label2.TabIndex = 44;
-            label2.Text = "Tên quản lý";
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -246,22 +226,50 @@
             label1.TabIndex = 65;
             label1.Text = "Thêm Phim";
             // 
+            // btn_Phim_ThemAnh
+            // 
+            btn_Phim_ThemAnh.Location = new Point(674, 288);
+            btn_Phim_ThemAnh.Name = "btn_Phim_ThemAnh";
+            btn_Phim_ThemAnh.Size = new Size(75, 23);
+            btn_Phim_ThemAnh.TabIndex = 66;
+            btn_Phim_ThemAnh.Text = "Chọn Ảnh";
+            btn_Phim_ThemAnh.UseVisualStyleBackColor = true;
+            btn_Phim_ThemAnh.Click += btn_Phim_ThemAnh_Click;
+            // 
+            // btn_ThemPhim_quaylai
+            // 
+            btn_ThemPhim_quaylai.Location = new Point(26, 27);
+            btn_ThemPhim_quaylai.Name = "btn_ThemPhim_quaylai";
+            btn_ThemPhim_quaylai.Size = new Size(75, 23);
+            btn_ThemPhim_quaylai.TabIndex = 68;
+            btn_ThemPhim_quaylai.Text = "← Quay lại danh sách";
+            btn_ThemPhim_quaylai.UseVisualStyleBackColor = true;
+            btn_ThemPhim_quaylai.Click += btn_ThemPhim_quaylai_Click;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(386, 172);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(180, 23);
+            dateTimePicker1.TabIndex = 69;
+            // 
             // Form_Phim_Them
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(btn_ThemPhim_quaylai);
+            Controls.Add(btn_Phim_ThemAnh);
             Controls.Add(label1);
             Controls.Add(cbb_ThemPhim_TheLoai);
             Controls.Add(tb_ThemPhim_QuocGia);
-            Controls.Add(tb_ThemPhim_Nam);
             Controls.Add(tb_ThemPhim_ThoiLuong);
             Controls.Add(tb_ThemPhim_MaPhim);
             Controls.Add(tb_ThemPhim_MoTa);
             Controls.Add(tb_ThemPhim_DaoDien);
             Controls.Add(tb_ThemPhim_Tenphim);
-            Controls.Add(tb_TenQuanLy);
             Controls.Add(btn_ThemPhim_XacNhan);
             Controls.Add(label11);
             Controls.Add(ptB_Them_Anh);
@@ -273,7 +281,6 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
             Name = "Form_Phim_Them";
             Text = "Form_Phim_Them";
             ((System.ComponentModel.ISupportInitialize)ptB_Them_Anh).EndInit();
@@ -285,13 +292,11 @@
 
         private ComboBox cbb_ThemPhim_TheLoai;
         private TextBox tb_ThemPhim_QuocGia;
-        private TextBox tb_ThemPhim_Nam;
         private TextBox tb_ThemPhim_ThoiLuong;
         private TextBox tb_ThemPhim_MaPhim;
         private TextBox tb_ThemPhim_MoTa;
         private TextBox tb_ThemPhim_DaoDien;
         private TextBox tb_ThemPhim_Tenphim;
-        private TextBox tb_TenQuanLy;
         private Button btn_ThemPhim_XacNhan;
         private Label label11;
         private PictureBox ptB_Them_Anh;
@@ -303,7 +308,9 @@
         private Label label5;
         private Label label4;
         private Label label3;
-        private Label label2;
         private Label label1;
+        private Button btn_Phim_ThemAnh;
+        private Button btn_ThemPhim_quaylai;
+        private DateTimePicker dateTimePicker1;
     }
 }
