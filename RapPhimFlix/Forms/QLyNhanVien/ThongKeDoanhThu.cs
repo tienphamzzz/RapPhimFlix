@@ -16,7 +16,8 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 {
     public partial class ThongKeDoanhThu : Form
     {
-        Controllers.DataContext dtbase = new Controllers.DataContext();
+     //   Controllers.DataContext dtbase = new Controllers.DataContext();
+
         DAO.DataProvider dp = DAO.DataProvider.Instance;
         public ThongKeDoanhThu()
         {

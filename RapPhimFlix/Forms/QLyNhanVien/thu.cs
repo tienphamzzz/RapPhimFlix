@@ -16,5 +16,10 @@ namespace RapPhimFlix.Forms.QLyNhanVien
         {
             InitializeComponent();
         }
+
+        private void btn_SuatChieu_Sua_XacNhan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
