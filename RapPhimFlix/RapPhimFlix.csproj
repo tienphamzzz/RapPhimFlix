@@ -23,7 +23,6 @@
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.deps.json" />
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.runtimeconfig.json" />
 
-
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\No Infomation.jpg" />
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Supergirl 1.jpg" />
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Superman 1.jpg" />
@@ -33,7 +32,8 @@
     <Folder Include="bin\Debug\net8.0-windows\Resources\images\icons\" />
     <Folder Include="bin\Debug\net8.0-windows\Resources\ve\" />
 
- 
+  <ItemGroup>
+    <Folder Include="DAO\" />
     <Folder Include="Forms\DangNhap\" />
     <Folder Include="Forms\MenuNav\" />
 

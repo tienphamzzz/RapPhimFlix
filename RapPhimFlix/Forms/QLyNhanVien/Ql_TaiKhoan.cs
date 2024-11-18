@@ -13,6 +13,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 {
     public partial class Ql_TaiKhoan : Form
     {
+        Controllers.DataProvider dtbase = Controllers.DataProvider.Instance;
         public Ql_TaiKhoan()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
             try
             {
                 string sql = "SELECT * FROM tblNhanvien";
-                DataTable dt = DataProvider.Instance.ExcuteQuery(sql);
+                DataTable dt = dtbase.ExcuteQuery(sql);
                 dtgv_ThongTinNV.DataSource = dt;
             }
             catch (Exception ex)
@@ -120,8 +121,8 @@ namespace RapPhimFlix.Forms.QLyNhanVien
                     string sqlNhanVien = "DELETE FROM tblNhanVien WHERE MaNhanVien = '"+ maNhanVien +"';";
                     string sqlTaiKhoan = "DELETE FROM tblTaiKhoan WHERE MaNhanVien = '"+ maNhanVien +"';";
 
-                    DataProvider.Instance.ExcuteQuery(sqlNhanVien);
-                    DataProvider.Instance.ExcuteQuery(sqlTaiKhoan);
+                     dtbase.ExcuteNonQuery(sqlNhanVien);
+                     dtbase.ExcuteNonQuery(sqlTaiKhoan);
 
                     
                         MessageBox.Show("Xóa thông tin nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

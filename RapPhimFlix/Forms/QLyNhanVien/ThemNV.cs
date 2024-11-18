@@ -18,7 +18,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 {
     public partial class ThemNV : Form
     {
-        Controllers.DataContext dtbase = new Controllers.DataContext();
+        Controllers.DataProvider dtbase = Controllers.DataProvider.Instance;
         public ThemNV()
         {
             InitializeComponent();
@@ -26,10 +26,10 @@ namespace RapPhimFlix.Forms.QLyNhanVien
         }
 
 
-        public void ThemMa_NV(Controllers.DataContext dtbase)
+        public void ThemMa_NV(Controllers.DataProvider dtbase)
         {
             string query = "SELECT TOP 1 MaNhanVien FROM tblNhanVien ORDER BY MaNhanVien DESC";
-            DataTable dt = dtbase.ReadData(query);
+            DataTable dt = dtbase.ExcuteQuery(query);
 
             if (dt.Rows.Count > 0)
             {
@@ -66,8 +66,8 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 
             string sqlTaiKhoan = "INSERT INTO tblTaiKhoan (MaNhanVien, MatKhau) VALUES ('" + maNV + "', '" + matKhau + "');";
 
-            dtbase.ChangeData(sqlNhanVien);
-            dtbase.ChangeData(sqlTaiKhoan);
+            dtbase.ExcuteNonQuery(sqlNhanVien);
+            dtbase.ExcuteNonQuery(sqlTaiKhoan);
             MessageBox.Show("Thêm thông tin nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.DialogResult = DialogResult.OK;
             this.Close();

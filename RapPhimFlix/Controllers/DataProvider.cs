@@ -16,8 +16,8 @@ namespace RapPhimFlix.Controllers
 
         public static DataProvider Instance
         {
-            get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
-            private set { DataProvider.instance = value; }
+            get { if (instance == null) instance = new DataProvider(); return instance; }
+            private set { instance = value; }
         }
 
         private DataProvider() { }
@@ -79,7 +79,7 @@ namespace RapPhimFlix.Controllers
             return data;
         }
 
-        public Object ExcuteScalar(string query, object[] parameter = null)//•	Phương thức này thực hiện một lệnh SQL và trả về một giá trị đơn lẻ (ví dụ: đếm số lượng bản ghi).
+        public object ExcuteScalar(string query, object[] parameter = null)//•	Phương thức này thực hiện một lệnh SQL và trả về một giá trị đơn lẻ (ví dụ: đếm số lượng bản ghi).
         {
             object data = 0;
             using (SqlConnection connection = new SqlConnection(connectionSTR))
