@@ -87,6 +87,7 @@
             btn_SuatChieu_Sua_XacNhan.TabIndex = 19;
             btn_SuatChieu_Sua_XacNhan.Text = "Xác nhận";
             btn_SuatChieu_Sua_XacNhan.UseVisualStyleBackColor = true;
+             //btn_SuatChieu_Sua_XacNhan.Click += new EventHandler(btn_SuatChieu_Sua_XacNhan_Click);
             // 
             // label6
             // 
@@ -143,6 +144,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Dock = DockStyle.Top;
             groupBox1.Location = new Point(0, 0);
+            groupBox1.Margin = new Padding(4, 5, 4, 5);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(800, 67);
             groupBox1.TabIndex = 13;
@@ -176,6 +178,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(groupBox1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Form_SuatChieu_Sua";
             Text = "Form_SuatChieu_Sua";
             groupBox1.ResumeLayout(false);
