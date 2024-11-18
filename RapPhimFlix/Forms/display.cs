@@ -71,7 +71,13 @@ namespace RapPhimFlix.Forms
         // chuyển từ phòng chiếu sang suất chiếu
         private void btn_QuayLaiSuatChieu(object? sender, DataRow phim)
         {
+
+           // UserControl user = new frmListPhim(this);
+           // ShowUserControl(user);
+
+
             OpenChildForm(new frmSuatChieu(phim));
+
         }
         // chuyển từ phòng chiếu sang form thanh toán
         private void btn_PhongChieu_ThanhToan(object? sender, Pair<DataRow, List<string>> e)

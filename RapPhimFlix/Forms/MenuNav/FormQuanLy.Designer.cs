@@ -28,6 +28,8 @@ namespace RapPhimFlix.Forms.MenuNav
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLy));
             panel1 = new Panel();
             groupBox1 = new GroupBox();
             btn_QuanLy_DoanhSo = new Button();
@@ -51,6 +53,7 @@ namespace RapPhimFlix.Forms.MenuNav
             btn_Qly_Sua = new Button();
             btn_Qly_ChiTiet = new Button();
             gb_QuanLy_Body = new GroupBox();
+            timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -103,9 +106,11 @@ namespace RapPhimFlix.Forms.MenuNav
             // 
             // pictureBox5
             // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.Location = new Point(12, 247);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(25, 25);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 15;
             pictureBox5.TabStop = false;
             // 
@@ -121,9 +126,11 @@ namespace RapPhimFlix.Forms.MenuNav
             // 
             // pictureBox4
             // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(12, 191);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(25, 25);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 13;
             pictureBox4.TabStop = false;
             // 
@@ -139,9 +146,11 @@ namespace RapPhimFlix.Forms.MenuNav
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 134);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(25, 25);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
@@ -157,17 +166,21 @@ namespace RapPhimFlix.Forms.MenuNav
             // 
             // pictureBox6
             // 
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
             pictureBox6.Location = new Point(12, 74);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(25, 25);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 9;
             pictureBox6.TabStop = false;
             // 
             // ptb_QuanLy
             // 
+            ptb_QuanLy.Image = (Image)resources.GetObject("ptb_QuanLy.Image");
             ptb_QuanLy.Location = new Point(12, 9);
             ptb_QuanLy.Name = "ptb_QuanLy";
             ptb_QuanLy.Size = new Size(25, 25);
+            ptb_QuanLy.SizeMode = PictureBoxSizeMode.StretchImage;
             ptb_QuanLy.TabIndex = 4;
             ptb_QuanLy.TabStop = false;
             // 
@@ -177,7 +190,7 @@ namespace RapPhimFlix.Forms.MenuNav
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(221, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(803, 48);
+            panel2.Size = new Size(587, 48);
             panel2.TabIndex = 1;
             // 
             // groupBox2
@@ -189,7 +202,7 @@ namespace RapPhimFlix.Forms.MenuNav
             groupBox2.Dock = DockStyle.Top;
             groupBox2.Location = new Point(0, 0);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(803, 45);
+            groupBox2.Size = new Size(587, 45);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             // 
@@ -211,20 +224,25 @@ namespace RapPhimFlix.Forms.MenuNav
             btn_QuanLy_DangXuat.TabIndex = 10;
             btn_QuanLy_DangXuat.Text = "Đăng xuất";
             btn_QuanLy_DangXuat.UseVisualStyleBackColor = true;
+            btn_QuanLy_DangXuat.Click += btn_QuanLy_DangXuat_Click;
             // 
             // ptb_QuanLy_DangXuat
             // 
+            ptb_QuanLy_DangXuat.Image = (Image)resources.GetObject("ptb_QuanLy_DangXuat.Image");
             ptb_QuanLy_DangXuat.Location = new Point(402, 9);
             ptb_QuanLy_DangXuat.Name = "ptb_QuanLy_DangXuat";
             ptb_QuanLy_DangXuat.Size = new Size(25, 25);
+            ptb_QuanLy_DangXuat.SizeMode = PictureBoxSizeMode.StretchImage;
             ptb_QuanLy_DangXuat.TabIndex = 8;
             ptb_QuanLy_DangXuat.TabStop = false;
             // 
             // pictureBox2
             // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(53, 10);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(25, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
             // 
@@ -286,16 +304,23 @@ namespace RapPhimFlix.Forms.MenuNav
             gb_QuanLy_Body.Dock = DockStyle.Fill;
             gb_QuanLy_Body.Location = new Point(221, 48);
             gb_QuanLy_Body.Name = "gb_QuanLy_Body";
-            gb_QuanLy_Body.Size = new Size(803, 398);
-            gb_QuanLy_Body.TabIndex = 4;
+
+            gb_QuanLy_Body.Size = new Size(587, 498);
+            gb_QuanLy_Body.TabIndex = 2;
+
             gb_QuanLy_Body.TabStop = false;
             gb_QuanLy_Body.Enter += gb_QuanLy_Body_Enter;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // FormQuanLy
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 546);
+            ClientSize = new Size(808, 546);
             Controls.Add(gb_QuanLy_Body);
             Controls.Add(grb_Phim);
             Controls.Add(panel2);
@@ -303,6 +328,8 @@ namespace RapPhimFlix.Forms.MenuNav
             Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "FormQuanLy";
             Text = "FormQuanLy";
+            FormClosing += FormQuanLy_FormClosing;
+            Load += FormQuanLy_Load;
             panel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -344,5 +371,6 @@ namespace RapPhimFlix.Forms.MenuNav
         private Button btn_Qly_Sua;
         private Button btn_Qly_ChiTiet;
         private GroupBox gb_QuanLy_Body;
+        private System.Windows.Forms.Timer timer1;
     }
 }
