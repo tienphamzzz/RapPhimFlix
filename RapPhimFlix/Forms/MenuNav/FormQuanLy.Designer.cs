@@ -354,6 +354,7 @@ namespace RapPhimFlix.Forms.MenuNav
         private Panel panel2;
         private GroupBox groupBox2;
         private Label label2;
+        private Label label;
         private Button btn_QuanLy_DangXuat;
         private PictureBox ptb_QuanLy_DangXuat;
         private PictureBox pictureBox2;
