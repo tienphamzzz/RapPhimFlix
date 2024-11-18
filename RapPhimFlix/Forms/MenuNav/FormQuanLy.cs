@@ -21,13 +21,17 @@ namespace RapPhimFlix.Forms.MenuNav
 {
     public partial class FormQuanLy : Form
     {
-
+         public string Row_index;
+        
+        private string currentform;
         public FormQuanLy(string tenQuanLy)
         {
             InitializeComponent();
-            txt_QuanLy_Ten.Text = tenQuanLy;
-            txt_QuanLy_Ten.Enabled = false;
-
+            currentform = "Phim";
+            btn_Qly_ChiTiet.Enabled = false;
+            btn_Qly_Sua.Enabled = false;
+            btn_Qly_Xoa.Enabled = false;
+            grb_Phim.Visible = true;
             OpenFormChild(new Form_DanhSachPhim(this));
         }
         private Form currentFormChild;
