@@ -18,7 +18,7 @@ namespace RapPhimFlix.Forms.MenuNav
     public partial class FormQuanLy : Form
     {
         public string Row_index;
-        DataContext db = new DataContext();
+        
         private string currentform;
         public FormQuanLy()
         {
@@ -204,8 +204,8 @@ namespace RapPhimFlix.Forms.MenuNav
                 if (result1 == DialogResult.Yes)
                 {
                     string deleteQuery = "DELETE FROM tblSanPham WHERE MaSanPham = '" + Row_index + "'";
-                    bool deleteResult = db.ChangeData(deleteQuery);
-                    if (deleteResult)
+                    int deleteResult = DataProvider.Instance.ExcuteNonQuery(deleteQuery);
+                    if (deleteResult!=0)
                     {
                         MessageBox.Show("Xóa sản phẩm thành công!");
                         OpenFormChild(new Form_DanhSachSanPham(this));
@@ -226,8 +226,8 @@ namespace RapPhimFlix.Forms.MenuNav
                 if (result1 == DialogResult.Yes)
                 {
                     string deleteQuery = "DELETE FROM tblSuatChieu WHERE MaSuatChieu = '" + Row_index + "'";
-                    bool deleteResult = db.ChangeData(deleteQuery);
-                    if (deleteResult)
+                    int deleteResult = DataProvider.Instance.ExcuteNonQuery(deleteQuery);
+                    if (deleteResult!=0)
                     {
                         MessageBox.Show("Xóa sản phẩm thành công!");
                         OpenFormChild(new Form_DanhSachSuatChieu(this));
