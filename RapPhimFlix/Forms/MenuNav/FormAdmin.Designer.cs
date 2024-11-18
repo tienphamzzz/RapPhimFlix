@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             btn_Admin_DoanhSo = new Button();
             pictureBox1 = new PictureBox();
             btn_Admin_NhanVien = new Button();
@@ -40,45 +42,45 @@
             pictureBox2 = new PictureBox();
             panel2 = new Panel();
             txt_Admin_Ten = new TextBox();
-            ptb_QuanLy = new PictureBox();
             groupBox1 = new GroupBox();
+            pictureBox3 = new PictureBox();
             panel1 = new Panel();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptb_QuanLy_DangXuat).BeginInit();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ptb_QuanLy).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btn_Admin_DoanhSo
             // 
-            btn_Admin_DoanhSo.Location = new Point(49, 179);
-            btn_Admin_DoanhSo.Margin = new Padding(3, 4, 3, 4);
+            btn_Admin_DoanhSo.Location = new Point(43, 134);
             btn_Admin_DoanhSo.Name = "btn_Admin_DoanhSo";
-            btn_Admin_DoanhSo.Size = new Size(190, 33);
+            btn_Admin_DoanhSo.Size = new Size(166, 25);
             btn_Admin_DoanhSo.TabIndex = 12;
             btn_Admin_DoanhSo.Text = "Quản lý doanh số";
             btn_Admin_DoanhSo.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(14, 179);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(12, 134);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(29, 33);
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
             // btn_Admin_NhanVien
             // 
-            btn_Admin_NhanVien.Location = new Point(49, 99);
-            btn_Admin_NhanVien.Margin = new Padding(3, 4, 3, 4);
+            btn_Admin_NhanVien.Location = new Point(43, 74);
             btn_Admin_NhanVien.Name = "btn_Admin_NhanVien";
-            btn_Admin_NhanVien.Size = new Size(190, 33);
+            btn_Admin_NhanVien.Size = new Size(166, 25);
             btn_Admin_NhanVien.TabIndex = 10;
             btn_Admin_NhanVien.Text = "Quản lý nhân viên";
             btn_Admin_NhanVien.UseVisualStyleBackColor = true;
@@ -87,46 +89,49 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(310, 20);
+            label2.Location = new Point(271, 15);
             label2.Name = "label2";
-            label2.Size = new Size(101, 19);
+            label2.Size = new Size(73, 15);
             label2.TabIndex = 11;
             label2.Text = "Flix Cinema";
             // 
             // btn_Admin_DangXuat
             // 
-            btn_Admin_DangXuat.Location = new Point(495, 13);
-            btn_Admin_DangXuat.Margin = new Padding(3, 4, 3, 4);
+            btn_Admin_DangXuat.Location = new Point(433, 10);
             btn_Admin_DangXuat.Name = "btn_Admin_DangXuat";
-            btn_Admin_DangXuat.Size = new Size(105, 31);
+            btn_Admin_DangXuat.Size = new Size(92, 23);
             btn_Admin_DangXuat.TabIndex = 10;
             btn_Admin_DangXuat.Text = "Đăng xuất";
             btn_Admin_DangXuat.UseVisualStyleBackColor = true;
+            btn_Admin_DangXuat.Click += btn_Admin_DangXuat_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(96, 20);
+            label1.Location = new Point(84, 15);
             label1.Name = "label1";
-            label1.Size = new Size(140, 20);
+            label1.Size = new Size(111, 15);
             label1.TabIndex = 9;
             label1.Text = "hiện ngày giờ ở đây";
+            label1.Click += label1_Click;
             // 
             // pictureBox6
             // 
-            pictureBox6.Location = new Point(14, 99);
-            pictureBox6.Margin = new Padding(3, 4, 3, 4);
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(12, 74);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(29, 33);
+            pictureBox6.Size = new Size(25, 25);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 9;
             pictureBox6.TabStop = false;
             // 
             // ptb_QuanLy_DangXuat
             // 
-            ptb_QuanLy_DangXuat.Location = new Point(459, 12);
-            ptb_QuanLy_DangXuat.Margin = new Padding(3, 4, 3, 4);
+            ptb_QuanLy_DangXuat.Image = (Image)resources.GetObject("ptb_QuanLy_DangXuat.Image");
+            ptb_QuanLy_DangXuat.Location = new Point(402, 9);
             ptb_QuanLy_DangXuat.Name = "ptb_QuanLy_DangXuat";
-            ptb_QuanLy_DangXuat.Size = new Size(29, 33);
+            ptb_QuanLy_DangXuat.Size = new Size(25, 25);
+            ptb_QuanLy_DangXuat.SizeMode = PictureBoxSizeMode.StretchImage;
             ptb_QuanLy_DangXuat.TabIndex = 8;
             ptb_QuanLy_DangXuat.TabStop = false;
             // 
@@ -139,19 +144,19 @@
             groupBox2.Controls.Add(pictureBox2);
             groupBox2.Dock = DockStyle.Top;
             groupBox2.Location = new Point(0, 0);
-            groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(834, 60);
+            groupBox2.Size = new Size(730, 45);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(61, 13);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.InitialImage = null;
+            pictureBox2.Location = new Point(53, 10);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(29, 33);
+            pictureBox2.Size = new Size(25, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
             // 
@@ -159,66 +164,70 @@
             // 
             panel2.Controls.Add(groupBox2);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(253, 0);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(221, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(834, 64);
+            panel2.Size = new Size(730, 48);
             panel2.TabIndex = 3;
             // 
             // txt_Admin_Ten
             // 
-            txt_Admin_Ten.Location = new Point(49, 16);
-            txt_Admin_Ten.Margin = new Padding(3, 4, 3, 4);
+            txt_Admin_Ten.Location = new Point(43, 12);
             txt_Admin_Ten.Name = "txt_Admin_Ten";
-            txt_Admin_Ten.Size = new Size(189, 27);
+            txt_Admin_Ten.Size = new Size(166, 23);
             txt_Admin_Ten.TabIndex = 5;
-            // 
-            // ptb_QuanLy
-            // 
-            ptb_QuanLy.Location = new Point(14, 12);
-            ptb_QuanLy.Margin = new Padding(3, 4, 3, 4);
-            ptb_QuanLy.Name = "ptb_QuanLy";
-            ptb_QuanLy.Size = new Size(29, 33);
-            ptb_QuanLy.TabIndex = 4;
-            ptb_QuanLy.TabStop = false;
+            txt_Admin_Ten.TextChanged += txt_Admin_Ten_TextChanged;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(pictureBox3);
             groupBox1.Controls.Add(btn_Admin_DoanhSo);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(btn_Admin_NhanVien);
             groupBox1.Controls.Add(pictureBox6);
             groupBox1.Controls.Add(txt_Admin_Ten);
-            groupBox1.Controls.Add(ptb_QuanLy);
             groupBox1.Dock = DockStyle.Left;
             groupBox1.Location = new Point(0, 0);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(248, 620);
+            groupBox1.Size = new Size(217, 465);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.ErrorImage = null;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(12, 10);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(25, 25);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 13;
+            pictureBox3.TabStop = false;
             // 
             // panel1
             // 
             panel1.Controls.Add(groupBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(253, 620);
+            panel1.Size = new Size(221, 465);
             panel1.TabIndex = 2;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // FormAdmin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1087, 620);
+            ClientSize = new Size(951, 465);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FormAdmin";
             Text = "FormAdmin";
+            FormClosing += FormAdmin_FormClosing;
+            Load += FormAdmin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptb_QuanLy_DangXuat).EndInit();
@@ -226,9 +235,9 @@
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)ptb_QuanLy).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -247,8 +256,9 @@
         private PictureBox pictureBox2;
         private Panel panel2;
         private TextBox txt_Admin_Ten;
-        private PictureBox ptb_QuanLy;
         private GroupBox groupBox1;
         private Panel panel1;
+        private PictureBox pictureBox3;
+        private System.Windows.Forms.Timer timer1;
     }
 }

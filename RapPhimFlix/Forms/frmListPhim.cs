@@ -27,6 +27,7 @@ namespace RapPhimFlix.Forms
 
         private void btn_Them(object sender, EventArgs e)
         {
+
             Button btn = (Button)sender;
             _maPhim = (btn.Text.Split('\n')[1]);
             //main.ShowUserControl(new frmSuatChieu(_maPhim, main));
