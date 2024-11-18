@@ -16,13 +16,18 @@
   </ItemGroup>
 
   <ItemGroup>
-
+    <Content Include="bin\Debug\Anh\anh dang nhap.png" />
+    <Content Include="bin\Debug\Anh\AnhMk.jpg" />
+    <Content Include="bin\Debug\Anh\istockphoto-1200064758-170667a.jpg" />
+    <Content Include="bin\Debug\Anh\mat khau.jpg" />
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.deps.json" />
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.runtimeconfig.json" />
+
 
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\No Infomation.jpg" />
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Supergirl 1.jpg" />
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Superman 1.jpg" />
+
     <Content Include="Resources\Icon\app-icon.ico" />
     <Folder Include="bin\Debug\net8.0-windows\Resources\filedata\" />
     <Folder Include="bin\Debug\net8.0-windows\Resources\images\icons\" />
@@ -40,14 +45,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="bin\debug\net8.0-windows\resources\filedata\Supergirl 1.rtf" />
-    <None Include="bin\debug\net8.0-windows\resources\filedata\Superman 1.rtf" />
-    <None Include="bin\Debug\net8.0-windows\Resources\hoadon\HoaDonExcel.xlsx" />
+
+    <None Include="bin\Debug\net8.0-windows\RapPhimFlix.dll" />
+    <None Include="bin\Debug\net8.0-windows\RapPhimFlix.exe" />
+    <None Include="bin\Debug\net8.0-windows\RapPhimFlix.pdb" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Data.SqlClient.dll" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EPPlus" Version="7.4.2" />
+    <PackageReference Include="DevExpress.Data" Version="24.1.7" />
+    <PackageReference Include="DevExpress.Win.Dashboard.CustomItemExtension" Version="24.1.0.1" />
+    <PackageReference Include="DevExpress.Win.Design" Version="24.1.7" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageReference Include="WinForms.DataVisualization" Version="1.9.2" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
-﻿using RapPhimFlix.Forms.MenuNav.ThongTinPhim;
+using RapPhimFlix.Controllers;
+using RapPhimFlix.Forms.MenuNav.ThongTinPhim;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,26 +15,22 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
     public partial class Form_DanhSachSanPham : Form
     {
         private FormQuanLy formQLy;
+        
         public Form_DanhSachSanPham(FormQuanLy formQuanLy)
         {
             InitializeComponent();
             this.formQLy = formQuanLy;
-        }
-        private void btn_SanPham_ChiTiet_Click(object sender, EventArgs e)
-        {
-            formQLy.OpenFormChild(new Form_SanPham_ChiTiet());
-        }
-
-        private void btn_SanPham_Them_Click(object sender, EventArgs e)
-        {
-            formQLy.OpenFormChild(new Form_SanPham_Them());
+            dgv_SanPham.DataSource = DataProvider.Instance.ExcuteQuery("select a.MaSanPham,a.TenSanPham,a.LoaiSanPham,a.Gia from tblSanPham as a");
+            dgv_SanPham.Columns["TenSanPham"].HeaderText = "Tên Sản phẩm";
+            dgv_SanPham.Columns["LoaiSanPham"].HeaderText = "Loại";
+            dgv_SanPham.Columns["Gia"].HeaderText = "Giá";
+            dgv_SanPham.Columns["MaSanPham"].Visible = false;
         }
 
-        private void btn_SanPham_Sua_Click(object sender, EventArgs e)
+        private void dgv_SanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            formQLy.OpenFormChild(new Form_SanPham_Sua());
+            formQLy.open_Button();
+            formQLy.Row_index = dgv_SanPham.Rows[e.RowIndex].Cells["MaSanPham"].Value?.ToString();
         }
-
-        
     }
 }

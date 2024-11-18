@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace RapPhimFlix.Appsetting
 {
@@ -20,5 +22,6 @@ namespace RapPhimFlix.Appsetting
         }
         public static int VaiTro = -1; // 0 là Admin
         public static string UserName {  get; set; }
+
     }
 }

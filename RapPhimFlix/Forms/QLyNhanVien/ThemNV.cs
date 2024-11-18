@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿
+=======
+
+>>>>>>> bafcbe9017ea13c7fb7c86b867d87109f0ff119c
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +18,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 {
     public partial class ThemNV : Form
     {
+        Controllers.DataContext dtbase = new Controllers.DataContext();
         public ThemNV()
         {
             InitializeComponent();

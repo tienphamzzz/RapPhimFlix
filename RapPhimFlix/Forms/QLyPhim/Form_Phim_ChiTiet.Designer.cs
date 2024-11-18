@@ -1,4 +1,4 @@
-﻿namespace RapPhimFlix.Forms.MenuNav.SanPham
+namespace RapPhimFlix.Forms.MenuNav.SanPham
 {
     partial class Form_Phim_ChiTiet
     {
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -42,15 +41,14 @@
             label11 = new Label();
             openFileDialog1 = new OpenFileDialog();
             btn_ChiTietPhim_XacNhan = new Button();
-            tb_TenQuanLy = new TextBox();
             tb_ChiTietPhim_Tenphim = new TextBox();
             tb_ChiTietPhim_DaoDien = new TextBox();
             tb_ChiTietPhim_MoTa = new TextBox();
             tb_ChiTietPhim_MaPhim = new TextBox();
             tb_ChiTietPhim_ThoiLuong = new TextBox();
-            tb_ChiTietPhim_Nam = new TextBox();
             tb_ChiTietPhim_QuocGia = new TextBox();
             cbb_ChiTietPhim_TheLoai = new ComboBox();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)ptB_ChiTiet_Anh).BeginInit();
             SuspendLayout();
             // 
@@ -63,16 +61,6 @@
             label1.Size = new Size(145, 30);
             label1.TabIndex = 0;
             label1.Text = "Chi Tiết Phim";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(23, 70);
-            label2.Name = "label2";
-            label2.Size = new Size(84, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Tên quản lý";
             // 
             // label3
             // 
@@ -118,7 +106,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(265, 71);
+            label7.Location = new Point(14, 71);
             label7.Name = "label7";
             label7.Size = new Size(68, 20);
             label7.TabIndex = 6;
@@ -128,7 +116,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(265, 153);
+            label8.Location = new Point(265, 74);
             label8.Name = "label8";
             label8.Size = new Size(84, 20);
             label8.TabIndex = 7;
@@ -138,7 +126,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(265, 240);
+            label9.Location = new Point(265, 161);
             label9.Name = "label9";
             label9.Size = new Size(111, 20);
             label9.TabIndex = 8;
@@ -148,7 +136,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(265, 312);
+            label10.Location = new Point(265, 233);
             label10.Name = "label10";
             label10.Size = new Size(69, 20);
             label10.TabIndex = 9;
@@ -185,13 +173,7 @@
             btn_ChiTietPhim_XacNhan.TabIndex = 12;
             btn_ChiTietPhim_XacNhan.Text = "Xác nhận";
             btn_ChiTietPhim_XacNhan.UseVisualStyleBackColor = true;
-            // 
-            // tb_TenQuanLy
-            // 
-            tb_TenQuanLy.Location = new Point(113, 70);
-            tb_TenQuanLy.Name = "tb_TenQuanLy";
-            tb_TenQuanLy.Size = new Size(136, 23);
-            tb_TenQuanLy.TabIndex = 13;
+            btn_ChiTietPhim_XacNhan.Click += btn_ChiTietPhim_XacNhan_Click;
             // 
             // tb_ChiTietPhim_Tenphim
             // 
@@ -217,28 +199,21 @@
             // 
             // tb_ChiTietPhim_MaPhim
             // 
-            tb_ChiTietPhim_MaPhim.Location = new Point(384, 71);
+            tb_ChiTietPhim_MaPhim.Location = new Point(113, 71);
             tb_ChiTietPhim_MaPhim.Name = "tb_ChiTietPhim_MaPhim";
-            tb_ChiTietPhim_MaPhim.Size = new Size(115, 23);
+            tb_ChiTietPhim_MaPhim.Size = new Size(135, 23);
             tb_ChiTietPhim_MaPhim.TabIndex = 18;
             // 
             // tb_ChiTietPhim_ThoiLuong
             // 
-            tb_ChiTietPhim_ThoiLuong.Location = new Point(384, 154);
+            tb_ChiTietPhim_ThoiLuong.Location = new Point(384, 75);
             tb_ChiTietPhim_ThoiLuong.Name = "tb_ChiTietPhim_ThoiLuong";
             tb_ChiTietPhim_ThoiLuong.Size = new Size(114, 23);
             tb_ChiTietPhim_ThoiLuong.TabIndex = 19;
             // 
-            // tb_ChiTietPhim_Nam
-            // 
-            tb_ChiTietPhim_Nam.Location = new Point(384, 236);
-            tb_ChiTietPhim_Nam.Name = "tb_ChiTietPhim_Nam";
-            tb_ChiTietPhim_Nam.Size = new Size(115, 23);
-            tb_ChiTietPhim_Nam.TabIndex = 20;
-            // 
             // tb_ChiTietPhim_QuocGia
             // 
-            tb_ChiTietPhim_QuocGia.Location = new Point(384, 313);
+            tb_ChiTietPhim_QuocGia.Location = new Point(384, 234);
             tb_ChiTietPhim_QuocGia.Name = "tb_ChiTietPhim_QuocGia";
             tb_ChiTietPhim_QuocGia.Size = new Size(115, 23);
             tb_ChiTietPhim_QuocGia.TabIndex = 21;
@@ -251,21 +226,27 @@
             cbb_ChiTietPhim_TheLoai.Size = new Size(135, 23);
             cbb_ChiTietPhim_TheLoai.TabIndex = 22;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(382, 161);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 23;
+            // 
             // Form_Phim_ChiTiet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
+            Controls.Add(dateTimePicker1);
             Controls.Add(cbb_ChiTietPhim_TheLoai);
             Controls.Add(tb_ChiTietPhim_QuocGia);
-            Controls.Add(tb_ChiTietPhim_Nam);
             Controls.Add(tb_ChiTietPhim_ThoiLuong);
             Controls.Add(tb_ChiTietPhim_MaPhim);
             Controls.Add(tb_ChiTietPhim_MoTa);
             Controls.Add(tb_ChiTietPhim_DaoDien);
             Controls.Add(tb_ChiTietPhim_Tenphim);
-            Controls.Add(tb_TenQuanLy);
             Controls.Add(btn_ChiTietPhim_XacNhan);
             Controls.Add(label11);
             Controls.Add(ptB_ChiTiet_Anh);
@@ -277,7 +258,6 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form_Phim_ChiTiet";
             Text = "Form_SanPham_ChiTiet";
@@ -289,7 +269,6 @@
         #endregion
 
         private Label label1;
-        private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
@@ -302,14 +281,13 @@
         private Label label11;
         private OpenFileDialog openFileDialog1;
         private Button btn_ChiTietPhim_XacNhan;
-        private TextBox tb_TenQuanLy;
         private TextBox tb_ChiTietPhim_Tenphim;
         private TextBox tb_ChiTietPhim_DaoDien;
         private TextBox tb_ChiTietPhim_MoTa;
         private TextBox tb_ChiTietPhim_MaPhim;
         private TextBox tb_ChiTietPhim_ThoiLuong;
-        private TextBox tb_ChiTietPhim_Nam;
         private TextBox tb_ChiTietPhim_QuocGia;
         private ComboBox cbb_ChiTietPhim_TheLoai;
+        private DateTimePicker dateTimePicker1;
     }
 }

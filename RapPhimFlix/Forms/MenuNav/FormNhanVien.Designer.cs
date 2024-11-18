@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanVien));
             groupBox2 = new GroupBox();
             button2 = new Button();
             btn_DanhSachPhim = new Button();
@@ -36,11 +38,12 @@
             label2 = new Label();
             button3 = new Button();
             label1 = new Label();
-            txt_Admin_Ten = new TextBox();
+            txt_NhanVien_Ten = new TextBox();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
+            timer1 = new System.Windows.Forms.Timer(components);
             groupBox2.SuspendLayout();
             panel2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -94,7 +97,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(txt_Admin_Ten);
+            groupBox1.Controls.Add(txt_NhanVien_Ten);
             groupBox1.Controls.Add(pictureBox3);
             groupBox1.Controls.Add(pictureBox2);
             groupBox1.Controls.Add(pictureBox1);
@@ -123,6 +126,7 @@
             button3.TabIndex = 5;
             button3.Text = "Đăng xuất";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label1
             // 
@@ -133,34 +137,44 @@
             label1.TabIndex = 4;
             label1.Text = "hiện ngày giờ ở đây";
             // 
-            // txt_Admin_Ten
+            // txt_NhanVien_Ten
             // 
-            txt_Admin_Ten.Location = new Point(43, 18);
-            txt_Admin_Ten.Name = "txt_Admin_Ten";
-            txt_Admin_Ten.Size = new Size(188, 22);
-            txt_Admin_Ten.TabIndex = 3;
+            txt_NhanVien_Ten.Location = new Point(43, 18);
+            txt_NhanVien_Ten.Name = "txt_NhanVien_Ten";
+            txt_NhanVien_Ten.Size = new Size(188, 22);
+            txt_NhanVien_Ten.TabIndex = 3;
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(769, 15);
+
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(646, 15);
+
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(25, 25);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(374, 15);
+
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(297, 16);
+
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(25, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 15);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(25, 25);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -173,6 +187,11 @@
             panel1.Size = new Size(904, 54);
             panel1.TabIndex = 2;
             // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
             // FormNhanVien
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -183,6 +202,8 @@
             Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "FormNhanVien";
             Text = "FormNhanVien";
+            FormClosing += FormNhanVien_FormClosing;
+            Load += FormNhanVien_Load;
             groupBox2.ResumeLayout(false);
             panel2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
@@ -203,11 +224,12 @@
         private GroupBox groupBox1;
         private Button button3;
         private Label label1;
-        private TextBox txt_Admin_Ten;
+        private TextBox txt_NhanVien_Ten;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Panel panel1;
         private Label label2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

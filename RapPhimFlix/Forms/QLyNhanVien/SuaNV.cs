@@ -13,8 +13,6 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 {
     public partial class SuaNV : Form
     {
-        Controllers.DataContext dtbase = new Controllers.DataContext();
-        Controllers.DataContext dtbase = new Controllers.DataContext();
         private string maNhanVien;
         public SuaNV(String maNhanVien)
         {

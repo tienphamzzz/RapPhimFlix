@@ -1,4 +1,5 @@
 ﻿using RapPhimFlix.Model;
+using RapPhimFlix.Appsetting;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,7 +22,7 @@ namespace RapPhimFlix.Controllers
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=DESKTOP-ABL3Q2P\\SQLEXPRESS;Initial Catalog=QLCinema;Integrated Security=True;";
+        private string connectionSTR = AppSetting.ConnectionString;
 
         public DataTable ExcuteQuery(string query, object[] parameter = null) // thực hiện một truy vấn SQL và trả về kết quả dưới dạng DataTable
         {

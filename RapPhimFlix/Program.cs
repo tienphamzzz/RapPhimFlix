@@ -1,6 +1,9 @@
-
-
+using System.Windows.Forms;
+using System;
 using RapPhimFlix.Forms;
+
+using RapPhimFlix.Forms.DangNhap;
+
 using RapPhimFlix.Forms.MenuNav;
 
 
@@ -19,7 +22,11 @@ namespace RapPhimFlix
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new FormNhanVien());
+
+
+           // Application.Run(new Main());
+           Application.Run(new FormDangNhap());
+
 
         }
     }
