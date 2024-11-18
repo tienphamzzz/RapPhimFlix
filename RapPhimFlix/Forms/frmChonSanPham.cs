@@ -45,6 +45,7 @@ namespace RapPhimFlix.Forms
         }
         #endregion
 
+        public event EventHandler<List<ListViewItem>> AddButtonThemSanPhamClicked;
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             if (txtProductName.Text == "")
@@ -110,11 +111,7 @@ namespace RapPhimFlix.Forms
                     items.Add((ListViewItem)item.Clone());
                 }
 
-                frmThanhToanSanPham frm = new frmThanhToanSanPham(items, this);
-
-                this.Hide();
-
-                frm.Show();
+                AddButtonThemSanPhamClicked?.Invoke(this, items);
             }
         }
     }

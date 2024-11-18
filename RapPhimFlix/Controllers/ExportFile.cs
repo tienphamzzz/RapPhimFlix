@@ -12,12 +12,12 @@ namespace RapPhimFlix.Controllers
 {
     public class ExportFile
     {
-        public static void loadImage(PictureBox ptb, string nameImage)
+        public static void loadImage(PictureBox ptb, string path, string nameImage)
         {
             try
             {
                 ptb.SizeMode = PictureBoxSizeMode.StretchImage;
-                string fullPath = Path.Combine(Application.StartupPath, $"Resources\\images\\phims\\{nameImage}");
+                string fullPath = Path.Combine(Application.StartupPath, path + "\\" + nameImage);
                 ptb.Image = Image.FromFile(fullPath);
             }
             catch (Exception e)
@@ -28,18 +28,21 @@ namespace RapPhimFlix.Controllers
                 ptb.Image = Image.FromFile(fullPath);
             }
         }
-        public static void saveImage(string sourcePath, string nameImage)
+        public static void saveImage(PictureBox ptb, string path, string newFileName)
         {
             try
             {
-                if (!File.Exists(sourcePath))
-                {
-                    throw new FileNotFoundException("File nguồn không tồn tại.");
-                }
-                string destinationFolder = Path.Combine(Application.StartupPath, "Resources", "images", "phims");
-                Directory.CreateDirectory(destinationFolder); // Tạo thư mục nếu chưa tồn tại
-                string destinationPath = Path.Combine(destinationFolder, nameImage);
-                File.Copy(sourcePath, destinationPath, true);
+                if (ptb.ImageLocation == null) return;
+                // Lấy đường dẫn thư mục lưu trữ
+                string appRoot = Application.StartupPath;
+                string fullPath = Path.Combine(appRoot, path);
+                Directory.CreateDirectory(fullPath);
+
+                // Tạo đường dẫn file đích với tên mới
+                string destinationPath = Path.Combine(fullPath, newFileName);
+
+                // Sao chép ảnh từ vị trí gốc vào thư mục đích với tên mới
+                File.Copy(ptb.ImageLocation, destinationPath, true);
             }
             catch
             {
@@ -92,7 +95,7 @@ namespace RapPhimFlix.Controllers
             worksheet.Cells["A1"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
             worksheet.Cells["A2:G2"].Merge = true;
-            worksheet.Cells["A2"].Value = "HOÁ ĐƠN THANH TOÁN";
+            worksheet.Cells["A2"].Value = "HOÁ ĐƠN THANH TOÁN SẢN PHẨM";
             worksheet.Cells["A2"].Style.Font.Size = 14;
             worksheet.Cells["A2"].Style.Font.Bold = true;
             worksheet.Cells["A2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
@@ -162,6 +165,48 @@ namespace RapPhimFlix.Controllers
             }
         }
         
+        public static void CreateInvoice(DataTable tblCTHDSP_SP, DataRow rowHD, DataRow rowK)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            string fullPath = Path.Combine(Application.StartupPath, $"Resources\\hoadon\\HoaDonExcel.xlsx");
+            using (var package = File.Exists(fullPath)
+                ? new ExcelPackage(new FileInfo(fullPath))
+                : new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add(rowHD["MaHoaDon"].ToString());
+                AddInvoiceHeader(worksheet, rowHD, rowK);
 
+                AddInvoiceDetails(worksheet, tblCTHDSP_SP, (decimal)rowHD["TongTien"]);
+
+                SaveExcelFile(package, fullPath);
+            }
+        }
+        private static void AddInvoiceDetails(ExcelWorksheet worksheet, DataTable tblCTHDSP_SP, decimal TongTien)
+        {
+            worksheet.Cells["A8"].Value = "STT";
+            worksheet.Cells["B8"].Value = "Tên sản phẩm";
+            worksheet.Cells["C8"].Value = "Loại sản phẩm";
+            worksheet.Cells["D8"].Value = "Số lượng";
+            worksheet.Cells["E8"].Value = "Thành tiền";
+            int i = 1;
+            foreach (DataRow row in tblCTHDSP_SP.Rows)
+            {
+                worksheet.Cells[$"A{8 + i}"].Value = i;
+                worksheet.Cells[$"B{8 + i}"].Value = row["TenSanPham"];
+                worksheet.Cells[$"C{8 + i}"].Value = row["LoaiSanPham"];
+                worksheet.Cells[$"D{8 + i}"].Value = row["SLBan"];
+                worksheet.Cells[$"E{8 + i}"].Value = row["ThanhTien"];
+                i++;
+            }
+            worksheet.Cells[$"A8:E{8 + i - 1}"].Style.Border.Top.Style = ExcelBorderStyle.Thin;
+            worksheet.Cells[$"A8:E{8 + i - 1}"].Style.Border.Left.Style = ExcelBorderStyle.Thin;
+            worksheet.Cells[$"A8:E{8 + i - 1}"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+            worksheet.Cells[$"A8:E{8 + i - 1}"].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+            worksheet.Cells[$"A8:E{8 + i - 1}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+            worksheet.Cells[$"D{8 + i}"].Value = "Tổng tiền:";
+            worksheet.Cells[$"E{8 + i}"].Value = TongTien;
+            worksheet.Cells[$"E{8 + i}"].Style.Font.Bold = true;
+        }
     }
 }

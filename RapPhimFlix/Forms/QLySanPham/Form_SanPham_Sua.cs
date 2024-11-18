@@ -69,7 +69,7 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
             string loaiSanPham = cbb_SanPham_Sua.Text;
 
             // Lấy đường dẫn ảnh từ PictureBox
-            string anhSanPham = ptb_SanPham_Sua.ImageLocation;
+            string anhSanPham = tb_SanPham_Sua_TenSP.Text;
 
             // Kiểm tra dữ liệu
             if (string.IsNullOrWhiteSpace(maSP) || string.IsNullOrWhiteSpace(gia) ||
@@ -99,6 +99,7 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
             if (result!=0)
             {
                 check = true;
+                ExportFile.saveImage(ptb_SanPham_Sua, "Resources\\images\\sanphams", anhSanPham);
                 MessageBox.Show("Cập nhật sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

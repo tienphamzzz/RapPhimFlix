@@ -22,6 +22,10 @@ namespace RapPhimFlix.Appsetting
         }
         public static int VaiTro = -1; // 0 là Admin
         public static string UserName {  get; set; }
-
+        public static string GenerateMa()
+        {
+            Random rnd = new Random();
+            return rnd.Next(1, 999999).ToString();
+        }
     }
 }

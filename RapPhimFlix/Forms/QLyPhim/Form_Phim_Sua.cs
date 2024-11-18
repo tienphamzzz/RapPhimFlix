@@ -48,6 +48,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             ptB_Sua_Anh.ImageLocation = dt.Rows[0]["TenAnh"].ToString();
             tb_SuaPhim_ThoiLuong.Text = dt.Rows[0]["ThoiLuong"].ToString();
             tb_SuaPhim_QuocGia.Text = dt.Rows[0]["QuocGia"].ToString();
+            
         }
 
         private void btn_SuaPhim_XacNhan_Click(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             string thoiLuong = tb_SuaPhim_ThoiLuong.Text;
             string quocGia = tb_SuaPhim_QuocGia.Text;
             string theLoai = cbb_SuaPhim_TheLoai.Text;
-            string Anh = ptB_Sua_Anh.ImageLocation;
+            string Anh = tb_SuaPhim_Tenphim.Text;
             // Kiểm tra nếu bất kỳ trường nào bị bỏ trống
             if (string.IsNullOrWhiteSpace(maPhim) || string.IsNullOrWhiteSpace(tenPhim) ||
                 string.IsNullOrWhiteSpace(daoDien) || string.IsNullOrWhiteSpace(moTa) ||
@@ -101,7 +102,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             }
 
             // cap nhat vao db
-            string updateQuery = $"UPDATE tblPhims SET Ten = N'{tenPhim}', DaoDien = N'{daoDien}', MoTa = N'{moTa}', NamPhatHanh = '{namPhatHanh}', ThoiLuong = '{thoiLuong}', QuocGia = N'{quocGia}' WHERE MaPhim = '{maPhim}'";
+            string updateQuery = $"UPDATE tblPhims SET Ten = N'{tenPhim}', DaoDien = N'{daoDien}', MoTa = N'{moTa}', NamPhatHanh = '{namPhatHanh}', ThoiLuong = '{thoiLuong}', QuocGia = N'{quocGia}', TenAnh = '{Anh}' WHERE MaPhim = '{maPhim}'";
             //cap nhat bang TheLoai_phim
 
             int result = DataProvider.Instance.ExcuteNonQuery(updateQuery);
@@ -109,6 +110,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             if (result!=0)
             {
                 check = true;
+                ExportFile.saveImage(ptB_Sua_Anh, "Resources\\images\\phims", Anh);
                 MessageBox.Show("Cập nhật phim thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

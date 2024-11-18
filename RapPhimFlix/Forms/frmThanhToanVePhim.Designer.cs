@@ -55,7 +55,7 @@
             // 
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Arial", 16F, FontStyle.Bold);
-            labelTitle.Location = new Point(350, 20);
+            labelTitle.Location = new Point(412, 19);
             labelTitle.Name = "labelTitle";
             labelTitle.Size = new Size(129, 26);
             labelTitle.TabIndex = 0;
@@ -75,7 +75,7 @@
             gbTicketInfo.Controls.Add(lblRoom);
             gbTicketInfo.Controls.Add(lblChair);
             gbTicketInfo.Controls.Add(lblTicketPrice);
-            gbTicketInfo.Location = new Point(30, 55);
+            gbTicketInfo.Location = new Point(92, 54);
             gbTicketInfo.Name = "gbTicketInfo";
             gbTicketInfo.Size = new Size(350, 316);
             gbTicketInfo.TabIndex = 1;
@@ -190,7 +190,7 @@
             gbCustomerInfo.Controls.Add(lblSex);
             gbCustomerInfo.Controls.Add(rbMale);
             gbCustomerInfo.Controls.Add(rbFemale);
-            gbCustomerInfo.Location = new Point(450, 60);
+            gbCustomerInfo.Location = new Point(512, 59);
             gbCustomerInfo.Name = "gbCustomerInfo";
             gbCustomerInfo.Size = new Size(350, 311);
             gbCustomerInfo.TabIndex = 2;
@@ -251,6 +251,7 @@
             txtPhoneNumber.Size = new Size(200, 23);
             txtPhoneNumber.TabIndex = 3;
             txtPhoneNumber.TextChanged += txt_TextChanged;
+            txtPhoneNumber.KeyPress += txtPhoneNumber_KeyPress;
             // 
             // lblSex
             // 
@@ -280,7 +281,7 @@
             // 
             // lblTotal
             // 
-            lblTotal.Location = new Point(30, 388);
+            lblTotal.Location = new Point(92, 387);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(100, 23);
             lblTotal.TabIndex = 3;
@@ -288,7 +289,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(546, 388);
+            btnCancel.Location = new Point(608, 387);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 43);
             btnCancel.TabIndex = 4;
@@ -297,7 +298,7 @@
             // 
             // btnPay
             // 
-            btnPay.Location = new Point(653, 388);
+            btnPay.Location = new Point(715, 387);
             btnPay.Name = "btnPay";
             btnPay.Size = new Size(106, 43);
             btnPay.TabIndex = 5;
@@ -306,7 +307,7 @@
             // 
             // txtTotal
             // 
-            txtTotal.Location = new Point(244, 388);
+            txtTotal.Location = new Point(306, 387);
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
             txtTotal.Size = new Size(125, 23);
@@ -314,7 +315,7 @@
             // 
             // frmThanhToanVePhim
             // 
-            ClientSize = new Size(843, 455);
+            ClientSize = new Size(943, 458);
             Controls.Add(txtTotal);
             Controls.Add(labelTitle);
             Controls.Add(gbTicketInfo);

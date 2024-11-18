@@ -56,18 +56,20 @@
             // 
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Arial", 16F, FontStyle.Bold);
-            labelTitle.Location = new Point(411, 17);
+            labelTitle.Location = new Point(389, 33);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(164, 32);
+            labelTitle.Size = new Size(129, 26);
             labelTitle.TabIndex = 1;
             labelTitle.Text = "Thanh toán";
             // 
             // gbProductsInfor
             // 
             gbProductsInfor.Controls.Add(lvProductsInfomations);
-            gbProductsInfor.Location = new Point(40, 78);
+            gbProductsInfor.Location = new Point(64, 78);
+            gbProductsInfor.Margin = new Padding(3, 2, 3, 2);
             gbProductsInfor.Name = "gbProductsInfor";
-            gbProductsInfor.Size = new Size(464, 371);
+            gbProductsInfor.Padding = new Padding(3, 2, 3, 2);
+            gbProductsInfor.Size = new Size(406, 278);
             gbProductsInfor.TabIndex = 2;
             gbProductsInfor.TabStop = false;
             gbProductsInfor.Text = "Thông tin sản phẩm";
@@ -75,9 +77,10 @@
             // lvProductsInfomations
             // 
             lvProductsInfomations.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
-            lvProductsInfomations.Location = new Point(13, 33);
+            lvProductsInfomations.Location = new Point(11, 25);
+            lvProductsInfomations.Margin = new Padding(3, 2, 3, 2);
             lvProductsInfomations.Name = "lvProductsInfomations";
-            lvProductsInfomations.Size = new Size(445, 332);
+            lvProductsInfomations.Size = new Size(390, 250);
             lvProductsInfomations.TabIndex = 0;
             lvProductsInfomations.UseCompatibleStateImageBehavior = false;
             lvProductsInfomations.View = View.Details;
@@ -114,111 +117,123 @@
             gbCustomerInfor.Controls.Add(lblSex);
             gbCustomerInfor.Controls.Add(rbMale);
             gbCustomerInfor.Controls.Add(rbFemale);
-            gbCustomerInfor.Location = new Point(510, 78);
+            gbCustomerInfor.Location = new Point(475, 78);
+            gbCustomerInfor.Margin = new Padding(3, 2, 3, 2);
             gbCustomerInfor.Name = "gbCustomerInfor";
-            gbCustomerInfor.Size = new Size(464, 371);
+            gbCustomerInfor.Padding = new Padding(3, 2, 3, 2);
+            gbCustomerInfor.Size = new Size(406, 278);
             gbCustomerInfor.TabIndex = 3;
             gbCustomerInfor.TabStop = false;
             gbCustomerInfor.Text = "Thông tin khách hàng";
             // 
             // lblCustomerName
             // 
-            lblCustomerName.Location = new Point(25, 37);
+            lblCustomerName.Location = new Point(22, 28);
             lblCustomerName.Name = "lblCustomerName";
-            lblCustomerName.Size = new Size(100, 23);
+            lblCustomerName.Size = new Size(88, 17);
             lblCustomerName.TabIndex = 7;
             lblCustomerName.Text = "Tên khách:";
             // 
             // txtTenKhach
             // 
-            txtTenKhach.Location = new Point(135, 37);
+            txtTenKhach.Location = new Point(118, 28);
+            txtTenKhach.Margin = new Padding(3, 2, 3, 2);
             txtTenKhach.Name = "txtTenKhach";
-            txtTenKhach.Size = new Size(200, 27);
+            txtTenKhach.Size = new Size(176, 23);
             txtTenKhach.TabIndex = 8;
-            txtTenKhach.TextChanged += txtTenKhach_TextChanged;
+            txtTenKhach.TextChanged += txt_TextChanged;
             // 
             // lblPhoneNumber
             // 
-            lblPhoneNumber.Location = new Point(25, 77);
+            lblPhoneNumber.Location = new Point(22, 58);
             lblPhoneNumber.Name = "lblPhoneNumber";
-            lblPhoneNumber.Size = new Size(100, 23);
+            lblPhoneNumber.Size = new Size(88, 17);
             lblPhoneNumber.TabIndex = 9;
             lblPhoneNumber.Text = "Số điện thoại:";
             // 
             // txtSoDienThoai
             // 
-            txtSoDienThoai.Location = new Point(135, 77);
+            txtSoDienThoai.Location = new Point(118, 58);
+            txtSoDienThoai.Margin = new Padding(3, 2, 3, 2);
             txtSoDienThoai.Name = "txtSoDienThoai";
-            txtSoDienThoai.Size = new Size(200, 27);
+            txtSoDienThoai.Size = new Size(176, 23);
             txtSoDienThoai.TabIndex = 10;
+            txtSoDienThoai.TextChanged += txt_TextChanged;
+            txtSoDienThoai.KeyPress += txtSoDienThoai_KeyPress;
             // 
             // lblSex
             // 
-            lblSex.Location = new Point(25, 117);
+            lblSex.Location = new Point(22, 88);
             lblSex.Name = "lblSex";
-            lblSex.Size = new Size(100, 23);
+            lblSex.Size = new Size(88, 17);
             lblSex.TabIndex = 11;
             lblSex.Text = "Giới tính:";
             // 
             // rbMale
             // 
-            rbMale.Location = new Point(135, 117);
+            rbMale.Location = new Point(118, 88);
+            rbMale.Margin = new Padding(3, 2, 3, 2);
             rbMale.Name = "rbMale";
-            rbMale.Size = new Size(71, 24);
+            rbMale.Size = new Size(62, 18);
             rbMale.TabIndex = 12;
             rbMale.Text = "Nam";
+            rbMale.Click += rbSex_Click;
             // 
             // rbFemale
             // 
-            rbFemale.Location = new Point(231, 117);
+            rbFemale.Location = new Point(202, 88);
+            rbFemale.Margin = new Padding(3, 2, 3, 2);
             rbFemale.Name = "rbFemale";
-            rbFemale.Size = new Size(80, 24);
+            rbFemale.Size = new Size(70, 18);
             rbFemale.TabIndex = 13;
             rbFemale.Text = "Nữ";
+            rbFemale.Click += rbSex_Click;
             // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(53, 468);
+            lblTotal.Location = new Point(75, 371);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(79, 20);
+            lblTotal.Size = new Size(63, 15);
             lblTotal.TabIndex = 4;
             lblTotal.Text = "Tổng tiền :";
-            lblTotal.Click += label1_Click;
             // 
             // txtTotal
             // 
-            txtTotal.Location = new Point(373, 465);
+            txtTotal.Location = new Point(355, 369);
+            txtTotal.Margin = new Padding(3, 2, 3, 2);
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
-            txtTotal.Size = new Size(125, 27);
+            txtTotal.Size = new Size(110, 23);
             txtTotal.TabIndex = 5;
             txtTotal.TabStop = false;
             txtTotal.Text = "0";
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(768, 468);
+            btnCancel.Location = new Point(701, 371);
+            btnCancel.Margin = new Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(75, 43);
+            btnCancel.Size = new Size(66, 32);
             btnCancel.TabIndex = 6;
             btnCancel.Text = "Hủy";
             btnCancel.Click += btnCancel_Click;
             // 
             // btnPay
             // 
-            btnPay.Location = new Point(868, 468);
+            btnPay.Location = new Point(789, 371);
+            btnPay.Margin = new Padding(3, 2, 3, 2);
             btnPay.Name = "btnPay";
-            btnPay.Size = new Size(106, 43);
+            btnPay.Size = new Size(93, 32);
             btnPay.TabIndex = 7;
             btnPay.Text = "Thanh toán";
             btnPay.Click += btnPay_Click;
             // 
             // frmThanhToanSanPham
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(997, 524);
+            ClientSize = new Size(943, 458);
             Controls.Add(btnCancel);
             Controls.Add(btnPay);
             Controls.Add(txtTotal);
@@ -227,6 +242,7 @@
             Controls.Add(gbProductsInfor);
             Controls.Add(labelTitle);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmThanhToanSanPham";
             gbProductsInfor.ResumeLayout(false);
             gbCustomerInfor.ResumeLayout(false);

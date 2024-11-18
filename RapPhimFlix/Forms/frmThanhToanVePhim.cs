@@ -1,4 +1,5 @@
-﻿using RapPhimFlix.Controllers;
+﻿using RapPhimFlix.Appsetting;
+using RapPhimFlix.Controllers;
 using RapPhimFlix.Forms.MenuNav;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace RapPhimFlix.Forms
         private DataRow _khach;
         private DataTable _cthdvp = new DataTable();
         public event EventHandler<DataRow> AddButtonHuyClicked;
+        public event EventHandler AddButtonThanhCongClicked;
 
         public frmThanhToanVePhim(DataRow suatChieu, List<string> listGhes)
         {
@@ -49,7 +51,7 @@ namespace RapPhimFlix.Forms
             txt_PhongChieu.Text = _suatChieu["MaPhongChieu"].ToString();
             txt_Ghes.Text = ListGhes();
             txtTotal.Text = $"{_listGhes.Count * decimal.Parse(_suatChieu["GiaVe"].ToString())}";
-            ExportFile.loadImage(ptb_Image, _phim["TenAnh"].ToString());
+            ExportFile.loadImage(ptb_Image, "Resources\\images\\phims", _phim["TenAnh"].ToString());
             btnPay.Enabled = false;
 
         }
@@ -68,7 +70,10 @@ namespace RapPhimFlix.Forms
             {
                 TaoHoaDon();
                 if (MessageBox.Show("In hoá đơn luôn không!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
                     XuatHoaDon();
+                    AddButtonThanhCongClicked?.Invoke(this, EventArgs.Empty);
+                }
             }
         }
         private void XuatHoaDon()
@@ -85,14 +90,14 @@ namespace RapPhimFlix.Forms
                 DataProvider.Instance.ExcuteNonQuery("insert into tblKhach ( MaKhach , TenKhach ) values ( @MaKhach , @TenKhach )", pr2);
             }
             dt = DataProvider.Instance.ExcuteQuery("select * from tblKhach where MaKhach = @MaKhach", pr1);
-            _khach = dt.Rows[0]; 
+            _khach = dt.Rows[0];
         }
         private void TaoHoaDon()
         {
             TaoKhach();
             DateTime day = DateTime.Now;
             string MaNhanVien = FormNhanVien._maNhanVien;
-            string mhd = MaHoaDon();
+            string mhd = AppSetting.GenerateMa();
             decimal tongTien = 0;
             object[] pr1 = { mhd, day, tongTien, MaNhanVien, txtPhoneNumber.Text };
             DataProvider.Instance.ExcuteNonQuery("insert into tblHoaDon ( MaHoaDon , NgayBan , TongTien , MaNhanVien , MaKhach ) values ( @MaHoaDon , @NgayBan , @TongTien , @MaNhanVien , @MaKhach )", pr1);
@@ -126,7 +131,7 @@ namespace RapPhimFlix.Forms
                 DataProvider.Instance.ExcuteNonQuery("insert into tblVes ( MaVe , NgayBan , MaSuatChieu ) values ( @Mave , @NgayBan , @MaSuatChieu )", pr);
                 TatGhe(ve);
                 tongtien += thanhTien;
-                object[] prGG = { ve,  mhd, thanhTien};
+                object[] prGG = { ve, mhd, thanhTien };
                 DataProvider.Instance.ExcuteNonQuery("insert into tblChiTietHoaDonVePhim ( MaVe , MaHoaDon , ThanhTien ) values ( @MaVe , @MaHoaDon , @ThanhTien )", prGG);
                 DataRow row = _cthdvp.NewRow();
                 row["MaVe"] = ve;
@@ -138,7 +143,7 @@ namespace RapPhimFlix.Forms
         }
         private void TatGhe(string maGhe)
         {
-            object[] pr = {1, maGhe};
+            object[] pr = { 1, maGhe };
             DataProvider.Instance.ExcuteNonQuery("update tblGhes set TrangThai = @TT where MaGhe = @MaGhe", pr);
         }
         private decimal ThanhTien(int phanTram, decimal tienGiam, decimal giaVe)
@@ -160,11 +165,15 @@ namespace RapPhimFlix.Forms
             if (han <= DateTime.Now) return new Pair<int, decimal>(0, 0);
             return new Pair<int, decimal>((int)dt.Rows[0]["PhanTramGiamGia"], (decimal)dt.Rows[0]["SoTienGiamGia"]);
         }
-        private string MaHoaDon()
-        {
-            Random ran = new Random();
-            return ran.Next(99, 999).ToString() + ran.Next(99, 999).ToString();
-        }
+        
         private void btnCancel_Click(object sender, EventArgs e) { AddButtonHuyClicked?.Invoke(this, _suatChieu); }
+
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

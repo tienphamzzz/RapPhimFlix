@@ -26,12 +26,13 @@ namespace RapPhimFlix
             //setProductImg(product.ImgPath);
             setProductName(product.Name);
             setProductPrice((float)product.Price);
+            ExportFile.loadImage(pbProductPicture, "Resources\\images\\sanphams", product.Name);
         }
 
-        //public void setProductImg(string? imgPath = null)
-        //{
-        //    pbProductPicture.Image = Image.FromFile(imgPath);
-        //}
+        public void setProductImg(string? imgPath = null)
+        {
+            pbProductPicture.Image = Image.FromFile(imgPath);
+        }
 
         public void setProductName(string name)
         {

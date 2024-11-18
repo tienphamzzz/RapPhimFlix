@@ -70,7 +70,7 @@ namespace RapPhimFlix.Forms
 
             rtb_ThongTinPhim.Text += "Thời lượng: " + _rowPhim["ThoiLuong"].ToString() + '\n';
             rtb_ThongTinPhim.Text += "Đạo diễn:   " + _rowPhim["DaoDien"].ToString() + '\n';
-            ExportFile.loadImage(ptb_Anh, _rowPhim["TenAnh"].ToString());
+            ExportFile.loadImage(ptb_Anh, "Resources\\images\\phims", _rowPhim["TenAnh"].ToString());
             rtb_ThongTinPhim.Text += "Mô tả: " + ExportFile.ReadFileOrDefault(_rowPhim["MoTa"].ToString());
         }
         private void btn_Them_Click(object sender, EventArgs e)

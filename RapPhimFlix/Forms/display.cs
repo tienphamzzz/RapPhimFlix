@@ -50,6 +50,7 @@ namespace RapPhimFlix.Forms
                 case frmThanhToanVePhim:
                     frmThanhToanVePhim form4 = (frmThanhToanVePhim)_formChild;
                     form4.AddButtonHuyClicked += btn_QuayLaiPhongChieu;
+                    form4.AddButtonThanhCongClicked += btn_ThanhToanThanhCong;
                     break;
             }
         }
@@ -71,11 +72,8 @@ namespace RapPhimFlix.Forms
         // chuyển từ phòng chiếu sang suất chiếu
         private void btn_QuayLaiSuatChieu(object? sender, DataRow phim)
         {
-
            // UserControl user = new frmListPhim(this);
            // ShowUserControl(user);
-
-
             OpenChildForm(new frmSuatChieu(phim));
 
         }
@@ -89,6 +87,10 @@ namespace RapPhimFlix.Forms
         {
             OpenChildForm(new frmPhongChieu(_phongChieu));
         }
-
+        // chuyển từ vé phim khi thanh toán thành công về
+        private void btn_ThanhToanThanhCong(object? sender, EventArgs e)
+        {
+            OpenChildForm(new frmListPhim());
+        }
     }
 }

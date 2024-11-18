@@ -34,7 +34,7 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
             string loaiSanPham = cbb_SanPham_Them.Text;
 
             // Lấy đường dẫn ảnh từ PictureBox
-            string anhSanPham = ptb_SanPham_Them.ImageLocation;
+            string anhSanPham = tb_SanPham_Them_TenSP.Text;
             if (string.IsNullOrWhiteSpace(maSP) || string.IsNullOrWhiteSpace(gia) ||
             string.IsNullOrWhiteSpace(tenSP) ||
             string.IsNullOrWhiteSpace(loaiSanPham) || string.IsNullOrWhiteSpace(anhSanPham))
@@ -60,7 +60,7 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
                                       "Xác nhận",
                                       MessageBoxButtons.YesNo,
                                       MessageBoxIcon.Question);
-
+                ExportFile.saveImage(ptb_SanPham_Them, "Resources\\images\\sanphams", anhSanPham);
                 if (result1 == DialogResult.Yes)
                 {
 

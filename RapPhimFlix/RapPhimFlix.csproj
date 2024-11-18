@@ -44,6 +44,8 @@
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Superman 1.jpg" />
 
     <Content Include="Resources\Icon\app-icon.ico" />
+
+    <Folder Include="bin\Debug\net8.0-windows\Resources\images\sanphams\" />
     <Folder Include="Forms\MenuNav\" />
 
     <Folder Include="Forms\ThongKeDoanhThu\" />

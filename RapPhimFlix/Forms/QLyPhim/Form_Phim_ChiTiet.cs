@@ -50,7 +50,7 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
             //ptB_ChiTiet_Anh.ImageLocation = dt.Rows[0]["TenAnh"].ToString();
             tb_ChiTietPhim_ThoiLuong.Text = dt.Rows[0]["ThoiLuong"].ToString();
             tb_ChiTietPhim_QuocGia.Text = dt.Rows[0]["QuocGia"].ToString();
-            ExportFile.loadImage(ptB_ChiTiet_Anh, dt.Rows[0]["TenAnh"].ToString());
+            ExportFile.loadImage(ptB_ChiTiet_Anh, "Resources\\images\\phims", dt.Rows[0]["TenAnh"].ToString());
         }
 
         private void btn_ChiTietPhim_XacNhan_Click(object sender, EventArgs e)

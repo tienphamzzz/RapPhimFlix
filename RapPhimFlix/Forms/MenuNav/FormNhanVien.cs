@@ -27,7 +27,7 @@ namespace RapPhimFlix.Forms.MenuNav
             txt_NhanVien_Ten.Enabled = false;
             _maNhanVien = maNhanVien;
             _childFormPhim = new display();
-            _childFormSanPham = new frmChonSanPham();
+            _childFormSanPham = new displaySP();
             OpenChildForm(_childFormPhim); _childFormPhim.Show();
             OpenChildForm(_childFormSanPham); _childFormSanPham.Hide();
         }

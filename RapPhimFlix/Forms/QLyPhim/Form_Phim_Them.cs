@@ -56,10 +56,10 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             string QuocGia = tb_ThemPhim_QuocGia.Text;
             string MoTa = tb_ThemPhim_MoTa.Text;
             string TheLoai = cbb_ThemPhim_TheLoai.Text;
-            string TenAnh = ptB_Them_Anh.ImageLocation;
+            string TenAnh = tb_ThemPhim_Tenphim.Text;
             DateTime ngayChieu = dateTimePicker1.Value;
             string NamPhatHanh = ngayChieu.ToString("yyyy-MM-dd");
-
+            
 
             //string NamPhatHanh = tb_Phim_Them_NamPhatHanh.Text;            // Check if all required fields are filled
             if (CheckNull() == false || string.IsNullOrEmpty(cbb_ThemPhim_TheLoai.Text) || ptB_Them_Anh.ImageLocation == "")
@@ -116,7 +116,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
                     formQLy.OpenFormChild(new Form_DanhSachPhim(formQLy));
                     formQLy.hien_thanhButton();
                 }
-
+                ExportFile.saveImage(ptB_Them_Anh, "Resources\\images\\phims", TenAnh);
             }
             else
             {

@@ -31,7 +31,7 @@ namespace RapPhimFlix.Forms.UserControls
         }
         private void Hehe_Load()
         {
-            ExportFile.loadImage(ptb_HienThi, _tenAnh);
+            ExportFile.loadImage(ptb_HienThi, "Resources\\images\\phims", _tenAnh);
             btn_Them.Text = $"Them\n{_maPhim}";
             grb_HienThi.Text = _tenPhim;
         }
