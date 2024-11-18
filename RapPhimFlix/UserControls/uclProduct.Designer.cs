@@ -47,7 +47,7 @@
             // 
             lblProductName.Anchor = AnchorStyles.Top;
             lblProductName.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblProductName.Location = new Point(4, 153);
+            lblProductName.Location = new Point(-2, 153);
             lblProductName.Name = "lblProductName";
             lblProductName.Size = new Size(159, 25);
             lblProductName.TabIndex = 1;
@@ -57,7 +57,7 @@
             // lblProductPrice
             // 
             lblProductPrice.Anchor = AnchorStyles.Top;
-            lblProductPrice.Location = new Point(5, 187);
+            lblProductPrice.Location = new Point(-1, 187);
             lblProductPrice.Name = "lblProductPrice";
             lblProductPrice.Size = new Size(159, 25);
             lblProductPrice.TabIndex = 2;
@@ -74,7 +74,7 @@
             Controls.Add(pbProductPicture);
             Controls.Add(lblProductName);
             Name = "uclProduct";
-            Size = new Size(170, 217);
+            Size = new Size(159, 217);
             ((System.ComponentModel.ISupportInitialize)pbProductPicture).EndInit();
             ResumeLayout(false);
         }

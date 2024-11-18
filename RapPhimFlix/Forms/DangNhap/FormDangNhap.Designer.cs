@@ -59,7 +59,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(596, 423);
+            panel1.Size = new Size(625, 423);
             panel1.TabIndex = 0;
             // 
             // lbHienMK
@@ -67,19 +67,19 @@
             lbHienMK.AutoSize = true;
             lbHienMK.Font = new Font("Times New Roman", 9.75F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             lbHienMK.ForeColor = Color.Blue;
-            lbHienMK.Location = new Point(444, 236);
+            lbHienMK.Location = new Point(419, 242);
             lbHienMK.Name = "lbHienMK";
-            lbHienMK.Size = new Size(87, 15);
+            lbHienMK.Size = new Size(112, 19);
             lbHienMK.TabIndex = 5;
             lbHienMK.Text = "Hiện mât khẩu";
             lbHienMK.Click += lbHienMK_Click;
             // 
             // btnThoat
             // 
-            btnThoat.Location = new Point(424, 280);
+            btnThoat.Location = new Point(350, 297);
             btnThoat.Margin = new Padding(4);
             btnThoat.Name = "btnThoat";
-            btnThoat.Size = new Size(107, 32);
+            btnThoat.Size = new Size(131, 48);
             btnThoat.TabIndex = 4;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = true;
@@ -87,10 +87,10 @@
             // 
             // btn_DangNhap_DangNhap
             // 
-            btn_DangNhap_DangNhap.Location = new Point(293, 280);
+            btn_DangNhap_DangNhap.Location = new Point(150, 297);
             btn_DangNhap_DangNhap.Margin = new Padding(4);
             btn_DangNhap_DangNhap.Name = "btn_DangNhap_DangNhap";
-            btn_DangNhap_DangNhap.Size = new Size(107, 32);
+            btn_DangNhap_DangNhap.Size = new Size(157, 48);
             btn_DangNhap_DangNhap.TabIndex = 3;
             btn_DangNhap_DangNhap.Text = "Đăng nhập";
             btn_DangNhap_DangNhap.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@
             txt_DangNhap_MatKhau.Location = new Point(150, 203);
             txt_DangNhap_MatKhau.Margin = new Padding(4);
             txt_DangNhap_MatKhau.Name = "txt_DangNhap_MatKhau";
-            txt_DangNhap_MatKhau.Size = new Size(381, 29);
+            txt_DangNhap_MatKhau.Size = new Size(381, 35);
             txt_DangNhap_MatKhau.TabIndex = 2;
             txt_DangNhap_MatKhau.TextChanged += txt_DangNhap_MatKhau_TextChanged;
             txt_DangNhap_MatKhau.KeyDown += txt_DangNhap_MatKhau_KeyDown;
@@ -109,7 +109,7 @@
             // ptb_DangNhap_MatKhau
             // 
             ptb_DangNhap_MatKhau.Image = (Image)resources.GetObject("ptb_DangNhap_MatKhau.Image");
-            ptb_DangNhap_MatKhau.Location = new Point(74, 190);
+            ptb_DangNhap_MatKhau.Location = new Point(74, 196);
             ptb_DangNhap_MatKhau.Margin = new Padding(4);
             ptb_DangNhap_MatKhau.Name = "ptb_DangNhap_MatKhau";
             ptb_DangNhap_MatKhau.Size = new Size(43, 42);
@@ -122,14 +122,14 @@
             txt_DangNhap_TaiKhoan.Location = new Point(150, 146);
             txt_DangNhap_TaiKhoan.Margin = new Padding(4);
             txt_DangNhap_TaiKhoan.Name = "txt_DangNhap_TaiKhoan";
-            txt_DangNhap_TaiKhoan.Size = new Size(381, 29);
+            txt_DangNhap_TaiKhoan.Size = new Size(381, 35);
             txt_DangNhap_TaiKhoan.TabIndex = 1;
             txt_DangNhap_TaiKhoan.KeyDown += txt_DangNhap_TaiKhoan_KeyDown;
             // 
             // ptb_DangNhap_TaiKhoan
             // 
             ptb_DangNhap_TaiKhoan.Image = (Image)resources.GetObject("ptb_DangNhap_TaiKhoan.Image");
-            ptb_DangNhap_TaiKhoan.Location = new Point(74, 133);
+            ptb_DangNhap_TaiKhoan.Location = new Point(74, 146);
             ptb_DangNhap_TaiKhoan.Margin = new Padding(4);
             ptb_DangNhap_TaiKhoan.Name = "ptb_DangNhap_TaiKhoan";
             ptb_DangNhap_TaiKhoan.Size = new Size(43, 42);
@@ -144,7 +144,7 @@
             label1.Location = new Point(218, 48);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(166, 36);
+            label1.Size = new Size(204, 45);
             label1.TabIndex = 0;
             label1.Text = "Đăng nhập";
             // 
@@ -154,9 +154,9 @@
             // 
             // FormDangNhap
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(13F, 27F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(596, 423);
+            ClientSize = new Size(625, 423);
             Controls.Add(panel1);
             Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);

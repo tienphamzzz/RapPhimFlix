@@ -37,19 +37,45 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
         private void btn_SanPham_Sua_ChonTep_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Title = "Chọn tệp cần mở";               // Tiêu đề hộp thoại
+            open.Title = "Chọn tệp cần mở"; // Tiêu đề hộp thoại
             open.Filter = "Tệp ảnh|*.jpg;*.jpeg;*.png;*.bmp;*.gif"; // Bộ lọc
-            open.Multiselect = false;                    // Cho phép chọn nhiều tệp (true/false)
+            open.Multiselect = false; // Cho phép chọn nhiều tệp (true/false)
             open.InitialDirectory = "Resources";
+
             string selectedFilePath = "";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 selectedFilePath = open.FileName;
-
             }
-            if (selectedFilePath != "")
+
+            if (!string.IsNullOrEmpty(selectedFilePath))
             {
-                ptb_SanPham_Sua.ImageLocation = selectedFilePath;
+                // Lấy tên sản phẩm từ TextBox
+                string tenSanPham = tb_SanPham_Sua_TenSP.Text;
+                if (!string.IsNullOrEmpty(tenSanPham))
+                {
+                    // Tạo đường dẫn mới cho ảnh
+                    string newFileName = tenSanPham + ".png"; // Đổi đuôi thành .png
+                    string newPath = @"Resources\Img\Products\" + newFileName;
+
+                    // Kiểm tra và tạo thư mục nếu chưa có
+                    string directoryPath = Path.GetDirectoryName(newPath);
+                    if (!Directory.Exists(directoryPath))
+                    {
+                        Directory.CreateDirectory(directoryPath);
+                    }
+
+                    // Copy ảnh vào thư mục mới
+                    try
+                    {
+                        File.Copy(selectedFilePath, newPath, true); // true để thay thế nếu ảnh đã tồn tại
+                        ptb_SanPham_Sua.ImageLocation = newPath; // Cập nhật hình ảnh trên PictureBox
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Không thể lưu ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
 
@@ -63,7 +89,6 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
                 MessageBox.Show("Giá phải là một số hợp lệ!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
 
             string tenSP = tb_SanPham_Sua_TenSP.Text;
             string loaiSanPham = cbb_SanPham_Sua.Text;
@@ -80,23 +105,19 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
                 return;
             }
 
-            // Kiểm tra xem giá có hợp lệ hay không
-
-
-            // Câu lệnh UPDATE
+            // Cập nhật dữ liệu trong cơ sở dữ liệu
             string updateQuery = "UPDATE tblSanPham " +
                                  "SET Gia = '" + giaHopLe + "', " +
                                  "    TenSanPham = N'" + tenSP + "', " +
                                  "    LoaiSanPham = N'" + loaiSanPham + "', " +
                                  "    Anh = '" + anhSanPham + "' " +
-
                                  "WHERE MaSanPham = '" + maSP + "'";
 
             // Thực thi câu lệnh UPDATE
             int result = DataProvider.Instance.ExcuteNonQuery(updateQuery); // db.ChangeData thực thi câu lệnh SQL
 
             // Thông báo kết quả
-            if (result!=0)
+            if (result != 0)
             {
                 check = true;
                 MessageBox.Show("Cập nhật sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -105,7 +126,6 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
             {
                 MessageBox.Show("Cập nhật sản phẩm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void btn_SuaSP_quaylai_Click(object sender, EventArgs e)

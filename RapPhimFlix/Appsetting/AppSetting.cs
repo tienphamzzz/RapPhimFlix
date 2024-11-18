@@ -10,7 +10,7 @@ namespace RapPhimFlix.Appsetting
 {
     public class AppSetting
     {
-        public static string ConnectionString = "Data Source=LAPTOP-A56O33LS\\SQLEXPRESS;Initial Catalog=QLCinema;Integrated Security=True";
+        public static string ConnectionString = "Data Source=TienPham\\SQLEXPRESS;Initial Catalog=QLCinema;Integrated Security=True;";
         public static string Admin { get; } = "Admin123";
         public static string Password { get; } = "Admin123";
         public bool checkAdmin(string username, string password)

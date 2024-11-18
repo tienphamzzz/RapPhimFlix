@@ -61,15 +61,15 @@
             groupBox2.Dock = DockStyle.Bottom;
             groupBox2.Location = new Point(0, 0);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(959, 45);
+            groupBox2.Size = new Size(953, 45);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             // 
             // button2
             // 
-            button2.Location = new Point(447, 3);
+            button2.Location = new Point(468, 3);
             button2.Name = "button2";
-            button2.Size = new Size(463, 42);
+            button2.Size = new Size(485, 42);
             button2.TabIndex = 1;
             button2.Text = "Đồ ăn vặt";
             button2.UseVisualStyleBackColor = true;
@@ -79,7 +79,7 @@
             // 
             btn_DanhSachPhim.Location = new Point(0, 3);
             btn_DanhSachPhim.Name = "btn_DanhSachPhim";
-            btn_DanhSachPhim.Size = new Size(450, 42);
+            btn_DanhSachPhim.Size = new Size(462, 42);
             btn_DanhSachPhim.TabIndex = 0;
             btn_DanhSachPhim.Text = "Phim đang chiếu";
             btn_DanhSachPhim.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@
             panel2.Dock = DockStyle.Bottom;
             panel2.Location = new Point(0, 551);
             panel2.Name = "panel2";
-            panel2.Size = new Size(959, 45);
+            panel2.Size = new Size(953, 45);
             panel2.TabIndex = 3;
             // 
             // groupBox1
@@ -106,7 +106,7 @@
             groupBox1.Dock = DockStyle.Top;
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(959, 54);
+            groupBox1.Size = new Size(953, 54);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             // 
@@ -116,7 +116,7 @@
             label2.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(690, 20);
             label2.Name = "label2";
-            label2.Size = new Size(73, 15);
+            label2.Size = new Size(101, 19);
             label2.TabIndex = 6;
             label2.Text = "Flix Cinema";
             // 
@@ -135,7 +135,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(405, 20);
             label1.Name = "label1";
-            label1.Size = new Size(113, 15);
+            label1.Size = new Size(140, 19);
             label1.TabIndex = 4;
             label1.Text = "hiện ngày giờ ở đây";
             // 
@@ -143,7 +143,7 @@
             // 
             txt_NhanVien_Ten.Location = new Point(43, 18);
             txt_NhanVien_Ten.Name = "txt_NhanVien_Ten";
-            txt_NhanVien_Ten.Size = new Size(188, 22);
+            txt_NhanVien_Ten.Size = new Size(188, 26);
             txt_NhanVien_Ten.TabIndex = 3;
             // 
             // pictureBox3
@@ -182,7 +182,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(959, 54);
+            panel1.Size = new Size(953, 54);
             panel1.TabIndex = 2;
             // 
             // timer1
@@ -195,14 +195,14 @@
             panel_Display.Dock = DockStyle.Fill;
             panel_Display.Location = new Point(0, 54);
             panel_Display.Name = "panel_Display";
-            panel_Display.Size = new Size(959, 497);
+            panel_Display.Size = new Size(953, 497);
             panel_Display.TabIndex = 4;
             // 
             // FormNhanVien
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(959, 596);
+            ClientSize = new Size(953, 596);
             Controls.Add(panel_Display);
             Controls.Add(panel1);
             Controls.Add(panel2);

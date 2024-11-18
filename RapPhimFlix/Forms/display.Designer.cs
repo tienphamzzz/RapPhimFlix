@@ -32,9 +32,10 @@
             // 
             // display
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(912, 491);
+            ClientSize = new Size(1025, 536);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "display";
             Text = "Display";
             ResumeLayout(false);

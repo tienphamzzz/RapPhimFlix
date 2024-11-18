@@ -27,50 +27,73 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
 
         private void btn_SanPham_Them_XacNhan_Click(object sender, EventArgs e)
         {
-            string maSP = tb_SanPham_Them_MaSP.Text;
-            string gia = tb_SanPham_Them_Gia.Text;
-
-            string tenSP = tb_SanPham_Them_TenSP.Text;
-            string loaiSanPham = cbb_SanPham_Them.Text;
-
-            // Lấy đường dẫn ảnh từ PictureBox
-            string anhSanPham = ptb_SanPham_Them.ImageLocation;
-            if (string.IsNullOrWhiteSpace(maSP) || string.IsNullOrWhiteSpace(gia) ||
-            string.IsNullOrWhiteSpace(tenSP) ||
-            string.IsNullOrWhiteSpace(loaiSanPham) || string.IsNullOrWhiteSpace(anhSanPham))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (!Double.TryParse(gia, out double giaHopLe))
-            {
-                MessageBox.Show("Giá phải là một số hợp lệ!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            string insertQuery = "INSERT INTO tblSanPham (MaSanPham, Gia, LoaiSanPham, TenSanPham,  Anh) " +
-                     "VALUES ('" + maSP + "', '" + giaHopLe + "', N'" + loaiSanPham + "', N'" + tenSP + "','" + anhSanPham + "')";
+                string maSP = tb_SanPham_Them_MaSP.Text;
+                string gia = tb_SanPham_Them_Gia.Text;
+                string tenSP = tb_SanPham_Them_TenSP.Text;
+                string loaiSanPham = cbb_SanPham_Them.Text;
 
+                // Lấy đường dẫn ảnh từ PictureBox
+                string anhSanPham = ptb_SanPham_Them.ImageLocation;
 
-            int result = DataProvider.Instance.ExcuteNonQuery(insertQuery);
-
-            if (result!=0)
-            {
-                check = true;
-                DialogResult result1 = MessageBox.Show("Bạn đã thêm sản phẩm thành công ! Bạn muốn quay lại danh sách phim không?",
-                                      "Xác nhận",
-                                      MessageBoxButtons.YesNo,
-                                      MessageBoxIcon.Question);
-
-                if (result1 == DialogResult.Yes)
+                // Kiểm tra thông tin đầu vào
+                if (string.IsNullOrWhiteSpace(maSP) || string.IsNullOrWhiteSpace(gia) ||
+                    string.IsNullOrWhiteSpace(tenSP) || string.IsNullOrWhiteSpace(loaiSanPham) || string.IsNullOrWhiteSpace(anhSanPham))
                 {
-
-                    formQLy.OpenFormChild(new Form_DanhSachSanPham(formQLy));
-                    formQLy.hien_thanhButton();
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-            }
-            else
-            {
-                MessageBox.Show("Thêm sản phẩm thất bại!");
+                if (!Double.TryParse(gia, out double giaHopLe))
+                {
+                    MessageBox.Show("Giá phải là một số hợp lệ!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Đổi tên ảnh thành "Tên sản phẩm.png"
+                string newFileName = $"{tenSP}.png";
+                string directoryPath = Path.Combine(Application.StartupPath, "Resources", "Img", "Products");
+
+                // Kiểm tra nếu thư mục chưa tồn tại thì tạo thư mục
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                string newFilePath = Path.Combine(directoryPath, newFileName);
+
+                // Di chuyển ảnh vào thư mục và đổi tên
+                try
+                {
+                    File.Copy(anhSanPham, newFilePath, true);  // True để ghi đè nếu file đã tồn tại
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi lưu ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Lưu đường dẫn vào cơ sở dữ liệu
+                string insertQuery = "INSERT INTO tblSanPham (MaSanPham, Gia, LoaiSanPham, TenSanPham, Anh) " +
+                                     "VALUES ('" + maSP + "', '" + giaHopLe + "', N'" + loaiSanPham + "', N'" + tenSP + "', N'" + newFileName + "')";
+
+                int result = DataProvider.Instance.ExcuteNonQuery(insertQuery);
+
+                if (result != 0)
+                {
+                    check = true;
+                    DialogResult result1 = MessageBox.Show("Bạn đã thêm sản phẩm thành công ! Bạn muốn quay lại danh sách sản phẩm không?",
+                                                          "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result1 == DialogResult.Yes)
+                    {
+                        formQLy.OpenFormChild(new Form_DanhSachSanPham(formQLy));
+                        formQLy.hien_thanhButton();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Thêm sản phẩm thất bại!");
+                }
             }
         }
 

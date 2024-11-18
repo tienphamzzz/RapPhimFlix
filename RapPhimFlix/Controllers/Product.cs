@@ -40,7 +40,7 @@ namespace RapPhimFlix.Controllers
             this.name = row["TenSanPham"].ToString();
             this.type = row["LoaiSanPham"].ToString();
             this.price = (decimal)row["Gia"];
-            //this.imgPath = row["Anh"].ToString();
+            this.imgPath = row["Anh"].ToString();
         }
     }
 }

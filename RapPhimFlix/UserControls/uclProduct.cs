@@ -23,15 +23,18 @@ namespace RapPhimFlix
         {
             InitializeComponent();
 
-            //setProductImg(product.ImgPath);
+            string directoryPath = Path.Combine(Application.StartupPath, "Resources", "Img", "Products");
+
+            setProductImg(Path.Combine(directoryPath, product.ImgPath));
+            pbProductPicture.SizeMode = PictureBoxSizeMode.StretchImage;
             setProductName(product.Name);
             setProductPrice((float)product.Price);
         }
 
-        //public void setProductImg(string? imgPath = null)
-        //{
-        //    pbProductPicture.Image = Image.FromFile(imgPath);
-        //}
+        public void setProductImg(string? imgPath = null)
+        {
+            pbProductPicture.Image = Image.FromFile(imgPath);
+        }
 
         public void setProductName(string name)
         {
