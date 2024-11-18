@@ -128,7 +128,6 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             if (open.ShowDialog() == DialogResult.OK)
             {
                 selectedFilePath = open.FileName;
-
             }
             if (selectedFilePath != "")
             {

@@ -16,7 +16,6 @@ namespace RapPhimFlix.Forms.DangNhap
 {
     public partial class FormDangNhap : Form
     {
-        AppSetting appSetting = new AppSetting();
 
         public FormDangNhap()
         {
@@ -26,13 +25,26 @@ namespace RapPhimFlix.Forms.DangNhap
         private void FormDangNhap_Load(object sender, EventArgs e)
         {
             txt_DangNhap_MatKhau.PasswordChar = '*';
+
+            //timerHienMK.Stop();
+            timerHienMK.Interval = 1000;
+
+            lbHienMK.Text = "Hiện mật khẩu";
         }
 
         private void btn_DangNhap_DangNhap_Click(object sender, EventArgs e)
         {
             string maNhanVien = txt_DangNhap_TaiKhoan.Text;
             string matKhau = txt_DangNhap_MatKhau.Text;
+            if (maNhanVien == AppSetting.Admin && matKhau == AppSetting.Password)
+            {
+                AppSetting.VaiTro = 0;
+                //MessageBox.Show("Hi Admin");
 
+                FormAdmin formAdmin = new FormAdmin("Admin");
+                this.Hide();
+                formAdmin.ShowDialog();
+            }
 
             string query = "SELECT nv.HovaTen, nv.ChucVu FROM tblTaiKhoan tk " +
                    "INNER JOIN tblNhanVien nv ON tk.MaNhanVien = nv.MaNhanVien " +
@@ -45,20 +57,10 @@ namespace RapPhimFlix.Forms.DangNhap
                 string HovaTen = dt.Rows[0]["HovaTen"].ToString();
                 string ChucVu = dt.Rows[0]["ChucVu"].ToString();
 
-                if (ChucVu == "Admin")
-                {
-                    AppSetting.VaiTro = 0;
-                    MessageBox.Show("Hi Admin");
-
-                    FormAdmin formAdmin = new FormAdmin(HovaTen);
-                    this.Hide();
-                    formAdmin.ShowDialog();
-                    //this.Show();
-                }
-                else if (ChucVu == "Quản lý")
+                if (ChucVu == "Quản lý")
                 {
                     AppSetting.VaiTro = 1;
-                    MessageBox.Show("Hi Quản lý");
+                    //MessageBox.Show("Hi Quản lý");
 
                     FormQuanLy formQuanLy = new FormQuanLy(HovaTen);
                     this.Hide();
@@ -68,19 +70,17 @@ namespace RapPhimFlix.Forms.DangNhap
                 else if (ChucVu == "Nhân viên")
                 {
                     AppSetting.VaiTro = 2;
-                    MessageBox.Show("Hi Nhân viên");
+                    //MessageBox.Show("Hi Nhân viên");
 
-                    FormNhanVien formNhanVien = new FormNhanVien(HovaTen);
+                    FormNhanVien formNhanVien = new FormNhanVien(HovaTen, maNhanVien);
                     this.Hide();
                     formNhanVien.ShowDialog();
                     // this.Show();
                 }
-
             }
             else
-            {
                 MessageBox.Show("Tên đăng nhập và mật khẩu không đúng.");
-            }
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -118,19 +118,6 @@ namespace RapPhimFlix.Forms.DangNhap
 
         }
 
-        private void FormDangNhap_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btn_DangNhap_DangNhap.PerformClick();
-            }
-        }
-
-        private void FormDangNhap_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if ()
-        }
-
         private void txt_DangNhap_MatKhau_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) btn_DangNhap_DangNhap.PerformClick();
@@ -139,6 +126,22 @@ namespace RapPhimFlix.Forms.DangNhap
         private void txt_DangNhap_TaiKhoan_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) txt_DangNhap_MatKhau.Focus();
+        }
+
+        private void timerHienMK_Tick(object sender, EventArgs e)
+        {
+            txt_DangNhap_MatKhau.PasswordChar = '*';
+            timerHienMK.Stop();
+
+            lbHienMK.Text = "Hiện mật khẩu";
+        }
+
+        private void lbHienMK_Click(object sender, EventArgs e)
+        {
+            txt_DangNhap_MatKhau.PasswordChar = '\0'; //Hiển thị mk
+            timerHienMK.Start();
+
+            lbHienMK.Text = "Ẩn mật khẩu";
         }
     }
 }

@@ -38,8 +38,9 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
                 cbb_PhongChieu.Items.Add(dt1.Rows[i]["TenPhong"]);
             }
             DataTable dt2 = DataProvider.Instance.ExcuteQuery("Select Ten from tblPhims");
-            for (int i = 0; i < dt1.Rows.Count; i++)
+            for (int i = 0; i < dt2.Rows.Count; i++)
             {
+                
                 cbb_TenPhim.Items.Add(dt2.Rows[i]["Ten"]);
             }
             for (int i = 0; i <= 23; i++)

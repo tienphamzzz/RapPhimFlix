@@ -46,6 +46,7 @@
             pictureBox3 = new PictureBox();
             panel1 = new Panel();
             timer1 = new System.Windows.Forms.Timer(components);
+            panel_Body = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptb_QuanLy_DangXuat).BeginInit();
@@ -84,6 +85,7 @@
             btn_Admin_NhanVien.TabIndex = 10;
             btn_Admin_NhanVien.Text = "Quản lý nhân viên";
             btn_Admin_NhanVien.UseVisualStyleBackColor = true;
+            btn_Admin_NhanVien.Click += btn_Admin_NhanVien_Click;
             // 
             // label2
             // 
@@ -188,7 +190,7 @@
             groupBox1.Dock = DockStyle.Left;
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(217, 465);
+            groupBox1.Size = new Size(215, 465);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
@@ -217,11 +219,20 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // panel_Body
+            // 
+            panel_Body.Dock = DockStyle.Fill;
+            panel_Body.Location = new Point(221, 48);
+            panel_Body.Name = "panel_Body";
+            panel_Body.Size = new Size(730, 417);
+            panel_Body.TabIndex = 4;
+            // 
             // FormAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(951, 465);
+            Controls.Add(panel_Body);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "FormAdmin";
@@ -260,5 +271,6 @@
         private Panel panel1;
         private PictureBox pictureBox3;
         private System.Windows.Forms.Timer timer1;
+        private Panel panel_Body;
     }
 }

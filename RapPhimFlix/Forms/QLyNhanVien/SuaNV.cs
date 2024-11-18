@@ -37,9 +37,9 @@ namespace RapPhimFlix.Forms.QLyNhanVien
                     txt_SDT.Text = row["SDT"].ToString();
                     txt_Luong.Text = row["Luong"].ToString();
                     txt_MatKhau.Text = row["MatKhau"].ToString();
-                    txt_TaiKhoan.Text = row["SDT"].ToString();
+                    txt_TaiKhoan.Text = txt_MaNV.Text;
 
-                    if (row["ChucVu"].ToString() == "1")
+                    if (row["ChucVu"].ToString() == "Nhân viên")
                     {
                         rdo_ChucVuNhanVien.Checked = true;
                     }
@@ -68,14 +68,14 @@ namespace RapPhimFlix.Forms.QLyNhanVien
         {
             string maNV = txt_MaNV.Text;
             string tenNV = txt_TenNV.Text;
-            string chucVu = rdo_ChucVuNhanVien.Checked ? "1" : "0";
+            string chucVu = rdo_ChucVuNhanVien.Checked ? "Nhân viên" : "Quản lý";
             string sdt = txt_SDT.Text;
             string luong = txt_Luong.Text;
             string gioiTinh = rdo_GioiTinh_Nam.Checked ? "Nam" : "Nữ";
             string matKhau = txt_MatKhau.Text;
-            string taiKhoan = txt_TaiKhoan.Text;
+            string taiKhoan = txt_TaiKhoan.Text = maNV;
 
-            string sqlNhanVien = "UPDATE tblNhanVien SET HovaTen = '" + tenNV + "', ChucVu = '" + chucVu + "', SDT = '" + sdt + "', Luong = '" + luong + "', GioiTinh = '" + gioiTinh + "' WHERE MaNhanVien = '" + maNV + "';";
+            string sqlNhanVien = "UPDATE tblNhanVien SET HovaTen = '" + tenNV + "', ChucVu = N'" + chucVu + "', SDT = '" + sdt + "', Luong = '" + luong + "', GioiTinh = N'" + gioiTinh + "' WHERE MaNhanVien = '" + maNV + "';";
 
             string sqlTaiKhoan = "UPDATE tblTaiKhoan SET MatKhau = '" + matKhau + "' WHERE MaNhanVien = '" + maNV + "';";
 
@@ -89,6 +89,30 @@ namespace RapPhimFlix.Forms.QLyNhanVien
         private void btn_Huy_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void txt_Luong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_SDT_TextChanged(object sender, EventArgs e)
+        {
+            
+            if (Annotation.TelephoneNumber(txt_SDT.Text))
+            {
+                btn_XacNhan.Enabled = true;
+            }else btn_XacNhan.Enabled = false;
         }
     }
 }

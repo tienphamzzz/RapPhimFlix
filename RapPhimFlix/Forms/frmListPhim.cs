@@ -16,23 +16,17 @@ namespace RapPhimFlix.Forms
     public partial class frmListPhim : Form
     {
         private DataTable _phimTable = DataProvider.Instance.ExcuteQuery("select * from tblPhims");
+        private string _maPhim;
         public event EventHandler<DataRow> AddButtonClicked;
         public frmListPhim()
         {
             InitializeComponent();
-
-            main = (display)form;
-            _phim = DataProvider.Instance.ExcuteQuery("select * from tblPhims");
+            //main = (display)form;
+            _phimTable = DataProvider.Instance.ExcuteQuery("select * from tblPhims");
+            Load();
         }
 
-        private void btn_Them(object sender, EventArgs e)
-        {
-
-            Button btn = (Button)sender;
-            _maPhim = (btn.Text.Split('\n')[1]);
-            //main.ShowUserControl(new frmSuatChieu(_maPhim, main));
-
-        }
+        
         private void Load()
         {
             if (_phimTable.Rows.Count > 0)

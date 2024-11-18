@@ -13,7 +13,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 {
     public partial class Ql_TaiKhoan : Form
     {
-        public Ql_TaiKhoan()
+        public Ql_TaiKhoan()//11-A3-B2
         {
             InitializeComponent();
             loaddata();
@@ -80,7 +80,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
             
           
             ThemNV themNV = new ThemNV();// câu lệnh này vùa tạo form vừa kết nối tới form đó để sử dụng hàm luôn
-            themNV.ThemMa_NV(dtbase);
+            themNV.ThemMa_NV();
            
             if (themNV.ShowDialog() == DialogResult.OK)
             {                

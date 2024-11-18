@@ -49,9 +49,9 @@
             gbOrder.Controls.Add(lvSelectedProducts);
             gbOrder.Controls.Add(panel2);
             gbOrder.Controls.Add(panel1);
-            gbOrder.Location = new Point(585, 20);
+            gbOrder.Location = new Point(550, 12);
             gbOrder.Name = "gbOrder";
-            gbOrder.Size = new Size(407, 545);
+            gbOrder.Size = new Size(397, 487);
             gbOrder.TabIndex = 1;
             gbOrder.TabStop = false;
             gbOrder.Text = "Thông tin đặt hàng";
@@ -61,7 +61,7 @@
             lvSelectedProducts.Columns.AddRange(new ColumnHeader[] { columnHeader, columnHeader1, columnHeader2, columnHeader3 });
             lvSelectedProducts.Location = new Point(6, 139);
             lvSelectedProducts.Name = "lvSelectedProducts";
-            lvSelectedProducts.Size = new Size(395, 306);
+            lvSelectedProducts.Size = new Size(382, 247);
             lvSelectedProducts.TabIndex = 21;
             lvSelectedProducts.UseCompatibleStateImageBehavior = false;
             lvSelectedProducts.View = View.Details;
@@ -96,14 +96,14 @@
             panel2.Controls.Add(lblTotalPrice);
             panel2.Controls.Add(lblTotal);
             panel2.Controls.Add(btnConfirm);
-            panel2.Location = new Point(6, 451);
+            panel2.Location = new Point(6, 392);
             panel2.Name = "panel2";
-            panel2.Size = new Size(391, 98);
+            panel2.Size = new Size(382, 85);
             panel2.TabIndex = 20;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(18, 45);
+            btnCancel.Location = new Point(14, 36);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(118, 40);
             btnCancel.TabIndex = 8;
@@ -113,18 +113,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(355, 10);
+            label1.Location = new Point(342, 10);
             label1.Name = "label1";
-            label1.Size = new Size(33, 20);
+            label1.Size = new Size(27, 15);
             label1.TabIndex = 7;
             label1.Text = "vnđ";
             // 
             // lblTotalPrice
             // 
             lblTotalPrice.AutoSize = true;
-            lblTotalPrice.Location = new Point(294, 10);
+            lblTotalPrice.Location = new Point(273, 10);
             lblTotalPrice.Name = "lblTotalPrice";
-            lblTotalPrice.Size = new Size(17, 20);
+            lblTotalPrice.Size = new Size(13, 15);
             lblTotalPrice.TabIndex = 6;
             lblTotalPrice.Text = "0";
             // 
@@ -138,7 +138,7 @@
             // 
             // btnConfirm
             // 
-            btnConfirm.Location = new Point(261, 45);
+            btnConfirm.Location = new Point(251, 36);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(118, 40);
             btnConfirm.TabIndex = 5;
@@ -153,14 +153,14 @@
             panel1.Controls.Add(txtProductName);
             panel1.Location = new Point(6, 25);
             panel1.Name = "panel1";
-            panel1.Size = new Size(395, 108);
+            panel1.Size = new Size(382, 108);
             panel1.TabIndex = 19;
             // 
             // btnAddProduct
             // 
-            btnAddProduct.Location = new Point(261, 50);
+            btnAddProduct.Location = new Point(251, 51);
             btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(118, 40);
+            btnAddProduct.Size = new Size(118, 37);
             btnAddProduct.TabIndex = 20;
             btnAddProduct.Text = "Thêm";
             btnAddProduct.Click += btnAddProduct_Click;
@@ -175,11 +175,11 @@
             // 
             // nudProductQuantity
             // 
-            nudProductQuantity.Location = new Point(330, 6);
+            nudProductQuantity.Location = new Point(320, 7);
             nudProductQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudProductQuantity.Name = "nudProductQuantity";
             nudProductQuantity.ReadOnly = true;
-            nudProductQuantity.Size = new Size(49, 27);
+            nudProductQuantity.Size = new Size(49, 23);
             nudProductQuantity.TabIndex = 18;
             nudProductQuantity.TabStop = false;
             nudProductQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
@@ -189,16 +189,16 @@
             txtProductName.Location = new Point(120, 7);
             txtProductName.Name = "txtProductName";
             txtProductName.ReadOnly = true;
-            txtProductName.Size = new Size(180, 27);
+            txtProductName.Size = new Size(176, 23);
             txtProductName.TabIndex = 1;
             txtProductName.TabStop = false;
             // 
             // gbProductsList
             // 
             gbProductsList.Controls.Add(flpProducts);
-            gbProductsList.Location = new Point(12, 20);
+            gbProductsList.Location = new Point(12, 12);
             gbProductsList.Name = "gbProductsList";
-            gbProductsList.Size = new Size(567, 545);
+            gbProductsList.Size = new Size(532, 487);
             gbProductsList.TabIndex = 2;
             gbProductsList.TabStop = false;
             gbProductsList.Text = "Chọn sản phẩm";
@@ -208,12 +208,12 @@
             flpProducts.AutoScroll = true;
             flpProducts.Location = new Point(6, 26);
             flpProducts.Name = "flpProducts";
-            flpProducts.Size = new Size(555, 523);
+            flpProducts.Size = new Size(519, 451);
             flpProducts.TabIndex = 0;
             // 
             // frmChonSanPham
             // 
-            ClientSize = new Size(1006, 581);
+            ClientSize = new Size(954, 504);
             Controls.Add(gbProductsList);
             Controls.Add(gbOrder);
             Icon = (Icon)resources.GetObject("$this.Icon");

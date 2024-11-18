@@ -18,13 +18,21 @@ namespace RapPhimFlix.Forms.QLyPhim
     {
         private FormQuanLy formQLy;
         public string Row_index;
-        
+
         public Form_DanhSachPhim(FormQuanLy formQuanLy)
         {
             InitializeComponent();
-            
+
             this.formQLy = formQuanLy;
-            dgv_Phim.DataSource = DataProvider.Instance.ExcuteQuery("SELECT p.MaPhim, p.Ten, p.DaoDien, p.QuocGia, p.MoTa, p.ThoiLuong, p.NamPhatHanh, t.Loai AS TheLoai FROM tblPhims p INNER JOIN tblTheLoai_Phim tp ON p.MaPhim = tp.MaPhim INNER JOIN tblTheLoai t ON tp.MaTheLoai = t.MaTheLoai");
+            Load();
+            //dgv_SanPham.Columns["TenAnh"].Visible = false;
+        }
+
+        private void Load()
+        {
+            dgv_Phim.DataSource = DataProvider.Instance.ExcuteQuery("SELECT p.MaPhim, p.Ten, p.DaoDien, p.QuocGia, p.MoTa, p.ThoiLuong, p.NamPhatHanh, t.Loai AS TheLoai " +
+                "FROM tblPhims p left JOIN tblTheLoai_Phim tp ON p.MaPhim = tp.MaPhim " +
+                "INNER JOIN tblTheLoai t ON tp.MaTheLoai = t.MaTheLoai");
             dgv_Phim.Columns["MaPhim"].Visible = false;
             dgv_Phim.Columns["TheLoai"].HeaderText = "Thể loại";
             dgv_Phim.Columns["Ten"].HeaderText = "Tên phim";
@@ -33,16 +41,35 @@ namespace RapPhimFlix.Forms.QLyPhim
             dgv_Phim.Columns["QuocGia"].HeaderText = "Quốc gia";
             dgv_Phim.Columns["NamPhatHanh"].HeaderText = "Năm phát hành";
             dgv_Phim.Columns["MoTa"].Visible = false;
-            //dgv_SanPham.Columns["TenAnh"].Visible = false;
         }
-
-        
 
         private void dgv_SanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             formQLy.Row_index = dgv_Phim.Rows[e.RowIndex].Cells["MaPhim"].Value?.ToString();
 
             formQLy.open_Button();
+        }
+
+        private void btn_TimKiem_Click(object sender, EventArgs e)
+        {
+            string tenPhim = txt_TimKiem.Text;
+            if (tenPhim == "")
+            {
+                Load();
+                return;
+            }
+            dgv_Phim.DataSource = DataProvider.Instance.ExcuteQuery("SELECT p.MaPhim, p.Ten, p.DaoDien, p.QuocGia, p.MoTa, p.ThoiLuong, p.NamPhatHanh, t.Loai AS TheLoai " +
+                "FROM tblPhims p left JOIN tblTheLoai_Phim tp ON p.MaPhim = tp.MaPhim " +
+                "INNER JOIN tblTheLoai t ON tp.MaTheLoai = t.MaTheLoai where p.Ten = @Ten", new object[] {tenPhim});
+            dgv_Phim.Columns["MaPhim"].Visible = false;
+            dgv_Phim.Columns["TheLoai"].HeaderText = "Thể loại";
+            dgv_Phim.Columns["Ten"].HeaderText = "Tên phim";
+            dgv_Phim.Columns["DaoDien"].HeaderText = "Đạo diễn";
+            dgv_Phim.Columns["ThoiLuong"].HeaderText = "Thời lượng";
+            dgv_Phim.Columns["QuocGia"].HeaderText = "Quốc gia";
+            dgv_Phim.Columns["NamPhatHanh"].HeaderText = "Năm phát hành";
+            dgv_Phim.Columns["MoTa"].Visible = false;
+
         }
     }
 }

@@ -44,6 +44,7 @@
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             timer1 = new System.Windows.Forms.Timer(components);
+            panel_Display = new Panel();
             groupBox2.SuspendLayout();
             panel2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -60,7 +61,7 @@
             groupBox2.Dock = DockStyle.Bottom;
             groupBox2.Location = new Point(0, 0);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(904, 45);
+            groupBox2.Size = new Size(959, 45);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             // 
@@ -72,6 +73,7 @@
             button2.TabIndex = 1;
             button2.Text = "Đồ ăn vặt";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // btn_DanhSachPhim
             // 
@@ -87,9 +89,9 @@
             // 
             panel2.Controls.Add(groupBox2);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 526);
+            panel2.Location = new Point(0, 551);
             panel2.Name = "panel2";
-            panel2.Size = new Size(904, 45);
+            panel2.Size = new Size(959, 45);
             panel2.TabIndex = 3;
             // 
             // groupBox1
@@ -104,7 +106,7 @@
             groupBox1.Dock = DockStyle.Top;
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(904, 54);
+            groupBox1.Size = new Size(959, 54);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             // 
@@ -146,10 +148,8 @@
             // 
             // pictureBox3
             // 
-
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(646, 15);
-
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(25, 25);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -158,10 +158,8 @@
             // 
             // pictureBox2
             // 
-
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(297, 16);
-
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(25, 25);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -184,7 +182,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(904, 54);
+            panel1.Size = new Size(959, 54);
             panel1.TabIndex = 2;
             // 
             // timer1
@@ -192,11 +190,20 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // panel_Display
+            // 
+            panel_Display.Dock = DockStyle.Fill;
+            panel_Display.Location = new Point(0, 54);
+            panel_Display.Name = "panel_Display";
+            panel_Display.Size = new Size(959, 497);
+            panel_Display.TabIndex = 4;
+            // 
             // FormNhanVien
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(904, 571);
+            ClientSize = new Size(959, 596);
+            Controls.Add(panel_Display);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -231,5 +238,6 @@
         private Panel panel1;
         private Label label2;
         private System.Windows.Forms.Timer timer1;
+        private Panel panel_Display;
     }
 }

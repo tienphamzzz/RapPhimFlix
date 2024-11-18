@@ -24,8 +24,8 @@ namespace RapPhimFlix
 
 
 
-           // Application.Run(new Main());
-           Application.Run(new FormDangNhap());
+            // Application.Run(new Main());
+            Application.Run(new FormDangNhap());
 
 
         }

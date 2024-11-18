@@ -248,6 +248,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker1.Location = new Point(386, 172);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(180, 23);

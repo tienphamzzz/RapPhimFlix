@@ -10,31 +10,40 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin\Debug\net8.0-windows\Resources\images\icons\**" />
+    <Compile Remove="bin\Debug\net8.0-windows\Resources\ve\**" />
     <Compile Remove="Forms\QLyNhanVien\NewFolder\**" />
+    <EmbeddedResource Remove="bin\Debug\net8.0-windows\Resources\images\icons\**" />
+    <EmbeddedResource Remove="bin\Debug\net8.0-windows\Resources\ve\**" />
     <EmbeddedResource Remove="Forms\QLyNhanVien\NewFolder\**" />
+    <None Remove="bin\Debug\net8.0-windows\Resources\images\icons\**" />
+    <None Remove="bin\Debug\net8.0-windows\Resources\ve\**" />
     <None Remove="Forms\QLyNhanVien\NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="bin\Debug\Anh\anh dang nhap.png" />
+    <Content Include="bin\Debug\Anh\anhmatkhau.png" />
     <Content Include="bin\Debug\Anh\AnhMk.jpg" />
+    <Content Include="bin\Debug\Anh\AnhNhanVien.jpg.jpg" />
+    <Content Include="bin\Debug\Anh\dangxuat.jpg" />
     <Content Include="bin\Debug\Anh\istockphoto-1200064758-170667a.jpg" />
-    <Content Include="bin\Debug\Anh\mat khau.jpg" />
+    <Content Include="bin\Debug\Anh\NgayGio.jpg" />
+    <Content Include="bin\Debug\Anh\QLdoanhso.jpg" />
+    <Content Include="bin\Debug\Anh\Qlnhanvien.jpg" />
+    <Content Include="bin\Debug\Anh\QLphim.jpg" />
+    <Content Include="bin\Debug\Anh\QLsuatchieu.jpg" />
+    <Content Include="bin\Debug\Anh\Sanpham.jpg" />
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.deps.json" />
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.runtimeconfig.json" />
+    <None Include="bin\Debug\net8.0-windows\Resources\hoadon\HoaDonExcel.xlsx" />
 
 
-    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\No Infomation.jpg" />
+    <None Include="bin\Debug\net8.0-windows\Resources\images\phims\No Infomation.jpg" />
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Supergirl 1.jpg" />
     <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Superman 1.jpg" />
 
     <Content Include="Resources\Icon\app-icon.ico" />
-    <Folder Include="bin\Debug\net8.0-windows\Resources\filedata\" />
-    <Folder Include="bin\Debug\net8.0-windows\Resources\images\icons\" />
-    <Folder Include="bin\Debug\net8.0-windows\Resources\ve\" />
-
- 
-    <Folder Include="Forms\DangNhap\" />
     <Folder Include="Forms\MenuNav\" />
 
     <Folder Include="Forms\ThongKeDoanhThu\" />
@@ -49,6 +58,8 @@
     <None Include="bin\Debug\net8.0-windows\RapPhimFlix.dll" />
     <None Include="bin\Debug\net8.0-windows\RapPhimFlix.exe" />
     <None Include="bin\Debug\net8.0-windows\RapPhimFlix.pdb" />
+    <None Include="bin\Debug\net8.0-windows\Resources\filedata\Supergirl 1.rtf" />
+    <None Include="bin\Debug\net8.0-windows\Resources\filedata\Superman 1.rtf" />
     <None Include="bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
     <None Include="bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll" />
     <None Include="bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll" />
@@ -59,8 +70,7 @@
 
   <ItemGroup>
     <PackageReference Include="DevExpress.Data" Version="24.1.7" />
-    <PackageReference Include="DevExpress.Win.Dashboard.CustomItemExtension" Version="24.1.0.1" />
-    <PackageReference Include="DevExpress.Win.Design" Version="24.1.7" />
+    <PackageReference Include="EPPlus" Version="7.5.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
     <PackageReference Include="WinForms.DataVisualization" Version="1.9.2" />
   </ItemGroup>

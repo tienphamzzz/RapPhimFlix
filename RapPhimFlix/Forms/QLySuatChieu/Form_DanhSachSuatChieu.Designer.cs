@@ -29,14 +29,11 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            btn_SuatPhim_Phong3 = new Button();
-            btn_SuatPhim_Phong2 = new Button();
-            btn_SuatPhim_Phong1 = new Button();
-            btn_SuatChieu_All = new Button();
+            flp_Phong = new FlowLayoutPanel();
             panel2 = new Panel();
+            dateTimePicker1 = new DateTimePicker();
             label1 = new Label();
             dgv_SuatChieu = new DataGridView();
-            dateTimePicker1 = new DateTimePicker();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_SuatChieu).BeginInit();
@@ -44,55 +41,20 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
             // 
             // panel1
             // 
-            panel1.Controls.Add(btn_SuatPhim_Phong3);
-            panel1.Controls.Add(btn_SuatPhim_Phong2);
-            panel1.Controls.Add(btn_SuatPhim_Phong1);
-            panel1.Controls.Add(btn_SuatChieu_All);
+            panel1.Controls.Add(flp_Phong);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 40);
             panel1.Name = "panel1";
             panel1.Size = new Size(169, 410);
             panel1.TabIndex = 3;
             // 
-            // btn_SuatPhim_Phong3
+            // flp_Phong
             // 
-            btn_SuatPhim_Phong3.Location = new Point(26, 229);
-            btn_SuatPhim_Phong3.Name = "btn_SuatPhim_Phong3";
-            btn_SuatPhim_Phong3.Size = new Size(117, 33);
-            btn_SuatPhim_Phong3.TabIndex = 3;
-            btn_SuatPhim_Phong3.Text = "Phòng 3";
-            btn_SuatPhim_Phong3.UseVisualStyleBackColor = true;
-            btn_SuatPhim_Phong3.Click += btn_SuatPhim_Phong3_Click;
-            // 
-            // btn_SuatPhim_Phong2
-            // 
-            btn_SuatPhim_Phong2.Location = new Point(26, 161);
-            btn_SuatPhim_Phong2.Name = "btn_SuatPhim_Phong2";
-            btn_SuatPhim_Phong2.Size = new Size(117, 33);
-            btn_SuatPhim_Phong2.TabIndex = 2;
-            btn_SuatPhim_Phong2.Text = "Phòng 2";
-            btn_SuatPhim_Phong2.UseVisualStyleBackColor = true;
-            btn_SuatPhim_Phong2.Click += btn_SuatPhim_Phong2_Click;
-            // 
-            // btn_SuatPhim_Phong1
-            // 
-            btn_SuatPhim_Phong1.Location = new Point(26, 91);
-            btn_SuatPhim_Phong1.Name = "btn_SuatPhim_Phong1";
-            btn_SuatPhim_Phong1.Size = new Size(117, 33);
-            btn_SuatPhim_Phong1.TabIndex = 1;
-            btn_SuatPhim_Phong1.Text = "Phòng 1";
-            btn_SuatPhim_Phong1.UseVisualStyleBackColor = true;
-            btn_SuatPhim_Phong1.Click += btn_SuatPhim_Phong1_Click;
-            // 
-            // btn_SuatChieu_All
-            // 
-            btn_SuatChieu_All.Location = new Point(26, 19);
-            btn_SuatChieu_All.Name = "btn_SuatChieu_All";
-            btn_SuatChieu_All.Size = new Size(117, 33);
-            btn_SuatChieu_All.TabIndex = 0;
-            btn_SuatChieu_All.Text = "Tất cả";
-            btn_SuatChieu_All.UseVisualStyleBackColor = true;
-            btn_SuatChieu_All.Click += btn_SuatChieu_All_Click;
+            flp_Phong.AutoScroll = true;
+            flp_Phong.Location = new Point(27, 22);
+            flp_Phong.Name = "flp_Phong";
+            flp_Phong.Size = new Size(129, 376);
+            flp_Phong.TabIndex = 4;
             // 
             // panel2
             // 
@@ -103,6 +65,14 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 40);
             panel2.TabIndex = 4;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(346, 6);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 2;
             // 
             // label1
             // 
@@ -124,13 +94,6 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
             dgv_SuatChieu.Size = new Size(631, 410);
             dgv_SuatChieu.TabIndex = 5;
             dgv_SuatChieu.CellClick += dgv_SuatChieu_CellClick;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(346, 6);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 2;
             // 
             // Form_DanhSachSuatChieu
             // 
@@ -155,10 +118,7 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
         private Panel panel2;
         private Label label1;
         private DataGridView dgv_SuatChieu;
-        private Button btn_SuatPhim_Phong3;
-        private Button btn_SuatPhim_Phong2;
-        private Button btn_SuatPhim_Phong1;
-        private Button btn_SuatChieu_All;
         private DateTimePicker dateTimePicker1;
+        private FlowLayoutPanel flp_Phong;
     }
 }

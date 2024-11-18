@@ -66,9 +66,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(297, 23);
+            label1.Location = new Point(208, 14);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(179, 30);
+            label1.Size = new Size(125, 20);
             label1.TabIndex = 0;
             label1.Text = "Thêm Nhân Viên";
             // 
@@ -86,9 +87,11 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(12, 56);
+            groupBox1.Location = new Point(8, 34);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(756, 196);
+            groupBox1.Padding = new Padding(2);
+            groupBox1.Size = new Size(529, 118);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin Nhân Viên";
@@ -97,17 +100,19 @@
             // 
             panel1.Controls.Add(rdo_GioiTinh_Nam);
             panel1.Controls.Add(rdo_GioiTinh_Nu);
-            panel1.Location = new Point(97, 140);
+            panel1.Location = new Point(68, 84);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(202, 35);
+            panel1.Size = new Size(141, 21);
             panel1.TabIndex = 14;
             // 
             // rdo_GioiTinh_Nam
             // 
             rdo_GioiTinh_Nam.AutoSize = true;
-            rdo_GioiTinh_Nam.Location = new Point(11, 3);
+            rdo_GioiTinh_Nam.Location = new Point(8, 2);
+            rdo_GioiTinh_Nam.Margin = new Padding(2);
             rdo_GioiTinh_Nam.Name = "rdo_GioiTinh_Nam";
-            rdo_GioiTinh_Nam.Size = new Size(75, 29);
+            rdo_GioiTinh_Nam.Size = new Size(51, 19);
             rdo_GioiTinh_Nam.TabIndex = 14;
             rdo_GioiTinh_Nam.TabStop = true;
             rdo_GioiTinh_Nam.Text = "Nam";
@@ -116,9 +121,10 @@
             // rdo_GioiTinh_Nu
             // 
             rdo_GioiTinh_Nu.AutoSize = true;
-            rdo_GioiTinh_Nu.Location = new Point(108, 3);
+            rdo_GioiTinh_Nu.Location = new Point(76, 2);
+            rdo_GioiTinh_Nu.Margin = new Padding(2);
             rdo_GioiTinh_Nu.Name = "rdo_GioiTinh_Nu";
-            rdo_GioiTinh_Nu.Size = new Size(61, 29);
+            rdo_GioiTinh_Nu.Size = new Size(41, 19);
             rdo_GioiTinh_Nu.TabIndex = 13;
             rdo_GioiTinh_Nu.TabStop = true;
             rdo_GioiTinh_Nu.Text = "Nữ";
@@ -126,91 +132,105 @@
             // 
             // btn_TaiAnh
             // 
-            btn_TaiAnh.Location = new Point(541, 72);
+            btn_TaiAnh.Location = new Point(379, 43);
+            btn_TaiAnh.Margin = new Padding(2);
             btn_TaiAnh.Name = "btn_TaiAnh";
-            btn_TaiAnh.Size = new Size(71, 70);
+            btn_TaiAnh.Size = new Size(50, 42);
             btn_TaiAnh.TabIndex = 11;
             btn_TaiAnh.Text = "Tải ảnh";
             btn_TaiAnh.UseVisualStyleBackColor = true;
             // 
             // pictureBox_anh
             // 
-            pictureBox_anh.Location = new Point(618, 19);
+            pictureBox_anh.Location = new Point(433, 11);
+            pictureBox_anh.Margin = new Padding(2);
             pictureBox_anh.Name = "pictureBox_anh";
-            pictureBox_anh.Size = new Size(132, 149);
+            pictureBox_anh.Size = new Size(92, 89);
             pictureBox_anh.TabIndex = 10;
             pictureBox_anh.TabStop = false;
             // 
             // txt_SDT
             // 
-            txt_SDT.Location = new Point(348, 85);
+            txt_SDT.Location = new Point(244, 51);
+            txt_SDT.Margin = new Padding(2);
             txt_SDT.Name = "txt_SDT";
-            txt_SDT.Size = new Size(158, 31);
+            txt_SDT.Size = new Size(112, 23);
             txt_SDT.TabIndex = 9;
+            txt_SDT.TextChanged += txt_SDT_TextChanged;
+            txt_SDT.KeyPress += txt_SDT_KeyPress;
             // 
             // txt_Luong
             // 
-            txt_Luong.Location = new Point(348, 37);
+            txt_Luong.Location = new Point(244, 22);
+            txt_Luong.Margin = new Padding(2);
             txt_Luong.Name = "txt_Luong";
-            txt_Luong.Size = new Size(158, 31);
+            txt_Luong.Size = new Size(112, 23);
             txt_Luong.TabIndex = 8;
+            txt_Luong.KeyPress += txt_Luong_KeyPress;
             // 
             // txt_TenNV
             // 
-            txt_TenNV.Location = new Point(108, 85);
+            txt_TenNV.Location = new Point(76, 51);
+            txt_TenNV.Margin = new Padding(2);
             txt_TenNV.Name = "txt_TenNV";
-            txt_TenNV.Size = new Size(158, 31);
+            txt_TenNV.Size = new Size(112, 23);
             txt_TenNV.TabIndex = 6;
             // 
             // txt_MaNV
             // 
-            txt_MaNV.Location = new Point(108, 31);
+            txt_MaNV.Location = new Point(76, 19);
+            txt_MaNV.Margin = new Padding(2);
             txt_MaNV.Name = "txt_MaNV";
-            txt_MaNV.Size = new Size(158, 31);
+            txt_MaNV.Size = new Size(112, 23);
             txt_MaNV.TabIndex = 5;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(272, 91);
+            label6.Location = new Point(190, 55);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(44, 25);
+            label6.Size = new Size(27, 15);
             label6.TabIndex = 4;
             label6.Text = "SĐT";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(272, 37);
+            label5.Location = new Point(190, 22);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(63, 25);
+            label5.Size = new Size(41, 15);
             label5.TabIndex = 3;
             label5.Text = "Lương";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(6, 143);
+            label4.Location = new Point(4, 86);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(81, 25);
+            label4.Size = new Size(54, 15);
             label4.TabIndex = 2;
             label4.Text = "Giới Tính";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 91);
+            label3.Location = new Point(4, 55);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(67, 25);
+            label3.Size = new Size(44, 15);
             label3.TabIndex = 1;
             label3.Text = "Tên NV";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 40);
+            label2.Location = new Point(4, 24);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(66, 25);
+            label2.Size = new Size(43, 15);
             label2.TabIndex = 0;
             label2.Text = "Mã NV";
             // 
@@ -222,9 +242,11 @@
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label7);
-            groupBox2.Location = new Point(12, 258);
+            groupBox2.Location = new Point(8, 155);
+            groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(756, 123);
+            groupBox2.Padding = new Padding(2);
+            groupBox2.Size = new Size(529, 74);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông Tin Tài Khoản";
@@ -233,17 +255,19 @@
             // 
             panel2.Controls.Add(rdo_ChucVuNhanVien);
             panel2.Controls.Add(rdo_ChucVu_QuanLy);
-            panel2.Location = new Point(367, 29);
+            panel2.Location = new Point(257, 17);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(265, 44);
+            panel2.Size = new Size(186, 26);
             panel2.TabIndex = 14;
             // 
             // rdo_ChucVuNhanVien
             // 
             rdo_ChucVuNhanVien.AutoSize = true;
-            rdo_ChucVuNhanVien.Location = new Point(127, 4);
+            rdo_ChucVuNhanVien.Location = new Point(89, 2);
+            rdo_ChucVuNhanVien.Margin = new Padding(2);
             rdo_ChucVuNhanVien.Name = "rdo_ChucVuNhanVien";
-            rdo_ChucVuNhanVien.Size = new Size(118, 29);
+            rdo_ChucVuNhanVien.Size = new Size(80, 19);
             rdo_ChucVuNhanVien.TabIndex = 13;
             rdo_ChucVuNhanVien.TabStop = true;
             rdo_ChucVuNhanVien.Text = "Nhân Viên";
@@ -252,9 +276,10 @@
             // rdo_ChucVu_QuanLy
             // 
             rdo_ChucVu_QuanLy.AutoSize = true;
-            rdo_ChucVu_QuanLy.Location = new Point(9, 7);
+            rdo_ChucVu_QuanLy.Location = new Point(6, 4);
+            rdo_ChucVu_QuanLy.Margin = new Padding(2);
             rdo_ChucVu_QuanLy.Name = "rdo_ChucVu_QuanLy";
-            rdo_ChucVu_QuanLy.Size = new Size(101, 29);
+            rdo_ChucVu_QuanLy.Size = new Size(68, 19);
             rdo_ChucVu_QuanLy.TabIndex = 12;
             rdo_ChucVu_QuanLy.TabStop = true;
             rdo_ChucVu_QuanLy.Text = "Quản Lý";
@@ -262,50 +287,57 @@
             // 
             // txt_MatKhau
             // 
-            txt_MatKhau.Location = new Point(108, 77);
+            txt_MatKhau.Location = new Point(76, 46);
+            txt_MatKhau.Margin = new Padding(2);
             txt_MatKhau.Name = "txt_MatKhau";
-            txt_MatKhau.Size = new Size(158, 31);
+            txt_MatKhau.Size = new Size(112, 23);
             txt_MatKhau.TabIndex = 11;
             // 
             // txt_TaiKhoan
             // 
-            txt_TaiKhoan.Location = new Point(108, 35);
+            txt_TaiKhoan.Location = new Point(76, 21);
+            txt_TaiKhoan.Margin = new Padding(2);
             txt_TaiKhoan.Name = "txt_TaiKhoan";
-            txt_TaiKhoan.Size = new Size(158, 31);
+            txt_TaiKhoan.ReadOnly = true;
+            txt_TaiKhoan.Size = new Size(112, 23);
             txt_TaiKhoan.TabIndex = 10;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(272, 35);
+            label9.Location = new Point(190, 21);
+            label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(78, 25);
+            label9.Size = new Size(52, 15);
             label9.TabIndex = 3;
             label9.Text = "Chức Vụ";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(6, 80);
+            label8.Location = new Point(4, 48);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(87, 25);
+            label8.Size = new Size(58, 15);
             label8.TabIndex = 3;
             label8.Text = "Mật Khẩu";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(6, 38);
+            label7.Location = new Point(4, 23);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(87, 25);
+            label7.Size = new Size(58, 15);
             label7.TabIndex = 5;
             label7.Text = "Tài Khoản";
             // 
             // btn_Huy
             // 
-            btn_Huy.Location = new Point(468, 402);
+            btn_Huy.Location = new Point(328, 241);
+            btn_Huy.Margin = new Padding(2);
             btn_Huy.Name = "btn_Huy";
-            btn_Huy.Size = new Size(118, 53);
+            btn_Huy.Size = new Size(83, 32);
             btn_Huy.TabIndex = 3;
             btn_Huy.Text = "Hủy";
             btn_Huy.UseVisualStyleBackColor = true;
@@ -313,9 +345,10 @@
             // 
             // btn_XacNhan
             // 
-            btn_XacNhan.Location = new Point(623, 402);
+            btn_XacNhan.Location = new Point(436, 241);
+            btn_XacNhan.Margin = new Padding(2);
             btn_XacNhan.Name = "btn_XacNhan";
-            btn_XacNhan.Size = new Size(118, 53);
+            btn_XacNhan.Size = new Size(83, 32);
             btn_XacNhan.TabIndex = 4;
             btn_XacNhan.Text = "Xác Nhận";
             btn_XacNhan.UseVisualStyleBackColor = true;
@@ -323,14 +356,15 @@
             // 
             // SuaNV
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 467);
+            ClientSize = new Size(560, 280);
             Controls.Add(btn_XacNhan);
             Controls.Add(btn_Huy);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label1);
+            Margin = new Padding(2);
             Name = "SuaNV";
             Text = "ThemNV";
             groupBox1.ResumeLayout(false);

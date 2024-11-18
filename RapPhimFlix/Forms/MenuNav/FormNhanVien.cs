@@ -14,19 +14,27 @@ namespace RapPhimFlix.Forms.MenuNav
     public partial class FormNhanVien : Form
     {
 
-        //public static string maNhanVien;
-        public FormNhanVien(string tenNhanVien)
+        public static string _maNhanVien;
+        private Form _childFormPhim;
+        private Form _childFormSanPham;
+        private FormDangNhap formDangNhap;
+
+        public FormNhanVien(string tenNhanVien, string maNhanVien)
 
         {
             InitializeComponent();
             txt_NhanVien_Ten.Text = tenNhanVien;
             txt_NhanVien_Ten.Enabled = false;
+            _maNhanVien = maNhanVien;
+            _childFormPhim = new display();
+            _childFormSanPham = new frmChonSanPham();
+            OpenChildForm(_childFormPhim); _childFormPhim.Show();
+            OpenChildForm(_childFormSanPham); _childFormSanPham.Hide();
         }
 
         private void FormNhanVien_Load(object sender, EventArgs e)
         {
             timer1.Start();
-           // this.ControlBox = false;
         }
 
         private void FormNhanVien_FormClosing(object sender, FormClosingEventArgs e)
@@ -66,7 +74,7 @@ namespace RapPhimFlix.Forms.MenuNav
                 this.Hide();
 
                 // Hiển thị lại form đăng nhập
-                FormDangNhap formDangNhap = new FormDangNhap();
+                formDangNhap = new FormDangNhap();
                 formDangNhap.ShowDialog();
 
                 // Đóng form admin hoàn toàn sau khi form đăng nhập đóng
@@ -76,19 +84,24 @@ namespace RapPhimFlix.Forms.MenuNav
 
         private void btn_DanhSachPhim_Click(object sender, EventArgs e)
         {
-            if (_childForm != null) _childForm.Close();
-            _childForm = new display();
-            OpenChildForm();
+
+            _childFormPhim.Show();
+            _childFormSanPham.Hide();
         }
 
-        private void OpenChildForm()
+        private void OpenChildForm(Form _childForm)
         {
             _childForm.TopLevel = false;
             _childForm.FormBorderStyle = FormBorderStyle.None;
             _childForm.Dock = DockStyle.Fill;
-            this.Controls.Add(_childForm);
+            this.panel_Display.Controls.Add(_childForm);
             _childForm.BringToFront();
-            _childForm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _childFormPhim.Hide();
+            _childFormSanPham.Show();
         }
     }
 }

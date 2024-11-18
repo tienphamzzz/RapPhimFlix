@@ -32,6 +32,7 @@ namespace RapPhimFlix.Forms.MenuNav
             btn_Qly_Sua.Enabled = false;
             btn_Qly_Xoa.Enabled = false;
             grb_Phim.Visible = true;
+            label4.Text = tenQuanLy;
             OpenFormChild(new Form_DanhSachPhim(this));
         }
         private Form currentFormChild;
@@ -175,7 +176,7 @@ namespace RapPhimFlix.Forms.MenuNav
                 if (result1 == DialogResult.Yes)
                 {
 
-                    DataTable dt = DataProvider.Instance.ExcuteQuery("select * from tblSuatChieu where MaPhim = '" + Row_index + "'");
+                    DataTable dt = DataProvider.Instance.ExcuteQuery("select * from tblSuatChieu where MaPhim = @MaPhim", new object[] { Row_index });
                     if (dt.Rows.Count > 0)
                     {
                         DialogResult result2 = MessageBox.Show("Phim này đang được chiếu ? Bạn có muốn xóa không",
@@ -280,7 +281,7 @@ namespace RapPhimFlix.Forms.MenuNav
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label1.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            label3.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

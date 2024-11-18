@@ -9,22 +9,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using RapPhimFlix.Forms.DangNhap;
+using RapPhimFlix.Forms.QLyNhanVien;
 
 namespace RapPhimFlix.Forms.MenuNav
 {
     public partial class FormAdmin : Form
     {
-
+        private Form _childForm;
         public FormAdmin(string tenAdmin)
         {
             InitializeComponent();
             txt_Admin_Ten.Text = tenAdmin;
             txt_Admin_Ten.Enabled = false;
+            _childForm = new Ql_TaiKhoan();
+            OpenChildForm(_childForm);
+            _childForm.Show();
         }
 
         private void txt_Admin_Ten_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,7 +43,7 @@ namespace RapPhimFlix.Forms.MenuNav
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
-            
+
             // this.ControlBox = false;
             timer1.Start();
         }
@@ -70,6 +74,19 @@ namespace RapPhimFlix.Forms.MenuNav
                 // Đóng form admin hoàn toàn sau khi form đăng nhập đóng
                 this.Close();
             }
+        }
+
+        private void btn_Admin_NhanVien_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void OpenChildForm(Form _childForm)
+        {
+            _childForm.TopLevel = false;
+            _childForm.FormBorderStyle = FormBorderStyle.None;
+            _childForm.Dock = DockStyle.Fill;
+            this.panel_Body.Controls.Add(_childForm);
+            _childForm.BringToFront();
         }
     }
 }

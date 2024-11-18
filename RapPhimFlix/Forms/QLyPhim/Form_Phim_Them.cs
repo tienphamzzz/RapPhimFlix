@@ -97,7 +97,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
 
             // Them vao db
             string insert = "INSERT INTO tblPhims (MaPhim, Ten, DaoDien, QuocGia, MoTa, ThoiLuong, TenAnh, NamPhatHanh) " +
-                                 "VALUES ('" + Ma_Phim + "', '" + Ten + "','" + DaoDien + "','" + QuocGia + "','" + MoTa + "','" + ThoiLuong + "','" + TenAnh + "','" + NamPhatHanh + "')";
+                                 "VALUES ('" + Ma_Phim + "', N'" + Ten + "',N'" + DaoDien + "',N'" + QuocGia + "',N'" + MoTa + "','" + ThoiLuong + "','" + TenAnh + "','" + NamPhatHanh + "')";
 
             //kiem tra ket qua them
             int result = DataProvider.Instance.ExcuteNonQuery(insert);

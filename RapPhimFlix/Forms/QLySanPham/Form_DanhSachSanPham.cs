@@ -15,11 +15,16 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
     public partial class Form_DanhSachSanPham : Form
     {
         private FormQuanLy formQLy;
-        
+
         public Form_DanhSachSanPham(FormQuanLy formQuanLy)
         {
             InitializeComponent();
             this.formQLy = formQuanLy;
+            Load();
+        }
+
+        private void Load()
+        {
             dgv_SanPham.DataSource = DataProvider.Instance.ExcuteQuery("select a.MaSanPham,a.TenSanPham,a.LoaiSanPham,a.Gia from tblSanPham as a");
             dgv_SanPham.Columns["TenSanPham"].HeaderText = "Tên Sản phẩm";
             dgv_SanPham.Columns["LoaiSanPham"].HeaderText = "Loại";
@@ -31,6 +36,20 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
         {
             formQLy.open_Button();
             formQLy.Row_index = dgv_SanPham.Rows[e.RowIndex].Cells["MaSanPham"].Value?.ToString();
+        }
+
+        private void btn_TimKiem_Click(object sender, EventArgs e)
+        {
+            string tenSanPham = txt_TimKiem.Text;
+            if (tenSanPham == "")
+            {
+                Load();return;
+            }
+            dgv_SanPham.DataSource = DataProvider.Instance.ExcuteQuery("select a.MaSanPham,a.TenSanPham,a.LoaiSanPham,a.Gia from tblSanPham as a where a.TenSanPham = @TSP", new object[] {tenSanPham});
+            dgv_SanPham.Columns["TenSanPham"].HeaderText = "Tên Sản phẩm";
+            dgv_SanPham.Columns["LoaiSanPham"].HeaderText = "Loại";
+            dgv_SanPham.Columns["Gia"].HeaderText = "Giá";
+            dgv_SanPham.Columns["MaSanPham"].Visible = false;
         }
     }
 }
