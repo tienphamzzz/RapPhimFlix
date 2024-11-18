@@ -36,8 +36,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(912, 491);
             Name = "display";
-            Text = "frmSuatChieu";
-            Load += frmSuatChieu1_Load;
+            Text = "Display";
             ResumeLayout(false);
         }
 

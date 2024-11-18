@@ -1,7 +1,11 @@
 using System.Windows.Forms;
 using System;
 using RapPhimFlix.Forms;
+
 using RapPhimFlix.Forms.DangNhap;
+
+using RapPhimFlix.Forms.MenuNav;
+
 
 namespace RapPhimFlix
 {
@@ -19,8 +23,10 @@ namespace RapPhimFlix
             ApplicationConfiguration.Initialize();
 
 
+
            // Application.Run(new Main());
            Application.Run(new FormDangNhap());
+
 
         }
     }

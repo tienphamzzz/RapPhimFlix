@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanVien));
             groupBox2 = new GroupBox();
             button2 = new Button();
-            button1 = new Button();
+            btn_DanhSachPhim = new Button();
             panel2 = new Panel();
             groupBox1 = new GroupBox();
             label2 = new Label();
@@ -56,39 +56,40 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(button1);
+            groupBox2.Controls.Add(btn_DanhSachPhim);
             groupBox2.Dock = DockStyle.Bottom;
             groupBox2.Location = new Point(0, 0);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(800, 45);
+            groupBox2.Size = new Size(904, 45);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             // 
             // button2
             // 
-            button2.Location = new Point(405, 3);
+            button2.Location = new Point(447, 3);
             button2.Name = "button2";
-            button2.Size = new Size(395, 42);
+            button2.Size = new Size(463, 42);
             button2.TabIndex = 1;
             button2.Text = "Đồ ăn vặt";
             button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_DanhSachPhim
             // 
-            button1.Location = new Point(0, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(409, 42);
-            button1.TabIndex = 0;
-            button1.Text = "Phim đang chiếu";
-            button1.UseVisualStyleBackColor = true;
+            btn_DanhSachPhim.Location = new Point(0, 3);
+            btn_DanhSachPhim.Name = "btn_DanhSachPhim";
+            btn_DanhSachPhim.Size = new Size(450, 42);
+            btn_DanhSachPhim.TabIndex = 0;
+            btn_DanhSachPhim.Text = "Phim đang chiếu";
+            btn_DanhSachPhim.UseVisualStyleBackColor = true;
+            btn_DanhSachPhim.Click += btn_DanhSachPhim_Click;
             // 
             // panel2
             // 
             panel2.Controls.Add(groupBox2);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 405);
+            panel2.Location = new Point(0, 526);
             panel2.Name = "panel2";
-            panel2.Size = new Size(800, 45);
+            panel2.Size = new Size(904, 45);
             panel2.TabIndex = 3;
             // 
             // groupBox1
@@ -103,7 +104,7 @@
             groupBox1.Dock = DockStyle.Top;
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(800, 54);
+            groupBox1.Size = new Size(904, 54);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             // 
@@ -111,7 +112,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(515, 21);
+            label2.Location = new Point(690, 20);
             label2.Name = "label2";
             label2.Size = new Size(73, 15);
             label2.TabIndex = 6;
@@ -119,7 +120,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(677, 16);
+            button3.Location = new Point(800, 16);
             button3.Name = "button3";
             button3.Size = new Size(92, 23);
             button3.TabIndex = 5;
@@ -130,7 +131,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(328, 21);
+            label1.Location = new Point(405, 20);
             label1.Name = "label1";
             label1.Size = new Size(113, 15);
             label1.TabIndex = 4;
@@ -145,8 +146,10 @@
             // 
             // pictureBox3
             // 
+
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(646, 15);
+
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(25, 25);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -155,8 +158,10 @@
             // 
             // pictureBox2
             // 
+
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(297, 16);
+
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(25, 25);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -179,7 +184,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 54);
+            panel1.Size = new Size(904, 54);
             panel1.TabIndex = 2;
             // 
             // timer1
@@ -191,7 +196,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(904, 571);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -214,7 +219,7 @@
 
         private GroupBox groupBox2;
         private Button button2;
-        private Button button1;
+        private Button btn_DanhSachPhim;
         private Panel panel2;
         private GroupBox groupBox1;
         private Button button3;

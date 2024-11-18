@@ -13,8 +13,10 @@ namespace RapPhimFlix.Forms.MenuNav
 {
     public partial class FormNhanVien : Form
     {
+
         //public static string maNhanVien;
         public FormNhanVien(string tenNhanVien)
+
         {
             InitializeComponent();
             txt_NhanVien_Ten.Text = tenNhanVien;
@@ -70,6 +72,23 @@ namespace RapPhimFlix.Forms.MenuNav
                 // Đóng form admin hoàn toàn sau khi form đăng nhập đóng
                 this.Close();
             }
+        }
+
+        private void btn_DanhSachPhim_Click(object sender, EventArgs e)
+        {
+            if (_childForm != null) _childForm.Close();
+            _childForm = new display();
+            OpenChildForm();
+        }
+
+        private void OpenChildForm()
+        {
+            _childForm.TopLevel = false;
+            _childForm.FormBorderStyle = FormBorderStyle.None;
+            _childForm.Dock = DockStyle.Fill;
+            this.Controls.Add(_childForm);
+            _childForm.BringToFront();
+            _childForm.Show();
         }
     }
 }
