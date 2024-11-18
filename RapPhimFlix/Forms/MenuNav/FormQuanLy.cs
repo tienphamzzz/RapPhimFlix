@@ -170,17 +170,28 @@ namespace RapPhimFlix.Forms.MenuNav
 
                 if (result1 == DialogResult.Yes)
                 {
-                    string deleteQuery = "DELETE FROM tblPhims WHERE MaPhim = '" + Row_index + "'";
-                    bool deleteResult = db.ChangeData(deleteQuery);
-                    if (deleteResult)
+
+                    DataTable dt = DataProvider.Instance.ExcuteQuery("select * from tblSuatChieu where MaPhim = '" + Row_index + "'");
+                    if (dt.Rows.Count > 0)
                     {
-                        MessageBox.Show("Xóa Phim thành công!");
-                        OpenFormChild(new Form_DanhSachPhim(this));
+                        DialogResult result2 = MessageBox.Show("Phim này đang được chiếu ? Bạn có muốn xóa không",
+                                       "Xác nhận",
+                                       MessageBoxButtons.YesNo,
+                                       MessageBoxIcon.Question);
+                        int rs = DataProvider.Instance.ExcuteNonQuery("delete from tblSuatChieu where MaPhim='" + Row_index + "'");
+                        string deleteQuery = "DELETE FROM tblPhims WHERE MaPhim = '" + Row_index + "'";
+                        int deleteResult = DataProvider.Instance.ExcuteNonQuery(deleteQuery);
+                        if (deleteResult !=0&&rs!=0)
+                        {
+                            MessageBox.Show("Xóa Phim thành công!");
+                            OpenFormChild(new Form_DanhSachPhim(this));
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi khi xóa phim.");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Lỗi khi xóa phim.");
-                    }
+                    
                 }
             }
             else if (currentform == "SanPham")

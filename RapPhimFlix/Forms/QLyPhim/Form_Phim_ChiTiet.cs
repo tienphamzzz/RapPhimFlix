@@ -15,14 +15,14 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
     public partial class Form_Phim_ChiTiet : Form
     {
         private FormQuanLy formQLy;
-        DataContext db = new DataContext();
+        
         private string index;
         public Form_Phim_ChiTiet(FormQuanLy formQLy, string id)
         {
             InitializeComponent();
             this.formQLy = formQLy;
             this.index = id;
-            DataTable dt = db.ReadData("select * from tblPhims where MaPhim ='" + id + "'");
+            DataTable dt = DataProvider.Instance.ExcuteQuery("select * from tblPhims where MaPhim ='" + id + "'");
             tb_ChiTietPhim_MaPhim.Enabled = false;
             tb_ChiTietPhim_DaoDien.Enabled = false;
             tb_ChiTietPhim_MoTa.Enabled = false;
@@ -32,7 +32,7 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
             tb_ChiTietPhim_Tenphim.Enabled = false;
             cbb_ChiTietPhim_TheLoai.Enabled = false;
             //combobox
-            DataTable dt1 = db.ReadData(" select a.Loai from tblTheLoai as a  join tblTheLoai_Phim as b on a.MaTheLoai=b.MaTheLoai where b.MaPhim='" + id + "'"); 
+            DataTable dt1 = DataProvider.Instance.ExcuteQuery(" select a.Loai from tblTheLoai as a  join tblTheLoai_Phim as b on a.MaTheLoai=b.MaTheLoai where b.MaPhim='" + id + "'"); 
             cbb_ChiTietPhim_TheLoai.Text = dt1.Rows[0]["Loai"].ToString();
             tb_ChiTietPhim_MaPhim.Text = dt.Rows[0]["MaPhim"].ToString();
 

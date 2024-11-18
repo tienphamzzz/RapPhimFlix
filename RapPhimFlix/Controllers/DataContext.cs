@@ -11,7 +11,8 @@ namespace RapPhimFlix.Controllers
 {
     public class DataContext
     {
-        private readonly string strConnect = AppSetting.ConnectionString;
+        // private readonly string strConnect = AppSetting.ConnectionString;
+        public static string strConnect = AppSetting.ConnectionString;
         private SqlConnection sqlConncect = null;
 
         private void OpenConnection()

@@ -15,7 +15,7 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
     public partial class Form_SanPham_Sua : Form
     {
         private FormQuanLy formQLy;
-        DataContext db = new DataContext();
+       
         private string index;
         bool check = false;
         public Form_SanPham_Sua(FormQuanLy formQLy, string id)
@@ -23,7 +23,7 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
             InitializeComponent();
             this.formQLy = formQLy;
             this.index = id;
-            DataTable dt = db.ReadData("select * from tblSanPham where MaSanPham ='" + id + "'");
+            DataTable dt = DataProvider.Instance.ExcuteQuery("select * from tblSanPham where MaSanPham ='" + id + "'");
             tb_SanPham_Sua_Gia.Text = dt.Rows[0]["Gia"].ToString();
             tb_SanPham_Sua_MaSP.Text = dt.Rows[0]["MaSanPham"].ToString();
             tb_SanPham_Sua_TenSP.Text = dt.Rows[0]["TenSanPham"].ToString();
@@ -93,10 +93,10 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
                                  "WHERE MaSanPham = '" + maSP + "'";
 
             // Thực thi câu lệnh UPDATE
-            bool result = db.ChangeData(updateQuery); // db.ChangeData thực thi câu lệnh SQL
+            int result = DataProvider.Instance.ExcuteNonQuery(updateQuery); // db.ChangeData thực thi câu lệnh SQL
 
             // Thông báo kết quả
-            if (result)
+            if (result!=0)
             {
                 check = true;
                 MessageBox.Show("Cập nhật sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

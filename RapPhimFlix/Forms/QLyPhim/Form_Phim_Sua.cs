@@ -16,7 +16,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
     {
         bool check = false;
         private FormQuanLy formQLy;
-        DataContext db = new DataContext();
+        
         private string index;
         int cntTheLoai;
         string tl;
@@ -26,16 +26,16 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             InitializeComponent();
             this.formQLy = formQLy;
             this.index = id;
-            DataTable dtb = db.ReadData("select Loai from tblTheLoai");
+            DataTable dtb = DataProvider.Instance.ExcuteQuery("select Loai from tblTheLoai");
 
             for (int i = 0; i < dtb.Rows.Count; i++)
             {
                 cbb_SuaPhim_TheLoai.Items.Add(dtb.Rows[i]["Loai"].ToString());
             }
-            DataTable dt = db.ReadData("select * from tblPhims where MaPhim ='" + id + "'");
+            DataTable dt = DataProvider.Instance.ExcuteQuery("select * from tblPhims where MaPhim ='" + id + "'");
             
             //combobox
-            DataTable dt1 = db.ReadData(" select a.Loai,a.MaTheLoai from tblTheLoai as a  join tblTheLoai_Phim as b on a.MaTheLoai=b.MaTheLoai where b.MaPhim='" + id + "'");
+            DataTable dt1 = DataProvider.Instance.ExcuteQuery(" select a.Loai,a.MaTheLoai from tblTheLoai as a  join tblTheLoai_Phim as b on a.MaTheLoai=b.MaTheLoai where b.MaPhim='" + id + "'");
             cbb_SuaPhim_TheLoai.Text = dt1.Rows[0]["Loai"].ToString();
             tb_SuaPhim_MaPhim.Text = dt.Rows[0]["MaPhim"].ToString();
             tl = dt1.Rows[0]["Loai"].ToString();
@@ -73,14 +73,14 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            DataTable dtb1 = db.ReadData("select Loai from tblTheLoai");
-            DataTable cb = db.ReadData("select * from tblTheLoai where Loai = N'" + theLoai + "'");
+            DataTable dtb1 = DataProvider.Instance.ExcuteQuery("select Loai from tblTheLoai");
+            DataTable cb = DataProvider.Instance.ExcuteQuery("select * from tblTheLoai where Loai = N'" + theLoai + "'");
             cntTheLoai = dtb1.Rows.Count;
             if (cb.Rows.Count == 0 )
             {
                 
-                bool rs = db.ChangeData("insert into tblTheLoai(MaTheLoai,Loai) values('TL" + (cntTheLoai + 1).ToString() + "',N'" + theLoai + "')");
-                if (!rs)
+                int rs = DataProvider.Instance.ExcuteNonQuery("insert into tblTheLoai(MaTheLoai,Loai) values('TL" + (cntTheLoai + 1).ToString() + "',N'" + theLoai + "')");
+                if (rs!=0)
                 {
                     MessageBox.Show("Thêm thể loại lỗi!");
                 }
@@ -94,8 +94,8 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
                     string deleteQuery = "DELETE FROM tblTheLoai_Phim WHERE MaPhim = '" + maPhim + "' AND MaTheLoai = '"+matl+"'";
 
                     // Thực hiện xóa trước khi thêm dữ liệu mới
-                    bool deleteResult = db.ChangeData(deleteQuery);
-                    bool rs1 = db.ChangeData("insert into tblTheLoai_Phim (MaPhim,MaTheLoai) values('" + maPhim + "','" + cb.Rows[0]["MaTheLoai"].ToString() + "')");
+                    int deleteResult = DataProvider.Instance.ExcuteNonQuery(deleteQuery);
+                    int rs1 = DataProvider.Instance.ExcuteNonQuery("insert into tblTheLoai_Phim (MaPhim,MaTheLoai) values('" + maPhim + "','" + cb.Rows[0]["MaTheLoai"].ToString() + "')");
 
                 }
             }
@@ -104,9 +104,9 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             string updateQuery = $"UPDATE tblPhims SET Ten = N'{tenPhim}', DaoDien = N'{daoDien}', MoTa = N'{moTa}', NamPhatHanh = '{namPhatHanh}', ThoiLuong = '{thoiLuong}', QuocGia = N'{quocGia}' WHERE MaPhim = '{maPhim}'";
             //cap nhat bang TheLoai_phim
 
-            bool result = db.ChangeData(updateQuery);
+            int result = DataProvider.Instance.ExcuteNonQuery(updateQuery);
 
-            if (result)
+            if (result!=0)
             {
                 check = true;
                 MessageBox.Show("Cập nhật phim thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -170,7 +170,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             }
             // Đọc dữ liệu và kiểm tra kết quả
             string query = "Select MaTheLoai from tblTheLoai where Loai = N'" + loai + "'";
-            DataTable dt1 = db.ReadData(query);
+            DataTable dt1 = DataProvider.Instance.ExcuteQuery(query);
             string Ma_Phim = tb_SuaPhim_MaPhim.Text;
             if (dt1.Rows.Count > 0)
             {
@@ -179,9 +179,9 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
 
                 // Tạo câu truy vấn
 
-                bool result = db.ChangeData("insert into tblTheLoai_Phim (MaPhim,MaTheLoai) values('" + Ma_Phim + "','" + MaTheloai + "')");
+                int result = DataProvider.Instance.ExcuteNonQuery("insert into tblTheLoai_Phim (MaPhim,MaTheLoai) values('" + Ma_Phim + "','" + MaTheloai + "')");
 
-                if (!result)
+                if (result!=0)
                 {
                     MessageBox.Show("Thêm dữ liệu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

@@ -15,7 +15,7 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
     public partial class Form_SanPham_Them : Form
     {
         private FormQuanLy formQLy;
-        DataContext db = new DataContext();
+       
         bool check = false;
         public Form_SanPham_Them(FormQuanLy formQLy)
         {
@@ -51,9 +51,9 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
                      "VALUES ('" + maSP + "', '" + giaHopLe + "', N'" + loaiSanPham + "', N'" + tenSP + "','" + anhSanPham + "')";
 
 
-            bool result = db.ChangeData(insertQuery);
+            int result = DataProvider.Instance.ExcuteNonQuery(insertQuery);
 
-            if (result)
+            if (result!=0)
             {
                 check = true;
                 DialogResult result1 = MessageBox.Show("Bạn đã thêm sản phẩm thành công ! Bạn muốn quay lại danh sách phim không?",

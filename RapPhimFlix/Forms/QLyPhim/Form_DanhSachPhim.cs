@@ -18,13 +18,13 @@ namespace RapPhimFlix.Forms.QLyPhim
     {
         private FormQuanLy formQLy;
         public string Row_index;
-        DataContext db = new DataContext();
+        
         public Form_DanhSachPhim(FormQuanLy formQuanLy)
         {
             InitializeComponent();
             
             this.formQLy = formQuanLy;
-            dgv_Phim.DataSource = db.ReadData("SELECT p.MaPhim, p.Ten, p.DaoDien, p.QuocGia, p.MoTa, p.ThoiLuong, p.NamPhatHanh, t.Loai AS TheLoai FROM tblPhims p INNER JOIN tblTheLoai_Phim tp ON p.MaPhim = tp.MaPhim INNER JOIN tblTheLoai t ON tp.MaTheLoai = t.MaTheLoai");
+            dgv_Phim.DataSource = DataProvider.Instance.ExcuteQuery("SELECT p.MaPhim, p.Ten, p.DaoDien, p.QuocGia, p.MoTa, p.ThoiLuong, p.NamPhatHanh, t.Loai AS TheLoai FROM tblPhims p INNER JOIN tblTheLoai_Phim tp ON p.MaPhim = tp.MaPhim INNER JOIN tblTheLoai t ON tp.MaTheLoai = t.MaTheLoai");
             dgv_Phim.Columns["MaPhim"].Visible = false;
             dgv_Phim.Columns["TheLoai"].HeaderText = "Thể loại";
             dgv_Phim.Columns["Ten"].HeaderText = "Tên phim";

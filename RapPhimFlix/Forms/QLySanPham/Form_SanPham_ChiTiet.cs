@@ -15,18 +15,17 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
     public partial class Form_SanPham_ChiTiet : Form
     {
         private FormQuanLy formQLy;
-        DataContext db = new DataContext();
+       
         private string index;
         public Form_SanPham_ChiTiet(FormQuanLy formQLy, string id)
         {
             InitializeComponent();
             this.formQLy = formQLy;
             this.index = id;
-            DataTable dt = db.ReadData("select * from tblSanPham where MaSanPham ='" + id + "'");
+            DataTable dt = DataProvider.Instance.ExcuteQuery("select * from tblSanPham where MaSanPham ='" + id + "'");
             tb_SanPham_ChiTiet_Gia.Text = dt.Rows[0]["Gia"].ToString();
             tb_SanPham_ChiTiet_Loai.Text = dt.Rows[0]["LoaiSanPham"].ToString();
             tb_SanPham_ChiTiet_MaSP.Text = dt.Rows[0]["MaSanPham"].ToString();
-
             tb_SanPham_ChiTiet_TenSanPham.Text = dt.Rows[0]["TenSanPham"].ToString();
             ptb_SanPham_ChiTiet.ImageLocation = dt.Rows[0]["Anh"].ToString();
             tb_SanPham_ChiTiet_Gia.Enabled = false;

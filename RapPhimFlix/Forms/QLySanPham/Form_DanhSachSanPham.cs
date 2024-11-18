@@ -15,12 +15,12 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
     public partial class Form_DanhSachSanPham : Form
     {
         private FormQuanLy formQLy;
-        DataContext db = new DataContext();
+        
         public Form_DanhSachSanPham(FormQuanLy formQuanLy)
         {
             InitializeComponent();
             this.formQLy = formQuanLy;
-            dgv_SanPham.DataSource = db.ReadData("select a.MaSanPham,a.TenSanPham,a.LoaiSanPham,a.Gia from tblSanPham as a");
+            dgv_SanPham.DataSource = DataProvider.Instance.ExcuteQuery("select a.MaSanPham,a.TenSanPham,a.LoaiSanPham,a.Gia from tblSanPham as a");
             dgv_SanPham.Columns["TenSanPham"].HeaderText = "Tên Sản phẩm";
             dgv_SanPham.Columns["LoaiSanPham"].HeaderText = "Loại";
             dgv_SanPham.Columns["Gia"].HeaderText = "Giá";

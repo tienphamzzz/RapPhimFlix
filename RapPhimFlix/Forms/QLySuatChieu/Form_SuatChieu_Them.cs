@@ -16,18 +16,18 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
     public partial class Form_SuatChieu_Them : Form
     {
         private FormQuanLy formQLy;
-        DataContext db = new DataContext();
+        
         bool check = false;
         public Form_SuatChieu_Them(FormQuanLy formQLy)
         {
             InitializeComponent();
             this.formQLy = formQLy;
-            DataTable dt = db.ReadData("select Ten from tblPhims");
+            DataTable dt = DataProvider.Instance.ExcuteQuery("select Ten from tblPhims");
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 cbb_SuatChieu_dsPhim.Items.Add(dt.Rows[i]["Ten"].ToString());
             }
-            DataTable dt1 = db.ReadData("Select TenPhong from tblPhongChieu");
+            DataTable dt1 = DataProvider.Instance.ExcuteQuery("Select TenPhong from tblPhongChieu");
             for (int i = 0; i < dt1.Rows.Count; i++)
             {
                 cbb_SuatChieu_dsPhongChieu.Items.Add(dt1.Rows[i]["TenPhong"]);
@@ -48,7 +48,7 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
 
             string TenPhim = cbb_SuatChieu_dsPhim.Text;
             string PhongChieu = cbb_SuatChieu_dsPhongChieu.Text;
-            DataTable dt = db.ReadData("select MaPhongChieu from tblPhongChieu where TenPhong=N'" + PhongChieu + "'");
+            DataTable dt = DataProvider.Instance.ExcuteQuery("select MaPhongChieu from tblPhongChieu where TenPhong=N'" + PhongChieu + "'");
             string maPhongChieu = dt.Rows[0]["MaPhongChieu"].ToString();
             // Kiểm tra các giá trị có rỗng không
             if (string.IsNullOrWhiteSpace(cbb_Ca_begin.Text) ||
@@ -67,15 +67,22 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
                 return;
             }
 
-            DataTable dt1 = db.ReadData("select MaPhim from tblPhims where Ten=N'" + TenPhim + "'");
+            DataTable dt1 = DataProvider.Instance.ExcuteQuery("select MaPhim from tblPhims where Ten=N'" + TenPhim + "'");
             string maPhim = dt1.Rows[0]["MaPhim"].ToString();
             string caChieu = cbb_Ca_begin.Text + "-" + cbb_Ca_end.Text;
+            DataTable dt2 = DataProvider.Instance.ExcuteQuery("select * from tblSuatChieu as a where a.CaChieu='" + caChieu + "' and CAST(a.NgayChieu AS DATE)='" + ngayChieu + "' and a.MaPhim=(select MaPhim from tblPhims where Ten=N'" + TenPhim + "') and a.MaPhongChieu='" + maPhongChieu + "'");
+
+            if (dt2.Rows.Count > 0)
+            {
+                MessageBox.Show("Phim có ca chiếu này đã tồn tại");
+                return;
+            }
             string insertQuery = "INSERT INTO tblSuatChieu (MaSuatChieu, NgayChieu, GiaVe, CaChieu, MaPhim, MaPhongChieu) " +
                                  "VALUES ('" + maSuatChieu + "', '" + ngayChieu + "', '" + giaVe + "', N'" + caChieu + "', '" + maPhim + "', '" + maPhongChieu + "')";
 
-            bool result = db.ChangeData(insertQuery);
+            int result = DataProvider.Instance.ExcuteNonQuery(insertQuery);
 
-            if (result)
+            if (result!=0)
             {
                 check = true;
                 DialogResult result1 = MessageBox.Show("Bạn đã thêm suất chiếu thành công! Bạn muốn quay lại danh sách suất chiếu không?",

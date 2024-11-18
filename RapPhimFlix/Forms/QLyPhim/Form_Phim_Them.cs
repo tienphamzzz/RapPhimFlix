@@ -16,14 +16,14 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
     public partial class Form_Phim_Them : Form
     {
         bool check = false;
-        DataContext db = new DataContext();
+        
         private FormQuanLy formQLy;
         int cntTheLoai;
         public Form_Phim_Them(FormQuanLy formQuanLy)
         {
             InitializeComponent();
             this.formQLy = formQuanLy;
-            DataTable dtb = db.ReadData("select Loai from tblTheLoai");
+            DataTable dtb = DataProvider.Instance.ExcuteQuery("select Loai from tblTheLoai");
 
             for (int i = 0; i < dtb.Rows.Count; i++)
             {
@@ -75,7 +75,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
 
             //kiem tra xem trong db da ton tai ma phim chua
             var maphim = tb_ThemPhim_MaPhim.Text;
-            DataTable dtb = db.ReadData("Select MaPhim from tblPhims where MaPhim ='" + maphim + "'");
+            DataTable dtb = DataProvider.Instance.ExcuteQuery("Select MaPhim from tblPhims where MaPhim ='" + maphim + "'");
             if (dtb.Rows.Count != 0)
             {
 
@@ -83,13 +83,13 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
                 return;
             }
             //Nếu Text trong cbb chưa tồn tại thì them moi
-            DataTable dtb1 = db.ReadData("select Loai from tblTheLoai");
-            DataTable cb = db.ReadData("select * from tblTheLoai where Loai = N'" + TheLoai + "'");
+            DataTable dtb1 = DataProvider.Instance.ExcuteQuery("select Loai from tblTheLoai");
+            DataTable cb = DataProvider.Instance.ExcuteQuery("select * from tblTheLoai where Loai = N'" + TheLoai + "'");
             cntTheLoai = dtb1.Rows.Count;
             if (cb.Rows.Count == 0)
             {
-                bool rs = db.ChangeData("insert into tblTheLoai(MaTheLoai,Loai) values('TL" + (cntTheLoai + 1).ToString() + "',N'" + TheLoai + "')");
-                if (!rs)
+                int rs = DataProvider.Instance.ExcuteNonQuery("insert into tblTheLoai(MaTheLoai,Loai) values('TL" + (cntTheLoai + 1).ToString() + "',N'" + TheLoai + "')");
+                if (rs==0)
                 {
                     MessageBox.Show("Thêm thể loại lỗi!");
                 }
@@ -100,9 +100,9 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
                                  "VALUES ('" + Ma_Phim + "', '" + Ten + "','" + DaoDien + "','" + QuocGia + "','" + MoTa + "','" + ThoiLuong + "','" + TenAnh + "','" + NamPhatHanh + "')";
 
             //kiem tra ket qua them
-            bool result = db.ChangeData(insert);
+            int result = DataProvider.Instance.ExcuteNonQuery(insert);
             them_theloai();
-            if (result)
+            if (result!=0)
             {
                 check = true;
                 DialogResult result1 = MessageBox.Show("Bạn đã thêm phim thành công ! Bạn muốn quay lại danh sách phim không?",
@@ -166,7 +166,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             }
             // Đọc dữ liệu và kiểm tra kết quả
             string query = "Select MaTheLoai from tblTheLoai where Loai = N'" + loai + "'";
-            DataTable dt1 = db.ReadData(query);
+            DataTable dt1 = DataProvider.Instance.ExcuteQuery(query);
             string Ma_Phim = tb_ThemPhim_MaPhim.Text;
             if (dt1.Rows.Count > 0)
             {
@@ -175,9 +175,9 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
 
                 // Tạo câu truy vấn
 
-                bool result = db.ChangeData("insert into tblTheLoai_Phim (MaPhim,MaTheLoai) values('" + Ma_Phim + "','" + MaTheloai + "')");
+                int result = DataProvider.Instance.ExcuteNonQuery("insert into tblTheLoai_Phim (MaPhim,MaTheLoai) values('" + Ma_Phim + "','" + MaTheloai + "')");
 
-                if (!result)
+                if (result==0)
                 {
                     MessageBox.Show("Thêm dữ liệu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

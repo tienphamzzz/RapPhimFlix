@@ -8,7 +8,9 @@ namespace RapPhimFlix.Appsetting
 {
     public class AppSetting
     {
+
         public static string ConnectionString = "Data Source=NKIEN\\SQLEXPRESS;Initial Catalog=QLCinema;Integrated Security=True;Connect Timeout=30;Encrypt=False";
+
         private readonly string Admin = "Admin123";
         private readonly string Password = "Admin123";
         public bool checkAdmin(string username, string password)

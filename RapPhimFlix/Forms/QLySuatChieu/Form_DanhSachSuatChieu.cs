@@ -15,12 +15,12 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
     public partial class Form_DanhSachSuatChieu : Form
     {
         private FormQuanLy formQLy;
-        DataContext db = new DataContext();
+        
         public Form_DanhSachSuatChieu(FormQuanLy formQuanLy)
         {
             InitializeComponent();
             this.formQLy = formQuanLy;
-            dgv_SuatChieu.DataSource = db.ReadData("SELECT (select Ten from tblPhims where MaPhim = a.MaPhim) as TenPhim, a.MaSuatChieu, CONVERT(varchar, a.NgayChieu, 103) AS NgayChieu,(select ThoiLuong from tblPhims where MaPhim = a.MaPhim) as ThoiLuong,a.CaChieu,a.GiaVe, a.MaPhongChieu FROM tblSuatChieu as a");
+            dgv_SuatChieu.DataSource = DataProvider.Instance.ExcuteQuery("SELECT (select Ten from tblPhims where MaPhim = a.MaPhim) as TenPhim, a.MaSuatChieu, CONVERT(varchar, a.NgayChieu, 103) AS NgayChieu,(select ThoiLuong from tblPhims where MaPhim = a.MaPhim) as ThoiLuong,a.CaChieu,a.GiaVe, a.MaPhongChieu FROM tblSuatChieu as a");
             dgv_SuatChieu.Columns["MaSuatChieu"].Visible = false;
             dgv_SuatChieu.Columns["NgayChieu"].HeaderText = "Ngày Chiếu";
             dgv_SuatChieu.Columns["GiaVe"].HeaderText = "Giá Vé";
@@ -43,7 +43,7 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
 
         private void btn_SuatChieu_All_Click(object sender, EventArgs e)
         {
-            dgv_SuatChieu.DataSource = db.ReadData("SELECT (select Ten from tblPhims where MaPhim = a.MaPhim) as TenPhim, CONVERT(varchar, a.NgayChieu, 103) AS NgayChieu,(select ThoiLuong from tblPhims where MaPhim = a.MaPhim) as ThoiLuong,a.CaChieu,a.GiaVe,a.MaSuatChieu FROM tblSuatChieu as a ");
+            dgv_SuatChieu.DataSource = DataProvider.Instance.ExcuteQuery("SELECT (select Ten from tblPhims where MaPhim = a.MaPhim) as TenPhim, CONVERT(varchar, a.NgayChieu, 103) AS NgayChieu,(select ThoiLuong from tblPhims where MaPhim = a.MaPhim) as ThoiLuong,a.CaChieu,a.GiaVe,a.MaSuatChieu FROM tblSuatChieu as a ");
             dgv_SuatChieu.Columns["MaSuatChieu"].Visible = false;
         }
 
@@ -51,7 +51,7 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
         {
             DateTime ngayChieu = dateTimePicker1.Value;
             string ngay = ngayChieu.ToString("yyyy-MM-dd");
-            dgv_SuatChieu.DataSource = db.ReadData("SELECT (select Ten from tblPhims where MaPhim = a.MaPhim) as TenPhim, CONVERT(varchar, a.NgayChieu, 103) AS NgayChieu,(select ThoiLuong from tblPhims where MaPhim = a.MaPhim) as ThoiLuong,a.CaChieu,a.GiaVe,a.MaSuatChieu FROM tblSuatChieu as a where a.MaPhongChieu ='PC001' and CAST(a.NgayChieu AS DATE)='"+ngay+"'");
+            dgv_SuatChieu.DataSource = DataProvider.Instance.ExcuteQuery("SELECT (select Ten from tblPhims where MaPhim = a.MaPhim) as TenPhim, CONVERT(varchar, a.NgayChieu, 103) AS NgayChieu,(select ThoiLuong from tblPhims where MaPhim = a.MaPhim) as ThoiLuong,a.CaChieu,a.GiaVe,a.MaSuatChieu FROM tblSuatChieu as a where a.MaPhongChieu ='PC001' and CAST(a.NgayChieu AS DATE)='"+ngay+"'");
             dgv_SuatChieu.Columns["MaSuatChieu"].Visible = false;
         }
 
@@ -59,7 +59,7 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
         {
             DateTime ngayChieu = dateTimePicker1.Value;
             string ngay = ngayChieu.ToString("yyyy-MM-dd");
-            dgv_SuatChieu.DataSource = db.ReadData("SELECT (select Ten from tblPhims where MaPhim = a.MaPhim) as TenPhim, CONVERT(varchar, a.NgayChieu, 103) AS NgayChieu,(select ThoiLuong from tblPhims where MaPhim = a.MaPhim) as ThoiLuong,a.CaChieu,a.GiaVe,a.MaSuatChieu FROM tblSuatChieu as a where a.MaPhongChieu ='PC002' and CAST(a.NgayChieu AS DATE)='" + ngay + "'");
+            dgv_SuatChieu.DataSource = DataProvider.Instance.ExcuteQuery("SELECT (select Ten from tblPhims where MaPhim = a.MaPhim) as TenPhim, CONVERT(varchar, a.NgayChieu, 103) AS NgayChieu,(select ThoiLuong from tblPhims where MaPhim = a.MaPhim) as ThoiLuong,a.CaChieu,a.GiaVe,a.MaSuatChieu FROM tblSuatChieu as a where a.MaPhongChieu ='PC002' and CAST(a.NgayChieu AS DATE)='" + ngay + "'");
             dgv_SuatChieu.Columns["MaSuatChieu"].Visible = false;
         }
 
@@ -67,7 +67,7 @@ namespace RapPhimFlix.Forms.MenuNav.SuatChieu
         {
             DateTime ngayChieu = dateTimePicker1.Value;
             string ngay = ngayChieu.ToString("yyyy-MM-dd");
-            dgv_SuatChieu.DataSource = db.ReadData("SELECT (select Ten from tblPhims where MaPhim = a.MaPhim) as TenPhim, CONVERT(varchar, a.NgayChieu, 103) AS NgayChieu,(select ThoiLuong from tblPhims where MaPhim = a.MaPhim) as ThoiLuong,a.CaChieu,a.GiaVe,a.MaSuatChieu FROM tblSuatChieu as a where a.MaPhongChieu ='PC003' and CAST(a.NgayChieu AS DATE)='" + ngay + "'");
+            dgv_SuatChieu.DataSource = DataProvider.Instance.ExcuteQuery("SELECT (select Ten from tblPhims where MaPhim = a.MaPhim) as TenPhim, CONVERT(varchar, a.NgayChieu, 103) AS NgayChieu,(select ThoiLuong from tblPhims where MaPhim = a.MaPhim) as ThoiLuong,a.CaChieu,a.GiaVe,a.MaSuatChieu FROM tblSuatChieu as a where a.MaPhongChieu ='PC003' and CAST(a.NgayChieu AS DATE)='" + ngay + "'");
             dgv_SuatChieu.Columns["MaSuatChieu"].Visible = false;
         }
     }
