@@ -16,13 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
-
+    <Content Include="bin\Debug\Anh\anh dang nhap.png" />
+    <Content Include="bin\Debug\Anh\AnhMk.jpg" />
+    <Content Include="bin\Debug\Anh\istockphoto-1200064758-170667a.jpg" />
+    <Content Include="bin\Debug\Anh\mat khau.jpg" />
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.deps.json" />
     <Content Include="bin\Debug\net8.0-windows\RapPhimFlix.runtimeconfig.json" />
-
-    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\No Infomation.jpg" />
-    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\SuperGirl 1.jpg" />
-    <Content Include="bin\Debug\net8.0-windows\Resources\images\phims\Superman 1.jpg" />
     <Content Include="Resources\Icon\app-icon.ico" />
 
  
@@ -34,6 +33,18 @@
     <Folder Include="Resources\Img\Products\" />
 
     <Folder Include="Resources\Poster\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net8.0-windows\RapPhimFlix.dll" />
+    <None Include="bin\Debug\net8.0-windows\RapPhimFlix.exe" />
+    <None Include="bin\Debug\net8.0-windows\RapPhimFlix.pdb" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll" />
+    <None Include="bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net8.0-windows\System.Data.SqlClient.dll" />
   </ItemGroup>
 
   <ItemGroup>

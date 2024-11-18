@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDangNhap));
             panel1 = new Panel();
-            label1 = new Label();
-            ptb_DangNhap_TaiKhoan = new PictureBox();
-            txt_DangNhap_TaiKhoan = new TextBox();
+            btnThoat = new Button();
+            btn_DangNhap_DangNhap = new Button();
             txt_DangNhap_MatKhau = new TextBox();
             ptb_DangNhap_MatKhau = new PictureBox();
-            btn_DangNhap_DangNhap = new Button();
+            txt_DangNhap_TaiKhoan = new TextBox();
+            ptb_DangNhap_TaiKhoan = new PictureBox();
+            label1 = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ptb_DangNhap_TaiKhoan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptb_DangNhap_MatKhau).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptb_DangNhap_TaiKhoan).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnThoat);
             panel1.Controls.Add(btn_DangNhap_DangNhap);
             panel1.Controls.Add(txt_DangNhap_MatKhau);
             panel1.Controls.Add(ptb_DangNhap_MatKhau);
@@ -50,10 +53,73 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 4, 4, 4);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
             panel1.Size = new Size(596, 423);
             panel1.TabIndex = 0;
+            // 
+            // btnThoat
+            // 
+            btnThoat.Location = new Point(424, 251);
+            btnThoat.Margin = new Padding(4);
+            btnThoat.Name = "btnThoat";
+            btnThoat.Size = new Size(107, 32);
+            btnThoat.TabIndex = 4;
+            btnThoat.Text = "Thoát";
+            btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
+            // 
+            // btn_DangNhap_DangNhap
+            // 
+            btn_DangNhap_DangNhap.Location = new Point(293, 251);
+            btn_DangNhap_DangNhap.Margin = new Padding(4);
+            btn_DangNhap_DangNhap.Name = "btn_DangNhap_DangNhap";
+            btn_DangNhap_DangNhap.Size = new Size(107, 32);
+            btn_DangNhap_DangNhap.TabIndex = 3;
+            btn_DangNhap_DangNhap.Text = "Đăng nhập";
+            btn_DangNhap_DangNhap.UseVisualStyleBackColor = true;
+            btn_DangNhap_DangNhap.Click += btn_DangNhap_DangNhap_Click;
+            // 
+            // txt_DangNhap_MatKhau
+            // 
+            txt_DangNhap_MatKhau.Location = new Point(150, 203);
+            txt_DangNhap_MatKhau.Margin = new Padding(4);
+            txt_DangNhap_MatKhau.Name = "txt_DangNhap_MatKhau";
+            txt_DangNhap_MatKhau.Size = new Size(381, 29);
+            txt_DangNhap_MatKhau.TabIndex = 2;
+            txt_DangNhap_MatKhau.TextChanged += txt_DangNhap_MatKhau_TextChanged;
+            txt_DangNhap_MatKhau.KeyDown += txt_DangNhap_MatKhau_KeyDown;
+            // 
+            // ptb_DangNhap_MatKhau
+            // 
+            ptb_DangNhap_MatKhau.Image = (Image)resources.GetObject("ptb_DangNhap_MatKhau.Image");
+            ptb_DangNhap_MatKhau.Location = new Point(74, 203);
+            ptb_DangNhap_MatKhau.Margin = new Padding(4);
+            ptb_DangNhap_MatKhau.Name = "ptb_DangNhap_MatKhau";
+            ptb_DangNhap_MatKhau.Size = new Size(43, 42);
+            ptb_DangNhap_MatKhau.SizeMode = PictureBoxSizeMode.StretchImage;
+            ptb_DangNhap_MatKhau.TabIndex = 3;
+            ptb_DangNhap_MatKhau.TabStop = false;
+            // 
+            // txt_DangNhap_TaiKhoan
+            // 
+            txt_DangNhap_TaiKhoan.Location = new Point(150, 146);
+            txt_DangNhap_TaiKhoan.Margin = new Padding(4);
+            txt_DangNhap_TaiKhoan.Name = "txt_DangNhap_TaiKhoan";
+            txt_DangNhap_TaiKhoan.Size = new Size(381, 29);
+            txt_DangNhap_TaiKhoan.TabIndex = 1;
+            txt_DangNhap_TaiKhoan.KeyDown += txt_DangNhap_TaiKhoan_KeyDown;
+            // 
+            // ptb_DangNhap_TaiKhoan
+            // 
+            ptb_DangNhap_TaiKhoan.Image = (Image)resources.GetObject("ptb_DangNhap_TaiKhoan.Image");
+            ptb_DangNhap_TaiKhoan.Location = new Point(74, 146);
+            ptb_DangNhap_TaiKhoan.Margin = new Padding(4);
+            ptb_DangNhap_TaiKhoan.Name = "ptb_DangNhap_TaiKhoan";
+            ptb_DangNhap_TaiKhoan.Size = new Size(43, 42);
+            ptb_DangNhap_TaiKhoan.SizeMode = PictureBoxSizeMode.StretchImage;
+            ptb_DangNhap_TaiKhoan.TabIndex = 1;
+            ptb_DangNhap_TaiKhoan.TabStop = false;
             // 
             // label1
             // 
@@ -66,52 +132,6 @@
             label1.TabIndex = 0;
             label1.Text = "Đăng nhập";
             // 
-            // ptb_DangNhap_TaiKhoan
-            // 
-            ptb_DangNhap_TaiKhoan.Location = new Point(74, 146);
-            ptb_DangNhap_TaiKhoan.Margin = new Padding(4, 4, 4, 4);
-            ptb_DangNhap_TaiKhoan.Name = "ptb_DangNhap_TaiKhoan";
-            ptb_DangNhap_TaiKhoan.Size = new Size(43, 42);
-            ptb_DangNhap_TaiKhoan.TabIndex = 1;
-            ptb_DangNhap_TaiKhoan.TabStop = false;
-            // 
-            // txt_DangNhap_TaiKhoan
-            // 
-            txt_DangNhap_TaiKhoan.Location = new Point(150, 146);
-            txt_DangNhap_TaiKhoan.Margin = new Padding(4, 4, 4, 4);
-            txt_DangNhap_TaiKhoan.Multiline = true;
-            txt_DangNhap_TaiKhoan.Name = "txt_DangNhap_TaiKhoan";
-            txt_DangNhap_TaiKhoan.Size = new Size(381, 40);
-            txt_DangNhap_TaiKhoan.TabIndex = 2;
-            // 
-            // txt_DangNhap_MatKhau
-            // 
-            txt_DangNhap_MatKhau.Location = new Point(150, 203);
-            txt_DangNhap_MatKhau.Margin = new Padding(4, 4, 4, 4);
-            txt_DangNhap_MatKhau.Multiline = true;
-            txt_DangNhap_MatKhau.Name = "txt_DangNhap_MatKhau";
-            txt_DangNhap_MatKhau.Size = new Size(381, 40);
-            txt_DangNhap_MatKhau.TabIndex = 4;
-            // 
-            // ptb_DangNhap_MatKhau
-            // 
-            ptb_DangNhap_MatKhau.Location = new Point(74, 203);
-            ptb_DangNhap_MatKhau.Margin = new Padding(4, 4, 4, 4);
-            ptb_DangNhap_MatKhau.Name = "ptb_DangNhap_MatKhau";
-            ptb_DangNhap_MatKhau.Size = new Size(43, 42);
-            ptb_DangNhap_MatKhau.TabIndex = 3;
-            ptb_DangNhap_MatKhau.TabStop = false;
-            // 
-            // btn_DangNhap_DangNhap
-            // 
-            btn_DangNhap_DangNhap.Location = new Point(254, 287);
-            btn_DangNhap_DangNhap.Margin = new Padding(4, 4, 4, 4);
-            btn_DangNhap_DangNhap.Name = "btn_DangNhap_DangNhap";
-            btn_DangNhap_DangNhap.Size = new Size(107, 32);
-            btn_DangNhap_DangNhap.TabIndex = 5;
-            btn_DangNhap_DangNhap.Text = "Đăng nhập";
-            btn_DangNhap_DangNhap.UseVisualStyleBackColor = true;
-            // 
             // FormDangNhap
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -119,13 +139,16 @@
             ClientSize = new Size(596, 423);
             Controls.Add(panel1);
             Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormDangNhap";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormDangNhap";
+            FormClosing += FormDangNhap_FormClosing;
+            Load += FormDangNhap_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ptb_DangNhap_TaiKhoan).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptb_DangNhap_MatKhau).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptb_DangNhap_TaiKhoan).EndInit();
             ResumeLayout(false);
         }
 
@@ -138,5 +161,6 @@
         private TextBox txt_DangNhap_TaiKhoan;
         private PictureBox ptb_DangNhap_TaiKhoan;
         private Label label1;
+        private Button btnThoat;
     }
 }
