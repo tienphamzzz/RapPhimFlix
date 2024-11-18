@@ -29,7 +29,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             {
                 cbb_ThemPhim_TheLoai.Items.Add(dtb.Rows[i]["Loai"].ToString());
             }
-
+            ExportFile.loadImage(ptB_Them_Anh, "Resources\\images\\phims", "No Infomation.jpg");
         }
         private bool CheckNull()
         {

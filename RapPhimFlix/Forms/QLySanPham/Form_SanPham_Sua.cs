@@ -27,7 +27,7 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
             tb_SanPham_Sua_Gia.Text = dt.Rows[0]["Gia"].ToString();
             tb_SanPham_Sua_MaSP.Text = dt.Rows[0]["MaSanPham"].ToString();
             tb_SanPham_Sua_TenSP.Text = dt.Rows[0]["TenSanPham"].ToString();
-            ptb_SanPham_Sua.ImageLocation = dt.Rows[0]["Anh"].ToString();
+            ExportFile.loadImage(ptb_SanPham_Sua, "Resources\\images\\sanphams", dt.Rows[0]["Anh"].ToString());
             cbb_SanPham_Sua.Text = dt.Rows[0]["LoaiSanPham"].ToString();
             tb_SanPham_Sua_MaSP.Enabled = false;
             cbb_SanPham_Sua.Items.Add("Đồ ăn");

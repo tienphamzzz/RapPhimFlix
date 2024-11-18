@@ -23,6 +23,7 @@ namespace RapPhimFlix.Forms.MenuNav.SanPham
             this.formQLy = formQLy;
             cbb_SanPham_Them.Items.Add("Đồ ăn");
             cbb_SanPham_Them.Items.Add("Đồ uống");
+            ExportFile.loadImage(ptb_SanPham_Them, "Resources\\images\\phims", "No Infomation.jpg");
         }
 
         private void btn_SanPham_Them_XacNhan_Click(object sender, EventArgs e)

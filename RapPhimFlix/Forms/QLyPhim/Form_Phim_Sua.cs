@@ -45,7 +45,7 @@ namespace RapPhimFlix.Forms.MenuNav.ThongTinPhim
             tb_SuaPhim_MoTa.Text = dt.Rows[0]["MoTa"].ToString();
             DateTime namPH = Convert.ToDateTime(dt.Rows[0]["NamPhatHanh"].ToString());
             dateTimePicker1.Value = namPH;
-            ptB_Sua_Anh.ImageLocation = dt.Rows[0]["TenAnh"].ToString();
+            ExportFile.loadImage(ptB_Sua_Anh, "Resources\\images\\phims", dt.Rows[0]["TenAnh"].ToString());
             tb_SuaPhim_ThoiLuong.Text = dt.Rows[0]["ThoiLuong"].ToString();
             tb_SuaPhim_QuocGia.Text = dt.Rows[0]["QuocGia"].ToString();
             
