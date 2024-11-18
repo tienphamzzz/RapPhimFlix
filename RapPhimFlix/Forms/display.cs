@@ -24,6 +24,7 @@ namespace RapPhimFlix.Forms
         {
            // UserControl user = new frmListPhim(this);
            // ShowUserControl(user);
+
         }
         public void ShowUserControl(UserControl user)
         {
