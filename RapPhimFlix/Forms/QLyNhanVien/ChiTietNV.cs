@@ -19,6 +19,15 @@ namespace RapPhimFlix.Forms.QLyNhanVien
             InitializeComponent();
             this.maNhanVien = maNhanVien; // gán giá trị mã nhân viên được truyền vào
             LoadChiTietNhanVien();
+            txt_MaNV.Enabled = false;
+            txt_ChucVu.Enabled = false;
+            txt_TenNV.Enabled = false;
+            txt_SDT.Enabled = false;
+            txt_Luong.Enabled = false;
+            txt_GioiTinh.Enabled = false;
+            txt_MatKhau.Enabled = false;
+            txt_TaiKhoan.Enabled = false;
+
         }
 
 
@@ -53,6 +62,16 @@ namespace RapPhimFlix.Forms.QLyNhanVien
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_ChucVu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_XacNhan_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

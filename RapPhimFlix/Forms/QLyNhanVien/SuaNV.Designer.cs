@@ -30,11 +30,13 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            panel1 = new Panel();
+            rdo_GioiTinh_Nam = new RadioButton();
+            rdo_GioiTinh_Nu = new RadioButton();
             btn_TaiAnh = new Button();
             pictureBox_anh = new PictureBox();
             txt_SDT = new TextBox();
             txt_Luong = new TextBox();
-            txt_GioiTinh = new TextBox();
             txt_TenNV = new TextBox();
             txt_MaNV = new TextBox();
             label6 = new Label();
@@ -43,7 +45,9 @@
             label3 = new Label();
             label2 = new Label();
             groupBox2 = new GroupBox();
-            txt_ChucVu = new TextBox();
+            panel2 = new Panel();
+            rdo_ChucVuNhanVien = new RadioButton();
+            rdo_ChucVu_QuanLy = new RadioButton();
             txt_MatKhau = new TextBox();
             txt_TaiKhoan = new TextBox();
             label9 = new Label();
@@ -52,8 +56,10 @@
             btn_Huy = new Button();
             btn_XacNhan = new Button();
             groupBox1.SuspendLayout();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_anh).BeginInit();
             groupBox2.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -62,17 +68,17 @@
             label1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(297, 23);
             label1.Name = "label1";
-            label1.Size = new Size(160, 30);
+            label1.Size = new Size(179, 30);
             label1.TabIndex = 0;
-            label1.Text = "Sửa Nhân Viên";
+            label1.Text = "Thêm Nhân Viên";
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(panel1);
             groupBox1.Controls.Add(btn_TaiAnh);
             groupBox1.Controls.Add(pictureBox_anh);
             groupBox1.Controls.Add(txt_SDT);
             groupBox1.Controls.Add(txt_Luong);
-            groupBox1.Controls.Add(txt_GioiTinh);
             groupBox1.Controls.Add(txt_TenNV);
             groupBox1.Controls.Add(txt_MaNV);
             groupBox1.Controls.Add(label6);
@@ -86,6 +92,37 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông Tin Nhân Viên";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(rdo_GioiTinh_Nam);
+            panel1.Controls.Add(rdo_GioiTinh_Nu);
+            panel1.Location = new Point(97, 140);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(202, 35);
+            panel1.TabIndex = 14;
+            // 
+            // rdo_GioiTinh_Nam
+            // 
+            rdo_GioiTinh_Nam.AutoSize = true;
+            rdo_GioiTinh_Nam.Location = new Point(11, 3);
+            rdo_GioiTinh_Nam.Name = "rdo_GioiTinh_Nam";
+            rdo_GioiTinh_Nam.Size = new Size(75, 29);
+            rdo_GioiTinh_Nam.TabIndex = 14;
+            rdo_GioiTinh_Nam.TabStop = true;
+            rdo_GioiTinh_Nam.Text = "Nam";
+            rdo_GioiTinh_Nam.UseVisualStyleBackColor = true;
+            // 
+            // rdo_GioiTinh_Nu
+            // 
+            rdo_GioiTinh_Nu.AutoSize = true;
+            rdo_GioiTinh_Nu.Location = new Point(108, 3);
+            rdo_GioiTinh_Nu.Name = "rdo_GioiTinh_Nu";
+            rdo_GioiTinh_Nu.Size = new Size(61, 29);
+            rdo_GioiTinh_Nu.TabIndex = 13;
+            rdo_GioiTinh_Nu.TabStop = true;
+            rdo_GioiTinh_Nu.Text = "Nữ";
+            rdo_GioiTinh_Nu.UseVisualStyleBackColor = true;
             // 
             // btn_TaiAnh
             // 
@@ -117,13 +154,6 @@
             txt_Luong.Name = "txt_Luong";
             txt_Luong.Size = new Size(158, 31);
             txt_Luong.TabIndex = 8;
-            // 
-            // txt_GioiTinh
-            // 
-            txt_GioiTinh.Location = new Point(108, 137);
-            txt_GioiTinh.Name = "txt_GioiTinh";
-            txt_GioiTinh.Size = new Size(158, 31);
-            txt_GioiTinh.TabIndex = 7;
             // 
             // txt_TenNV
             // 
@@ -186,7 +216,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(txt_ChucVu);
+            groupBox2.Controls.Add(panel2);
             groupBox2.Controls.Add(txt_MatKhau);
             groupBox2.Controls.Add(txt_TaiKhoan);
             groupBox2.Controls.Add(label9);
@@ -199,12 +229,36 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông Tin Tài Khoản";
             // 
-            // txt_ChucVu
+            // panel2
             // 
-            txt_ChucVu.Location = new Point(356, 38);
-            txt_ChucVu.Name = "txt_ChucVu";
-            txt_ChucVu.Size = new Size(158, 31);
-            txt_ChucVu.TabIndex = 12;
+            panel2.Controls.Add(rdo_ChucVuNhanVien);
+            panel2.Controls.Add(rdo_ChucVu_QuanLy);
+            panel2.Location = new Point(367, 29);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(265, 44);
+            panel2.TabIndex = 14;
+            // 
+            // rdo_ChucVuNhanVien
+            // 
+            rdo_ChucVuNhanVien.AutoSize = true;
+            rdo_ChucVuNhanVien.Location = new Point(127, 4);
+            rdo_ChucVuNhanVien.Name = "rdo_ChucVuNhanVien";
+            rdo_ChucVuNhanVien.Size = new Size(118, 29);
+            rdo_ChucVuNhanVien.TabIndex = 13;
+            rdo_ChucVuNhanVien.TabStop = true;
+            rdo_ChucVuNhanVien.Text = "Nhân Viên";
+            rdo_ChucVuNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // rdo_ChucVu_QuanLy
+            // 
+            rdo_ChucVu_QuanLy.AutoSize = true;
+            rdo_ChucVu_QuanLy.Location = new Point(9, 7);
+            rdo_ChucVu_QuanLy.Name = "rdo_ChucVu_QuanLy";
+            rdo_ChucVu_QuanLy.Size = new Size(101, 29);
+            rdo_ChucVu_QuanLy.TabIndex = 12;
+            rdo_ChucVu_QuanLy.TabStop = true;
+            rdo_ChucVu_QuanLy.Text = "Quản Lý";
+            rdo_ChucVu_QuanLy.UseVisualStyleBackColor = true;
             // 
             // txt_MatKhau
             // 
@@ -255,6 +309,7 @@
             btn_Huy.TabIndex = 3;
             btn_Huy.Text = "Hủy";
             btn_Huy.UseVisualStyleBackColor = true;
+            btn_Huy.Click += btn_Huy_Click;
             // 
             // btn_XacNhan
             // 
@@ -280,9 +335,13 @@
             Text = "ThemNV";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_anh).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -301,16 +360,20 @@
         private Label label8;
         private Label label7;
         private TextBox txt_Luong;
-        private TextBox txt_GioiTinh;
         private TextBox txt_TenNV;
         private TextBox txt_MaNV;
         private TextBox txt_SDT;
-        private TextBox txt_ChucVu;
         private TextBox txt_MatKhau;
         private TextBox txt_TaiKhoan;
         private Button btn_Huy;
         private Button btn_XacNhan;
         private Button btn_TaiAnh;
         private PictureBox pictureBox_anh;
+        private RadioButton rdo_GioiTinh_Nu;
+        private RadioButton rdo_ChucVuNhanVien;
+        private RadioButton rdo_ChucVu_QuanLy;
+        private Panel panel1;
+        private Panel panel2;
+        private RadioButton rdo_GioiTinh_Nam;
     }
 }

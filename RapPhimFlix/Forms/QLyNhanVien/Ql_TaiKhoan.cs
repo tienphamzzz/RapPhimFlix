@@ -40,7 +40,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
             if (e.RowIndex >= 0)
             {
 
-                string maNhanVien = dtgv_ThongTinNV.CurrentRow.Cells[0].Value.ToString(); // Giả sử cột "MaNhanVien" là khóa chính
+                string maNhanVien = dtgv_ThongTinNV.CurrentRow.Cells[0].Value.ToString(); 
 
                 // Mở form ChiTietNV và truyền dữ liệu
                 ChiTietNV chiTietNVForm = new ChiTietNV(maNhanVien);
@@ -50,7 +50,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 
         private void btn_TimMaNV_Click(object sender, EventArgs e)
         {
-            if (txt_TimMaNV.Text == "")
+            if (string.IsNullOrEmpty(txt_TimMaNV.Text))
             {
                 MessageBox.Show("Vui lòng nhập vào ô tìm kiếm nhân viên!");
                 return;
@@ -65,22 +65,25 @@ namespace RapPhimFlix.Forms.QLyNhanVien
                         dtgv_ThongTinNV.CurrentCell = dtgv_ThongTinNV.Rows[i].Cells[0];
                         break;
                     }
-                    else
+                    if (i == dtgv_ThongTinNV.Rows.Count - 1)
                     {
                         MessageBox.Show("Không tìm thấy nhân viên!", "thông báo", MessageBoxButtons.OK);
-                        return;
+                        
                     }
                 }
-
-
             }
         }
 
+
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            ThemNV themNV = new ThemNV();
+            
+          
+            ThemNV themNV = new ThemNV();// câu lệnh này vùa tạo form vừa kết nối tới form đó để sử dụng hàm luôn
+            themNV.ThemMa_NV(dtbase);
+           
             if (themNV.ShowDialog() == DialogResult.OK)
-            {
+            {                
                 loaddata(); // Gọi lại phương thức loaddata() để cập nhật dữ liệu
             }
 
