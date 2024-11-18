@@ -12,7 +12,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 {
     public partial class SuaNV : Form
     {
-        Controllers.DataContext dtbase = new Controllers.DataContext();
+        Controllers.DataProvider dtbase = Controllers.DataProvider.Instance;
         private string maNhanVien;
         public SuaNV(String maNhanVien)
         {
@@ -26,7 +26,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
             try
             {
                 string sql = "select nv.GioiTinh,nv.HovaTen,nv.Luong,nv.MaNhanVien,nv.SDT,tk.MatKhau,nv.ChucVu from [dbo].[tblNhanVien] nv join [dbo].[tblTaiKhoan] tk on nv.MaNhanVien=tk.MaNhanVien WHERE nv.MaNhanVien = '" + maNhanVien + "'";
-                DataTable dt = dtbase.ReadData(sql);
+                DataTable dt = dtbase.ExcuteQuery(sql);
 
                 if (dt.Rows.Count > 0)
                 {
@@ -79,8 +79,8 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 
             string sqlTaiKhoan = "UPDATE tblTaiKhoan SET MatKhau = '" + matKhau + "' WHERE MaNhanVien = '" + maNV + "';";
 
-            dtbase.ChangeData(sqlNhanVien);
-            dtbase.ChangeData(sqlTaiKhoan);
+            dtbase.ExcuteNonQuery(sqlNhanVien);
+            dtbase.ExcuteNonQuery(sqlTaiKhoan);
             MessageBox.Show("Cập nhật thông tin nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.DialogResult = DialogResult.OK; // Đặt kết quả DialogResult là OK
             this.Close(); // Đóng form SuaNV

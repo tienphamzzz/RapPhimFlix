@@ -12,7 +12,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
 {
     public partial class ChiTietNV : Form
     {
-        Controllers.DataContext dtbase = new Controllers.DataContext();
+        Controllers.DataProvider dtbase = Controllers.DataProvider.Instance;
         private string maNhanVien;
         public ChiTietNV(string maNhanVien)
         {
@@ -36,7 +36,7 @@ namespace RapPhimFlix.Forms.QLyNhanVien
             try
             {
                 string sql = "select nv.GioiTinh,nv.HovaTen,nv.Luong,nv.MaNhanVien,nv.SDT,tk.MatKhau,nv.ChucVu from [dbo].[tblNhanVien] nv join [dbo].[tblTaiKhoan] tk on nv.MaNhanVien=tk.MaNhanVien WHERE nv.MaNhanVien = '" + maNhanVien + "'";
-                DataTable dt = dtbase.ReadData(sql);
+                DataTable dt = dtbase.ExcuteQuery(sql);
 
                 if (dt.Rows.Count > 0)
                 {

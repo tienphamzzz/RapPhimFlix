@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DAO\" />
     <Folder Include="Forms\DangNhap\" />
     <Folder Include="Forms\MenuNav\" />
     <Folder Include="Forms\QLyNhanVien\NewFolder\" />

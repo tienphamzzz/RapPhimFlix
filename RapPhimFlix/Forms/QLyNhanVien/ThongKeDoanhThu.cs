@@ -10,14 +10,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RapPhimFlix.Model;
 using DevExpress.XtraCharts;
+using RapPhimFlix.Controllers;
 
 
 namespace RapPhimFlix.Forms.QLyNhanVien
 {
     public partial class ThongKeDoanhThu : Form
     {
-        Controllers.DataContext dtbase = new Controllers.DataContext();
-        DAO.DataProvider dp = DAO.DataProvider.Instance;
+        //    Controllers.DataContext dtbase = new Controllers.DataContext();
+    //    Controllers.DataProvider dtbase = Controllers.DataProvider.Instance;
+        DataProvider dp = DataProvider.Instance;
         public ThongKeDoanhThu()
         {
             InitializeComponent();
